@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI速 Operations</title><link rel="stylesheet" href="/style.css">
+</head>
+<body><main>
+<header><div><p class="eyebrow">ローカル・読み取り専用</p><h1>AI速 Operations</h1><p id="summary" role="status">読み込み中</p><p class="muted">最終更新: <span id="updated">—</span></p></div><button id="refresh" type="button">更新</button></header>
+<p id="message" role="status"></p>
+<section id="dashboard" hidden>
+<article class="wide"><h2>接続状態・集計条件</h2><div id="connections"></div></article>
+<article class="wide"><h2>共通エラー診断 <small>機能別・必要なときだけ詳細を表示</small></h2><div id="anomalies" class="diagnostic-panel"></div></article>
+<div class="grid">
+<article><h2>ニュース記事の処理状況 <small>過去24時間</small></h2><div id="topic"></div><details open><summary>AIによる記事の分析</summary><div id="gemma"></div></details></article>
+<article><h2>ニュースの収集状況</h2><div id="newsdata"></div><hr><div id="rss"></div></article>
+<article><h2>Topic検索・Vector Outbox</h2><div id="topic-vector"></div><hr><h3>Embeddingログ・Gemini利用枠履歴</h3><div id="embedding"></div></article>
+<article><div class="monitor-heading"><h2>Gemma 4 31B コメント事前生成</h2><button id="refresh-pregen" type="button">状態を更新</button></div><p id="pregen-fetched-at" class="muted">最終取得: 未取得</p><p id="pregen-message" role="status">未取得です。必要なときに手動更新してください。</p><div id="pregen"></div></article>
+<article><h2>システムの稼働状況</h2><div id="infrastructure"></div><p class="links"><a href="https://supabase.com/dashboard/org/voudqbjgehclfknkicor/usage" target="_blank" rel="noopener noreferrer">Supabase 利用状況</a><a href="https://console.upstash.com/redis/1d759853-69ca-4386-b050-f784ee013569/details" target="_blank" rel="noopener noreferrer">Upstash Redis</a></p></article>
+<article><h2>スレッドの作成状況</h2><div id="quality"></div></article>
+</div>
+
+</section></main><script src="/app.js"></script></body></html>

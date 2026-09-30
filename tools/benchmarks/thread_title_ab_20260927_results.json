@@ -1,0 +1,1696 @@
+﻿{
+    "started_at":  "2026-09-26T17:00:29.866Z",
+    "source_file":  "thread_title_ab_20260927_dataset.json",
+    "model_a_id":  "gemini-3.1-flash-lite",
+    "model_a_substitution":  "Production preview ID gemini-3.1-flash-lite-preview was officially shut down 2026-05-25; stable 3.1 used without spending a request on the stopped ID.",
+    "model_b_id":  "gemini-3.5-flash-lite",
+    "protocol":  {
+                     "temperature":  0,
+                     "thinkingLevel":  "high",
+                     "maxOutputTokens":  8192,
+                     "timeoutSeconds":  30,
+                     "retries":  0,
+                     "batchSize":  4,
+                     "titleMaxCodepoints":  47
+                 },
+    "request_plan":  "Initial one batch per model; proceed only after both first responses return HTTP 200, usageMetadata, valid JSON and valid schema. 4.1s minimum between request starts. Stop only the model receiving 429; no retries.",
+    "requests":  [
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  0,
+                         "topic_ids":  [
+                                           "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+                                           "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+                                           "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+                                           "27414090-21bc-4207-be64-73d41612af9c"
+                                       ],
+                         "started_at":  "2026-09-26T17:00:29.870Z",
+                         "elapsed_ms":  4655.4,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  338,
+                                       "candidatesTokenCount":  251,
+                                       "totalTokenCount":  1880,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  338
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1291,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+                                            "title":  "【米陸軍】小型ドローン量産計画、磁石供給元に新興企業Vulcanを選定",
+                                            "status":  "success",
+                                            "length":  35
+                                        },
+                                        {
+                                            "id":  "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+                                            "title":  "【Huawei】独自理論の新型チップ「麒麟9050 Pro」発表",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+                                            "title":  "【速報】NVIDIA、Hugging Face買収で合意　AI界隈激震",
+                                            "status":  "success",
+                                            "length":  35
+                                        },
+                                        {
+                                            "id":  "27414090-21bc-4207-be64-73d41612af9c",
+                                            "title":  "次世代PC「Googlebook」実機披露　Snapdragon搭載で登場",
+                                            "status":  "success",
+                                            "length":  37
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:00:34.526Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  0,
+                         "topic_ids":  [
+                                           "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+                                           "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+                                           "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+                                           "27414090-21bc-4207-be64-73d41612af9c"
+                                       ],
+                         "started_at":  "2026-09-26T17:00:38.650Z",
+                         "elapsed_ms":  4249.7,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  338,
+                                       "candidatesTokenCount":  234,
+                                       "totalTokenCount":  1632,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  338
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1060,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+                                            "title":  "米陸軍のドローン計画、磁石供給元に新興企業を選定",
+                                            "status":  "success",
+                                            "length":  24
+                                        },
+                                        {
+                                            "id":  "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+                                            "title":  "ファーウェイ、独自理論の新型チップ「麒麟9050 Pro」発表",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+                                            "title":  "エヌビディア、Hugging Face買収で合意へ",
+                                            "status":  "success",
+                                            "length":  25
+                                        },
+                                        {
+                                            "id":  "27414090-21bc-4207-be64-73d41612af9c",
+                                            "title":  "次世代PC「Googlebook」実機披露 スナップドラゴンサミット",
+                                            "status":  "success",
+                                            "length":  34
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:00:42.900Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  1,
+                         "topic_ids":  [
+                                           "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+                                           "861d0873-175c-46c9-8212-c5285564647b",
+                                           "5ed06eeb-1aa6-4368-aea6-911223607533",
+                                           "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412"
+                                       ],
+                         "started_at":  "2026-09-26T17:00:51.119Z",
+                         "elapsed_ms":  3415.1,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  330,
+                                       "candidatesTokenCount":  299,
+                                       "totalTokenCount":  1258,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  330
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  629,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+                                            "title":  "AIデータセンター、GPUを担保に資金調達とかいうパワーワード",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "861d0873-175c-46c9-8212-c5285564647b",
+                                            "title":  "アルバック、半導体後工程向け装置で2028年量産へ",
+                                            "status":  "success",
+                                            "length":  25
+                                        },
+                                        {
+                                            "id":  "5ed06eeb-1aa6-4368-aea6-911223607533",
+                                            "title":  "マウス操作で5倍拡大できる「QuickLoupe」が便利そう",
+                                            "status":  "success",
+                                            "length":  30
+                                        },
+                                        {
+                                            "id":  "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412",
+                                            "title":  "iPhone 18 Pro、分解したら冷却重視の設計だった件",
+                                            "status":  "success",
+                                            "length":  30
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:00:54.534Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  2,
+                         "topic_ids":  [
+                                           "41d99bb3-493c-4156-9597-8e531583bdcf",
+                                           "9b6638d0-58eb-4af8-8256-2b27014882ce",
+                                           "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+                                           "10c06596-ae8e-47c9-b484-a7350a13fd16"
+                                       ],
+                         "started_at":  "2026-09-26T17:00:58.646Z",
+                         "elapsed_ms":  3862.3,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  329,
+                                       "candidatesTokenCount":  259,
+                                       "totalTokenCount":  1476,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  329
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  888,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "41d99bb3-493c-4156-9597-8e531583bdcf",
+                                            "title":  "【VAB】WRX STIに19インチTE37 SAGA S-plusが適合！履かせる奴いる？",
+                                            "status":  "success",
+                                            "length":  46
+                                        },
+                                        {
+                                            "id":  "9b6638d0-58eb-4af8-8256-2b27014882ce",
+                                            "title":  "スバル「ジャスティ」など3車種がエンジン刷新！110万円台からでコスパ最強か？",
+                                            "status":  "success",
+                                            "length":  39
+                                        },
+                                        {
+                                            "id":  "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+                                            "title":  "マジセミ、Windowsプロファイル移行とデバイス登録のウェビナー開催へ",
+                                            "status":  "success",
+                                            "length":  36
+                                        },
+                                        {
+                                            "id":  "10c06596-ae8e-47c9-b484-a7350a13fd16",
+                                            "title":  "中国PaXini TechがA株上場へ！IPO準備開始で市場の反応は？",
+                                            "status":  "success",
+                                            "length":  35
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:02.508Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  3,
+                         "topic_ids":  [
+                                           "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+                                           "c9d060df-d9d6-48dc-a063-413681ca43c6",
+                                           "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+                                           "506693dc-43f3-4aaf-bd77-c8de311401b1"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:06.613Z",
+                         "elapsed_ms":  3662.5,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  340,
+                                       "candidatesTokenCount":  246,
+                                       "totalTokenCount":  1356,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  340
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  770,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+                                            "title":  "Windows 11、シャットダウンより再起動の方が不具合直る説ｗｗｗ",
+                                            "status":  "success",
+                                            "length":  35
+                                        },
+                                        {
+                                            "id":  "c9d060df-d9d6-48dc-a063-413681ca43c6",
+                                            "title":  "札幌でインクルーシブダンスフェス初開催！10/3エルプラザ集合な",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+                                            "title":  "ユニクロ：シー26AW新作パンツ試着したけどこれ神だわ",
+                                            "status":  "success",
+                                            "length":  27
+                                        },
+                                        {
+                                            "id":  "506693dc-43f3-4aaf-bd77-c8de311401b1",
+                                            "title":  "コスメデコルテのホリデー限定コフレ、今年も争奪戦確定か？",
+                                            "status":  "success",
+                                            "length":  28
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:10.276Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  4,
+                         "topic_ids":  [
+                                           "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+                                           "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+                                           "fcb679a3-ae01-4369-8933-2ed0f7719737",
+                                           "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:14.395Z",
+                         "elapsed_ms":  3687.3,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  339,
+                                       "candidatesTokenCount":  256,
+                                       "totalTokenCount":  1365,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  339
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  770,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+                                            "title":  "大分県臼杵市、民間防空壕を観光資源として公開へ　平和学習の場に",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+                                            "title":  "中学生が秋蚕の繭を収穫　岡谷北部中の3年生が「収繭」作業",
+                                            "status":  "success",
+                                            "length":  28
+                                        },
+                                        {
+                                            "id":  "fcb679a3-ae01-4369-8933-2ed0f7719737",
+                                            "title":  "eスポーツ、プロゲーマーの道が確立　スポンサーや固定給も",
+                                            "status":  "success",
+                                            "length":  28
+                                        },
+                                        {
+                                            "id":  "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177",
+                                            "title":  "ダイソーの謎商品がThreadsで話題に　これ何？と絶賛の嵐",
+                                            "status":  "success",
+                                            "length":  30
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:18.083Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  5,
+                         "topic_ids":  [
+                                           "281e7195-fdb5-4449-83ff-bb01f36668fa",
+                                           "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+                                           "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+                                           "45a3f7a0-fefd-4e09-b844-6667301f4494"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:22.186Z",
+                         "elapsed_ms":  6476.6,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  365,
+                                       "candidatesTokenCount":  252,
+                                       "totalTokenCount":  1544,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  365
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  927,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "281e7195-fdb5-4449-83ff-bb01f36668fa",
+                                            "title":  "【Bプレミア】神戸ストークス、9/26大阪エヴェッサとの開幕戦へ！",
+                                            "status":  "success",
+                                            "length":  33
+                                        },
+                                        {
+                                            "id":  "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+                                            "title":  "YOASOBI「夜に駆ける」がオリコン史上初11億回再生突破ｗｗｗ",
+                                            "status":  "success",
+                                            "length":  33
+                                        },
+                                        {
+                                            "id":  "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+                                            "title":  "Snow Man佐久間とKEY TO LIT猪狩がベビーワセリン新CMに出演",
+                                            "status":  "success",
+                                            "length":  38
+                                        },
+                                        {
+                                            "id":  "45a3f7a0-fefd-4e09-b844-6667301f4494",
+                                            "title":  "1日15時間ゲームしてた医師「ゲームでセルフコントロール力は高まる」",
+                                            "status":  "success",
+                                            "length":  34
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:28.663Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  6,
+                         "topic_ids":  [
+                                           "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+                                           "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+                                           "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+                                           "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:32.770Z",
+                         "elapsed_ms":  4830.5,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  351,
+                                       "candidatesTokenCount":  258,
+                                       "totalTokenCount":  1807,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  351
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1198,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+                                            "title":  "【F1】ガスリーへの誹謗中傷にブリアトーレ激怒「メディアは責任を持て」",
+                                            "status":  "success",
+                                            "length":  35
+                                        },
+                                        {
+                                            "id":  "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+                                            "title":  "Snow Man阿部亮平、WEST.解散に「この結末しかなかったのかな」",
+                                            "status":  "success",
+                                            "length":  36
+                                        },
+                                        {
+                                            "id":  "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+                                            "title":  "映画『リターン・トゥ・サイレントヒル』BD発売決定！12月23日発売",
+                                            "status":  "success",
+                                            "length":  34
+                                        },
+                                        {
+                                            "id":  "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0",
+                                            "title":  "ロード・オブ・ザ・リング25周年記念、東京で特別公演開催決定！",
+                                            "status":  "success",
+                                            "length":  31
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:37.601Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  7,
+                         "topic_ids":  [
+                                           "7823d0ee-8761-4cb0-826e-49d0d4406205",
+                                           "56c17078-33c3-4de3-8636-c7da00b61cd0",
+                                           "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+                                           "7b1301b5-4cc7-4a19-9355-a86d74d7880e"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:41.711Z",
+                         "elapsed_ms":  5384,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  360,
+                                       "candidatesTokenCount":  257,
+                                       "totalTokenCount":  1915,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  360
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1298,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "7823d0ee-8761-4cb0-826e-49d0d4406205",
+                                            "title":  "神木隆之介、ドジャース戦で山本由伸にノーバン投球！凄すぎワロタ",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "56c17078-33c3-4de3-8636-c7da00b61cd0",
+                                            "title":  "宇宙人と会うには数学が必要？高水裕一氏が語る宇宙的思考法が面白い",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+                                            "title":  "【悲報】ゼルダ40周年コンサート、チケット争奪戦が始まる模様",
+                                            "status":  "success",
+                                            "length":  30
+                                        },
+                                        {
+                                            "id":  "7b1301b5-4cc7-4a19-9355-a86d74d7880e",
+                                            "title":  "魔女の宅急便が4K UHDで発売決定！ジブリファン歓喜の朗報",
+                                            "status":  "success",
+                                            "length":  30
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:47.095Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  8,
+                         "topic_ids":  [
+                                           "f930eab6-78d9-40ad-a256-6922d00bef4a",
+                                           "1ace7966-f798-488f-a7b8-8336c096dff1",
+                                           "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+                                           "5c600faa-e9b5-4ca8-9dbc-9108e6244401"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:51.200Z",
+                         "elapsed_ms":  4391.7,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  337,
+                                       "candidatesTokenCount":  253,
+                                       "totalTokenCount":  1546,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  337
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  956,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "f930eab6-78d9-40ad-a256-6922d00bef4a",
+                                            "title":  "【朗報】中国上海に『ロード・オブ・ミステリーズ』のポップアップストアがオープン！",
+                                            "status":  "success",
+                                            "length":  40
+                                        },
+                                        {
+                                            "id":  "1ace7966-f798-488f-a7b8-8336c096dff1",
+                                            "title":  "グラストNOVELS、9月25日に新刊4作品発売！購入特典も付くぞ",
+                                            "status":  "success",
+                                            "length":  33
+                                        },
+                                        {
+                                            "id":  "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+                                            "title":  "経済産業省の人事の偏りに懸念の声、内閣府の要職独占か",
+                                            "status":  "success",
+                                            "length":  26
+                                        },
+                                        {
+                                            "id":  "5c600faa-e9b5-4ca8-9dbc-9108e6244401",
+                                            "title":  "経産省、アニメ・ゲーム産業の海外展開に4.5兆円の支援を要求へ",
+                                            "status":  "success",
+                                            "length":  31
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:01:55.592Z"
+                     },
+                     {
+                         "model_key":  "A",
+                         "model_id":  "gemini-3.1-flash-lite",
+                         "batch_index":  9,
+                         "topic_ids":  [
+                                           "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+                                           "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+                                           "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+                                           "21071a54-da3b-4234-ad8a-3392949e71b6"
+                                       ],
+                         "started_at":  "2026-09-26T17:01:59.700Z",
+                         "elapsed_ms":  4384.4,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  359,
+                                       "candidatesTokenCount":  256,
+                                       "totalTokenCount":  1537,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  359
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  922,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+                                            "title":  "25歳孫、祖母の築50年団地をDIYリノベして転売→即完売ｗｗｗ",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+                                            "title":  "インテルとエヌビディア、AI半導体株でここまで差がついた理由",
+                                            "status":  "success",
+                                            "length":  30
+                                        },
+                                        {
+                                            "id":  "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+                                            "title":  "日経平均、米半導体株安と配当狙いの買いで板挟み状態へ",
+                                            "status":  "success",
+                                            "length":  26
+                                        },
+                                        {
+                                            "id":  "21071a54-da3b-4234-ad8a-3392949e71b6",
+                                            "title":  "【速報】日経平均、804円高で続伸！市場の反応は？",
+                                            "status":  "success",
+                                            "length":  25
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:04.084Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  1,
+                         "topic_ids":  [
+                                           "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+                                           "861d0873-175c-46c9-8212-c5285564647b",
+                                           "5ed06eeb-1aa6-4368-aea6-911223607533",
+                                           "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:08.202Z",
+                         "elapsed_ms":  4300.4,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  330,
+                                       "candidatesTokenCount":  246,
+                                       "totalTokenCount":  1824,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  330
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1248,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+                                            "title":  "AIデータセンターの資金調達、ついにGPUを担保に入れ始める",
+                                            "status":  "success",
+                                            "length":  30
+                                        },
+                                        {
+                                            "id":  "861d0873-175c-46c9-8212-c5285564647b",
+                                            "title":  "アルバック、半導体後工程向けの先端パッケージ装置を2028年量産へ",
+                                            "status":  "success",
+                                            "length":  33
+                                        },
+                                        {
+                                            "id":  "5ed06eeb-1aa6-4368-aea6-911223607533",
+                                            "title":  "マウス操作だけで最大5倍の拡大表示ができるツール「QuickLoupe」が便利そう",
+                                            "status":  "success",
+                                            "length":  41
+                                        },
+                                        {
+                                            "id":  "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412",
+                                            "title":  "【速報】iPhone 18 Pro、ガチで冷却重視の設計になってしまう",
+                                            "status":  "success",
+                                            "length":  35
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:12.503Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  2,
+                         "topic_ids":  [
+                                           "41d99bb3-493c-4156-9597-8e531583bdcf",
+                                           "9b6638d0-58eb-4af8-8256-2b27014882ce",
+                                           "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+                                           "10c06596-ae8e-47c9-b484-a7350a13fd16"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:16.615Z",
+                         "elapsed_ms":  4404.8,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  329,
+                                       "candidatesTokenCount":  238,
+                                       "totalTokenCount":  1646,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  329
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1079,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "41d99bb3-493c-4156-9597-8e531583bdcf",
+                                            "title":  "VAB型WRX STIに19インチのTE37 SAGA S-plusが適合！",
+                                            "status":  "success",
+                                            "length":  38
+                                        },
+                                        {
+                                            "id":  "9b6638d0-58eb-4af8-8256-2b27014882ce",
+                                            "title":  "スバル・ジャスティなどコンパクト3台が110万円台で大幅進化",
+                                            "status":  "success",
+                                            "length":  30
+                                        },
+                                        {
+                                            "id":  "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+                                            "title":  "Winプロファイル移行のウェビナーがマジセミで開催へ",
+                                            "status":  "success",
+                                            "length":  26
+                                        },
+                                        {
+                                            "id":  "10c06596-ae8e-47c9-b484-a7350a13fd16",
+                                            "title":  "中国PaXini TechがA株上場へ、IPO準備を開始",
+                                            "status":  "success",
+                                            "length":  28
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:21.019Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  3,
+                         "topic_ids":  [
+                                           "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+                                           "c9d060df-d9d6-48dc-a063-413681ca43c6",
+                                           "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+                                           "506693dc-43f3-4aaf-bd77-c8de311401b1"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:25.128Z",
+                         "elapsed_ms":  4786.4,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  340,
+                                       "candidatesTokenCount":  244,
+                                       "totalTokenCount":  1794,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  340
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1210,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+                                            "title":  "【悲報】Windows11さん、シャットダウンより「再起動」のが有能だった",
+                                            "status":  "success",
+                                            "length":  37
+                                        },
+                                        {
+                                            "id":  "c9d060df-d9d6-48dc-a063-413681ca43c6",
+                                            "title":  "インクルーシブダンスフェス札幌地区予選大会、10月3日に初開催へ",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+                                            "title":  "ユニクロ：シーの新作パンツ試着レビュー来たぞｗｗｗ",
+                                            "status":  "success",
+                                            "length":  25
+                                        },
+                                        {
+                                            "id":  "506693dc-43f3-4aaf-bd77-c8de311401b1",
+                                            "title":  "コスメデコルテのホリデー限定コフレ、ガチで良さそう",
+                                            "status":  "success",
+                                            "length":  25
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:29.914Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  4,
+                         "topic_ids":  [
+                                           "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+                                           "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+                                           "fcb679a3-ae01-4369-8933-2ed0f7719737",
+                                           "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:34.023Z",
+                         "elapsed_ms":  3327.8,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  339,
+                                       "candidatesTokenCount":  242,
+                                       "totalTokenCount":  1394,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  339
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  813,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+                                            "title":  "大分県臼杵市の民間製防空壕、平和学習や観光活用で一般公開へ",
+                                            "status":  "success",
+                                            "length":  29
+                                        },
+                                        {
+                                            "id":  "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+                                            "title":  "岡谷北部中3年、秋蚕の繭収穫「収繭」作業を体験",
+                                            "status":  "success",
+                                            "length":  23
+                                        },
+                                        {
+                                            "id":  "fcb679a3-ae01-4369-8933-2ed0f7719737",
+                                            "title":  "eスポーツ、ガチでプロへの道が整う スポンサーや固定給も",
+                                            "status":  "success",
+                                            "length":  28
+                                        },
+                                        {
+                                            "id":  "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177",
+                                            "title":  "ダイソーの「謎の商品」、Threadsでバズりまくり絶賛される",
+                                            "status":  "success",
+                                            "length":  31
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:37.350Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  5,
+                         "topic_ids":  [
+                                           "281e7195-fdb5-4449-83ff-bb01f36668fa",
+                                           "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+                                           "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+                                           "45a3f7a0-fefd-4e09-b844-6667301f4494"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:41.454Z",
+                         "elapsed_ms":  4520.4,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  365,
+                                       "candidatesTokenCount":  256,
+                                       "totalTokenCount":  1869,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  365
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1248,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "281e7195-fdb5-4449-83ff-bb01f36668fa",
+                                            "title":  "神戸ストークス、9月26日のBプレミア開幕戦で大阪エヴェッサと対戦！",
+                                            "status":  "success",
+                                            "length":  34
+                                        },
+                                        {
+                                            "id":  "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+                                            "title":  "YOASOBI「夜に駆ける」がオリコン史上初の累積再生数11億回突破！",
+                                            "status":  "success",
+                                            "length":  35
+                                        },
+                                        {
+                                            "id":  "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+                                            "title":  "Snow Man佐久間＆猪狩蒼弥、ベビーワセリン新CMで共演決定！",
+                                            "status":  "success",
+                                            "length":  33
+                                        },
+                                        {
+                                            "id":  "45a3f7a0-fefd-4e09-b844-6667301f4494",
+                                            "title":  "1日15時間ゲームしてた医師が語る「セルフコントロール力を高めるコツ」",
+                                            "status":  "success",
+                                            "length":  35
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:45.974Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  6,
+                         "topic_ids":  [
+                                           "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+                                           "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+                                           "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+                                           "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:50.085Z",
+                         "elapsed_ms":  5404,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  351,
+                                       "candidatesTokenCount":  254,
+                                       "totalTokenCount":  1872,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  351
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1267,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+                                            "title":  "【F1】ガスリーへの誹謗中傷にブリアトーレ激怒「メディアも責任持て」",
+                                            "status":  "success",
+                                            "length":  34
+                                        },
+                                        {
+                                            "id":  "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+                                            "title":  "スノ阿部亮平、WEST.解散に「この結末しかなかったのかな」",
+                                            "status":  "success",
+                                            "length":  30
+                                        },
+                                        {
+                                            "id":  "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+                                            "title":  "映画『リターン・トゥ・サイレントヒル』BDが12月23日発売決定",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0",
+                                            "title":  "ロード・オブ・ザ・リング25周年特別公演が東京で開催へ",
+                                            "status":  "success",
+                                            "length":  27
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:02:55.489Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  7,
+                         "topic_ids":  [
+                                           "7823d0ee-8761-4cb0-826e-49d0d4406205",
+                                           "56c17078-33c3-4de3-8636-c7da00b61cd0",
+                                           "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+                                           "7b1301b5-4cc7-4a19-9355-a86d74d7880e"
+                                       ],
+                         "started_at":  "2026-09-26T17:02:59.595Z",
+                         "elapsed_ms":  4603.2,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  360,
+                                       "candidatesTokenCount":  252,
+                                       "totalTokenCount":  1792,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  360
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1180,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "7823d0ee-8761-4cb0-826e-49d0d4406205",
+                                            "title":  "神木隆之介、ドジャース戦で山本由伸にノーバウンド投球！",
+                                            "status":  "success",
+                                            "length":  27
+                                        },
+                                        {
+                                            "id":  "56c17078-33c3-4de3-8636-c7da00b61cd0",
+                                            "title":  "宇宙人との接触に備えよ！高水裕一が語る宇宙的思考法",
+                                            "status":  "success",
+                                            "length":  25
+                                        },
+                                        {
+                                            "id":  "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+                                            "title":  "ゼルダの伝説40周年コンサート、チケット最速先行が9/25開始",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "7b1301b5-4cc7-4a19-9355-a86d74d7880e",
+                                            "title":  "ジブリ『魔女の宅急便』4K UHD＆BDセットが11月発売決定",
+                                            "status":  "success",
+                                            "length":  31
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:03:04.199Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  8,
+                         "topic_ids":  [
+                                           "f930eab6-78d9-40ad-a256-6922d00bef4a",
+                                           "1ace7966-f798-488f-a7b8-8336c096dff1",
+                                           "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+                                           "5c600faa-e9b5-4ca8-9dbc-9108e6244401"
+                                       ],
+                         "started_at":  "2026-09-26T17:03:08.317Z",
+                         "elapsed_ms":  6676.9,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  337,
+                                       "candidatesTokenCount":  240,
+                                       "totalTokenCount":  2489,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  337
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1912,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "f930eab6-78d9-40ad-a256-6922d00bef4a",
+                                            "title":  "上海で「ロード・オブ・ミステリーズ」ポップアップストア爆誕ｗｗ",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "1ace7966-f798-488f-a7b8-8336c096dff1",
+                                            "title":  "グラストNOVELSの新刊4作品、9月25日に特典付きで発売決定",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+                                            "title":  "経産省が内閣府の要職を多数獲得…人事の偏りに懸念の声",
+                                            "status":  "success",
+                                            "length":  26
+                                        },
+                                        {
+                                            "id":  "5c600faa-e9b5-4ca8-9dbc-9108e6244401",
+                                            "title":  "経産省、アニメやゲームの海外展開に約4.5兆円要求",
+                                            "status":  "success",
+                                            "length":  25
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:03:14.994Z"
+                     },
+                     {
+                         "model_key":  "B",
+                         "model_id":  "gemini-3.5-flash-lite",
+                         "batch_index":  9,
+                         "topic_ids":  [
+                                           "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+                                           "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+                                           "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+                                           "21071a54-da3b-4234-ad8a-3392949e71b6"
+                                       ],
+                         "started_at":  "2026-09-26T17:03:19.112Z",
+                         "elapsed_ms":  6087.8,
+                         "http_status":  200,
+                         "retry_after":  null,
+                         "usage":  {
+                                       "promptTokenCount":  359,
+                                       "candidatesTokenCount":  264,
+                                       "totalTokenCount":  2300,
+                                       "promptTokensDetails":  [
+                                                                   {
+                                                                       "modality":  "TEXT",
+                                                                       "tokenCount":  359
+                                                                   }
+                                                               ],
+                                       "thoughtsTokenCount":  1677,
+                                       "serviceTier":  "standard"
+                                   },
+                         "finish_reason":  "STOP",
+                         "status":  "success",
+                         "errors":  [
+
+                                    ],
+                         "titles":  [
+                                        {
+                                            "id":  "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+                                            "title":  "【悲報】25歳、祖母の築50年団地をDIYリノベして転売したら秒で完売ｗｗｗ",
+                                            "status":  "success",
+                                            "length":  38
+                                        },
+                                        {
+                                            "id":  "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+                                            "title":  "インテルさんとエヌビディアさんの格差、ガチで限界突破してしまう…",
+                                            "status":  "success",
+                                            "length":  32
+                                        },
+                                        {
+                                            "id":  "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+                                            "title":  "今日の日経平均、米株安と配当狙いで完全に綱引き状態になってる件",
+                                            "status":  "success",
+                                            "length":  31
+                                        },
+                                        {
+                                            "id":  "21071a54-da3b-4234-ad8a-3392949e71b6",
+                                            "title":  "【速報】日経平均株価、謎の爆上がりで＋804円ｗｗｗお前ら息してるか？",
+                                            "status":  "success",
+                                            "length":  35
+                                        }
+                                    ],
+                         "schema_error":  false,
+                         "completed_at":  "2026-09-26T17:03:25.200Z"
+                     }
+                 ],
+    "stop_reason":  null,
+    "finished_at":  "2026-09-26T17:03:25.203Z",
+    "total_api_calls":  20,
+    "summary":  {
+                    "A":  {
+                              "batch_attempts":  10,
+                              "http_200":  10,
+                              "topic_output_count":  40,
+                              "title_success":  40,
+                              "title_failure_reasons":  {
+
+                                                        },
+                              "json_schema_valid_batches":  10,
+                              "title_length_compliant":  40,
+                              "latency_ms":  {
+                                                 "count":  10,
+                                                 "mean":  4475,
+                                                 "median":  4388,
+                                                 "p95":  6476.6
+                                             },
+                              "input_tokens":  3448,
+                              "output_tokens":  2587,
+                              "thinking_tokens":  9649
+                          },
+                    "B":  {
+                              "batch_attempts":  10,
+                              "http_200":  10,
+                              "topic_output_count":  40,
+                              "title_success":  40,
+                              "title_failure_reasons":  {
+
+                                                        },
+                              "json_schema_valid_batches":  10,
+                              "title_length_compliant":  40,
+                              "latency_ms":  {
+                                                 "count":  10,
+                                                 "mean":  4836.1,
+                                                 "median":  4561.8,
+                                                 "p95":  6676.9
+                                             },
+                              "input_tokens":  3448,
+                              "output_tokens":  2470,
+                              "thinking_tokens":  12694
+                          }
+                },
+    "blind":  [
+                  {
+                      "id":  "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+                      "category":  "IT・ガジェット",
+                      "subject":  "米陸軍の小型ドローン量産計画「SkyFoundry」",
+                      "event":  "磁石の供給元に米新興企業Vulcan Elementsを選定",
+                      "X":  "【米陸軍】小型ドローン量産計画、磁石供給元に新興企業Vulcanを選定",
+                      "X_status":  "success",
+                      "Y":  "米陸軍のドローン計画、磁石供給元に新興企業を選定",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+                      "category":  "IT・ガジェット",
+                      "subject":  "ファーウェイ",
+                      "event":  "独自理論に基づく新型チップ「麒麟9050 Pro」を発表",
+                      "X":  "ファーウェイ、独自理論の新型チップ「麒麟9050 Pro」発表",
+                      "X_status":  "success",
+                      "Y":  "【Huawei】独自理論の新型チップ「麒麟9050 Pro」発表",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+                      "category":  "IT・ガジェット",
+                      "subject":  "NVIDIA（エヌビディア）",
+                      "event":  "AIモデル共有基盤のHugging Faceを買収することで合意",
+                      "X":  "エヌビディア、Hugging Face買収で合意へ",
+                      "X_status":  "success",
+                      "Y":  "【速報】NVIDIA、Hugging Face買収で合意　AI界隈激震",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "27414090-21bc-4207-be64-73d41612af9c",
+                      "category":  "IT・ガジェット",
+                      "subject":  "次世代PC「Googlebook」",
+                      "event":  "Snapdragon Summit 2026にて実機が披露された",
+                      "X":  "次世代PC「Googlebook」実機披露 スナップドラゴンサミット",
+                      "X_status":  "success",
+                      "Y":  "次世代PC「Googlebook」実機披露　Snapdragon搭載で登場",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+                      "category":  "IT・ガジェット",
+                      "subject":  "AIデータセンターの建設資金調達",
+                      "event":  "GPUを担保にした融資や証券化など、手法が複雑化している",
+                      "X":  "AIデータセンターの資金調達、ついにGPUを担保に入れ始める",
+                      "X_status":  "success",
+                      "Y":  "AIデータセンター、GPUを担保に資金調達とかいうパワーワード",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "861d0873-175c-46c9-8212-c5285564647b",
+                      "category":  "IT・ガジェット",
+                      "subject":  "アルバック",
+                      "event":  "半導体後工程向けの先端パッケージ装置を開発し、2028年に量産を開始する",
+                      "X":  "アルバック、半導体後工程向けの先端パッケージ装置を2028年量産へ",
+                      "X_status":  "success",
+                      "Y":  "アルバック、半導体後工程向け装置で2028年量産へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "5ed06eeb-1aa6-4368-aea6-911223607533",
+                      "category":  "IT・ガジェット",
+                      "subject":  "QuickLoupe",
+                      "event":  "マウス操作だけで最大5倍の拡大表示が可能",
+                      "X":  "マウス操作だけで最大5倍の拡大表示ができるツール「QuickLoupe」が便利そう",
+                      "X_status":  "success",
+                      "Y":  "マウス操作で5倍拡大できる「QuickLoupe」が便利そう",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412",
+                      "category":  "IT・ガジェット",
+                      "subject":  "iPhone 18 Pro",
+                      "event":  "分解調査により、冷却重視の設計であることが判明",
+                      "X":  "【速報】iPhone 18 Pro、ガチで冷却重視の設計になってしまう",
+                      "X_status":  "success",
+                      "Y":  "iPhone 18 Pro、分解したら冷却重視の設計だった件",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "41d99bb3-493c-4156-9597-8e531583bdcf",
+                      "category":  "IT・ガジェット",
+                      "subject":  "VAB WRX STI",
+                      "event":  "19インチのTE37 SAGA S-plusが適合する",
+                      "X":  "VAB型WRX STIに19インチのTE37 SAGA S-plusが適合！",
+                      "X_status":  "success",
+                      "Y":  "【VAB】WRX STIに19インチTE37 SAGA S-plusが適合！履かせる奴いる？",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "9b6638d0-58eb-4af8-8256-2b27014882ce",
+                      "category":  "IT・ガジェット",
+                      "subject":  "スバル「ジャスティ」を含む軽・コンパクトカー3台",
+                      "event":  "110万円台からエンジン刷新により大幅に進化",
+                      "X":  "スバル「ジャスティ」など3車種がエンジン刷新！110万円台からでコスパ最強か？",
+                      "X_status":  "success",
+                      "Y":  "スバル・ジャスティなどコンパクト3台が110万円台で大幅進化",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+                      "category":  "IT・ガジェット",
+                      "subject":  "マジセミ株式会社",
+                      "event":  "Windowsプロファイル移行とデバイス登録に関するウェビナーを開催",
+                      "X":  "マジセミ、Windowsプロファイル移行とデバイス登録のウェビナー開催へ",
+                      "X_status":  "success",
+                      "Y":  "Winプロファイル移行のウェビナーがマジセミで開催へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "10c06596-ae8e-47c9-b484-a7350a13fd16",
+                      "category":  "IT・ガジェット",
+                      "subject":  "中国のPaXini Tech",
+                      "event":  "A株上場に向けた手続きを開始し、IPO準備に入った",
+                      "X":  "中国PaXini TechがA株上場へ！IPO準備開始で市場の反応は？",
+                      "X_status":  "success",
+                      "Y":  "中国PaXini TechがA株上場へ、IPO準備を開始",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+                      "category":  "IT・ガジェット",
+                      "subject":  "Windows 11",
+                      "event":  "シャットダウンより再起動の方が不具合解消に役立つ場合がある",
+                      "X":  "【悲報】Windows11さん、シャットダウンより「再起動」のが有能だった",
+                      "X_status":  "success",
+                      "Y":  "Windows 11、シャットダウンより再起動の方が不具合直る説ｗｗｗ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "c9d060df-d9d6-48dc-a063-413681ca43c6",
+                      "category":  "トレンド",
+                      "subject":  "インクルーシブダンスフェス26-27札幌地区予選大会",
+                      "event":  "10月3日に札幌エルプラザで初開催される",
+                      "X":  "札幌でインクルーシブダンスフェス初開催！10/3エルプラザ集合な",
+                      "X_status":  "success",
+                      "Y":  "インクルーシブダンスフェス札幌地区予選大会、10月3日に初開催へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+                      "category":  "トレンド",
+                      "subject":  "ユニクロ：シー（UNIQLO : C）",
+                      "event":  "2026年秋冬コレクションが登場し、新作パンツを試着レビュー",
+                      "X":  "ユニクロ：シーの新作パンツ試着レビュー来たぞｗｗｗ",
+                      "X_status":  "success",
+                      "Y":  "ユニクロ：シー26AW新作パンツ試着したけどこれ神だわ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "506693dc-43f3-4aaf-bd77-c8de311401b1",
+                      "category":  "トレンド",
+                      "subject":  "コスメデコルテ",
+                      "event":  "ホリデー限定のスキンケアコフレが登場",
+                      "X":  "コスメデコルテのホリデー限定コフレ、ガチで良さそう",
+                      "X_status":  "success",
+                      "Y":  "コスメデコルテのホリデー限定コフレ、今年も争奪戦確定か？",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+                      "category":  "トレンド",
+                      "subject":  "大分県臼杵市の民間製防空壕",
+                      "event":  "平和学習の場として観光活用を目指し、広く公開を開始する",
+                      "X":  "大分県臼杵市、民間防空壕を観光資源として公開へ　平和学習の場に",
+                      "X_status":  "success",
+                      "Y":  "大分県臼杵市の民間製防空壕、平和学習や観光活用で一般公開へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+                      "category":  "トレンド",
+                      "subject":  "岡谷北部中学校の3年生",
+                      "event":  "秋蚕の繭を収穫する「収繭」作業を行った",
+                      "X":  "岡谷北部中3年、秋蚕の繭収穫「収繭」作業を体験",
+                      "X_status":  "success",
+                      "Y":  "中学生が秋蚕の繭を収穫　岡谷北部中の3年生が「収繭」作業",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "fcb679a3-ae01-4369-8933-2ed0f7719737",
+                      "category":  "トレンド",
+                      "subject":  "eスポーツ（エレクトロニック・スポーツ）",
+                      "event":  "プロゲーマーの道が認められ、スポンサーや固定給、配信収入などの仕組みが整いつつある",
+                      "X":  "eスポーツ、プロゲーマーの道が確立　スポンサーや固定給も",
+                      "X_status":  "success",
+                      "Y":  "eスポーツ、ガチでプロへの道が整う スポンサーや固定給も",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177",
+                      "category":  "トレンド",
+                      "subject":  "ダイソーの謎の商品",
+                      "event":  "Threadsで話題になり、絶賛されている",
+                      "X":  "ダイソーの謎商品がThreadsで話題に　これ何？と絶賛の嵐",
+                      "X_status":  "success",
+                      "Y":  "ダイソーの「謎の商品」、Threadsでバズりまくり絶賛される",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "281e7195-fdb5-4449-83ff-bb01f36668fa",
+                      "category":  "トレンド",
+                      "subject":  "神戸ストークス",
+                      "event":  "9月26日に大阪エヴェッサを相手にBプレミアのシーズン初戦に臨む",
+                      "X":  "【Bプレミア】神戸ストークス、9/26大阪エヴェッサとの開幕戦へ！",
+                      "X_status":  "success",
+                      "Y":  "神戸ストークス、9月26日のBプレミア開幕戦で大阪エヴェッサと対戦！",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+                      "category":  "エンタメ",
+                      "subject":  "YOASOBIの「夜に駆ける」",
+                      "event":  "オリコン史上初の累積再生数11億回を突破",
+                      "X":  "YOASOBI「夜に駆ける」がオリコン史上初の累積再生数11億回突破！",
+                      "X_status":  "success",
+                      "Y":  "YOASOBI「夜に駆ける」がオリコン史上初11億回再生突破ｗｗｗ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+                      "category":  "エンタメ",
+                      "subject":  "Snow Man佐久間大介とKEY TO LIT猪狩蒼弥",
+                      "event":  "ベビーワセリンシリーズの新CMに出演し、9月25日より公開。",
+                      "X":  "Snow Man佐久間＆猪狩蒼弥、ベビーワセリン新CMで共演決定！",
+                      "X_status":  "success",
+                      "Y":  "Snow Man佐久間とKEY TO LIT猪狩がベビーワセリン新CMに出演",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "45a3f7a0-fefd-4e09-b844-6667301f4494",
+                      "category":  "エンタメ",
+                      "subject":  "1日15時間ゲームしていた医師が明かす ゲームを通じてセルフコントロール力を高めるコツと依存の防ぎ方(AERA with Kids＋)",
+                      "event":  "対象記事",
+                      "X":  "1日15時間ゲームしてた医師が語る「セルフコントロール力を高めるコツ」",
+                      "X_status":  "success",
+                      "Y":  "1日15時間ゲームしてた医師「ゲームでセルフコントロール力は高まる」",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+                      "category":  "エンタメ",
+                      "subject":  "ピエール・ガスリー",
+                      "event":  "オンライン上での攻撃を受け、ブリアトーレがメディアへの警告を発した",
+                      "X":  "【F1】ガスリーへの誹謗中傷にブリアトーレ激怒「メディアは責任を持て」",
+                      "X_status":  "success",
+                      "Y":  "【F1】ガスリーへの誹謗中傷にブリアトーレ激怒「メディアも責任持て」",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+                      "category":  "エンタメ",
+                      "subject":  "Snow Manの阿部亮平",
+                      "event":  "WEST.の解散について「この結末しかなかったのかな」とコメント",
+                      "X":  "Snow Man阿部亮平、WEST.解散に「この結末しかなかったのかな」",
+                      "X_status":  "success",
+                      "Y":  "スノ阿部亮平、WEST.解散に「この結末しかなかったのかな」",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+                      "category":  "エンタメ",
+                      "subject":  "映画『リターン・トゥ・サイレントヒル』",
+                      "event":  "12月23日(水)にBlu-rayが発売されることが決定",
+                      "X":  "映画『リターン・トゥ・サイレントヒル』BDが12月23日発売決定",
+                      "X_status":  "success",
+                      "Y":  "映画『リターン・トゥ・サイレントヒル』BD発売決定！12月23日発売",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0",
+                      "category":  "エンタメ",
+                      "subject":  "Candlelight(R)",
+                      "event":  "「ロード・オブ・ザ・リング」25周年記念の特別公演を東京で開催",
+                      "X":  "ロード・オブ・ザ・リング25周年記念、東京で特別公演開催決定！",
+                      "X_status":  "success",
+                      "Y":  "ロード・オブ・ザ・リング25周年特別公演が東京で開催へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "7823d0ee-8761-4cb0-826e-49d0d4406205",
+                      "category":  "エンタメ",
+                      "subject":  "神木隆之介",
+                      "event":  "ドジャース戦の始球式で山本由伸へノーバウンド投球を行った",
+                      "X":  "神木隆之介、ドジャース戦で山本由伸にノーバウンド投球！",
+                      "X_status":  "success",
+                      "Y":  "神木隆之介、ドジャース戦で山本由伸にノーバン投球！凄すぎワロタ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "56c17078-33c3-4de3-8636-c7da00b61cd0",
+                      "category":  "サブカル",
+                      "subject":  "高水裕一氏による宇宙的思考法と数学の真のルール",
+                      "event":  "宇宙人との接触時に役立つ普遍的な教養と宇宙的思考法の重要性を強調",
+                      "X":  "宇宙人と会うには数学が必要？高水裕一氏が語る宇宙的思考法が面白い",
+                      "X_status":  "success",
+                      "Y":  "宇宙人との接触に備えよ！高水裕一が語る宇宙的思考法",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+                      "category":  "サブカル",
+                      "subject":  "『ゼルダの伝説』40周年コンサート",
+                      "event":  "チケット最速先行予約が9月25日より開始",
+                      "X":  "【悲報】ゼルダ40周年コンサート、チケット争奪戦が始まる模様",
+                      "X_status":  "success",
+                      "Y":  "ゼルダの伝説40周年コンサート、チケット最速先行が9/25開始",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "7b1301b5-4cc7-4a19-9355-a86d74d7880e",
+                      "category":  "サブカル",
+                      "subject":  "『魔女の宅急便』4K UHD+ブルーレイセット",
+                      "event":  "2024年11月25日に発売される",
+                      "X":  "魔女の宅急便が4K UHDで発売決定！ジブリファン歓喜の朗報",
+                      "X_status":  "success",
+                      "Y":  "ジブリ『魔女の宅急便』4K UHD＆BDセットが11月発売決定",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "f930eab6-78d9-40ad-a256-6922d00bef4a",
+                      "category":  "サブカル",
+                      "subject":  "Yoren",
+                      "event":  "中国上海で「ロード・オブ・ミステリーズ」のポップアップストアをオープン",
+                      "X":  "【朗報】中国上海に『ロード・オブ・ミステリーズ』のポップアップストアがオープン！",
+                      "X_status":  "success",
+                      "Y":  "上海で「ロード・オブ・ミステリーズ」ポップアップストア爆誕ｗｗ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "1ace7966-f798-488f-a7b8-8336c096dff1",
+                      "category":  "サブカル",
+                      "subject":  "グラストNOVELSの新刊4作品",
+                      "event":  "9月25日(金)に購入特典付きで発売",
+                      "X":  "グラストNOVELS、9月25日に新刊4作品発売！購入特典も付くぞ",
+                      "X_status":  "success",
+                      "Y":  "グラストNOVELSの新刊4作品、9月25日に特典付きで発売決定",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+                      "category":  "マネー",
+                      "subject":  "経済産業省",
+                      "event":  "内閣府の要職を獲得するなど、人事の偏りに対する懸念が示されている",
+                      "X":  "経済産業省の人事の偏りに懸念の声、内閣府の要職独占か",
+                      "X_status":  "success",
+                      "Y":  "経産省が内閣府の要職を多数獲得…人事の偏りに懸念の声",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "5c600faa-e9b5-4ca8-9dbc-9108e6244401",
+                      "category":  "マネー",
+                      "subject":  "経済産業省",
+                      "event":  "2027年度予算でアニメやゲーム産業の海外展開に約4.5兆円の支援を要求",
+                      "X":  "経産省、アニメやゲームの海外展開に約4.5兆円要求",
+                      "X_status":  "success",
+                      "Y":  "経産省、アニメ・ゲーム産業の海外展開に4.5兆円の支援を要求へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+                      "category":  "マネー",
+                      "subject":  "25歳の孫が祖母の築50年団地を購入",
+                      "event":  "セルフリノベーションを行い、強気価格で即完売した",
+                      "X":  "25歳孫、祖母の築50年団地をDIYリノベして転売→即完売ｗｗｗ",
+                      "X_status":  "success",
+                      "Y":  "【悲報】25歳、祖母の築50年団地をDIYリノベして転売したら秒で完売ｗｗｗ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+                      "category":  "マネー",
+                      "subject":  "インテルとエヌビディア",
+                      "event":  "AI半導体株における成長力と収益力の差が分析されている",
+                      "X":  "インテルさんとエヌビディアさんの格差、ガチで限界突破してしまう…",
+                      "X_status":  "success",
+                      "Y":  "インテルとエヌビディア、AI半導体株でここまで差がついた理由",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+                      "category":  "マネー",
+                      "subject":  "日経平均株価",
+                      "event":  "米半導体株安と配当狙いの買いが拮抗し、一進一退の展開が予想される",
+                      "X":  "今日の日経平均、米株安と配当狙いで完全に綱引き状態になってる件",
+                      "X_status":  "success",
+                      "Y":  "日経平均、米半導体株安と配当狙いの買いで板挟み状態へ",
+                      "Y_status":  "success"
+                  },
+                  {
+                      "id":  "21071a54-da3b-4234-ad8a-3392949e71b6",
+                      "category":  "マネー",
+                      "subject":  "日経平均株価",
+                      "event":  "25日午前の東京株式市場で続伸し、前日比804円15銭高となった",
+                      "X":  "【速報】日経平均株価、謎の爆上がりで＋804円ｗｗｗお前ら息してるか？",
+                      "X_status":  "success",
+                      "Y":  "【速報】日経平均、804円高で続伸！市場の反応は？",
+                      "Y_status":  "success"
+                  }
+              ],
+    "model_discovery":  {
+                            "method":  "Node.js standard fetch; Gemini models.list",
+                            "http_status":  200,
+                            "matched_models":  [
+                                                   "gemini-3.1-flash-lite",
+                                                   "gemini-3.5-flash-lite",
+                                                   "gemini-3.1-flash-lite-preview"
+                                               ],
+                            "preview_api_test_skipped":  "Officially shutdown 2026-05-25; stable 3.1 used."
+                        }
+}

@@ -1,0 +1,12 @@
+[
+  {"id":"body-related-body","html":"<article><p>本文A。重要な説明です。</p><section><h2>関連記事</h2><ul><li><a href='#'>記事1</a></li><li><a href='#'>記事2</a></li><li><a href='#'>記事3</a></li></ul></section><p>本文B。続きの説明です。</p></article>","keep":["本文A","本文B"],"remove":["関連記事"]},
+  {"id":"body-sponsored-body","html":"<article><p>前半の本文です。事実を説明します。</p><div><span rel='sponsored'><a href='#'>おすすめ商品</a></span><a href='#'>商品を見る</a></div><p>後半の本文です。結論です。</p></article>","keep":["前半の本文","後半の本文"],"remove":["おすすめ商品","商品を見る"]},
+  {"id":"word-related","html":"<article><p>この記事では関連記事という単語の意味と使い方を本文中で説明します。これは自然な文章です。</p></article>","keep":["関連記事という単語"],"remove":[]},
+  {"id":"reference-links","html":"<article><p>研究結果を確認するため、<a href='#'>公式資料</a>と<a href='#'>統計資料</a>を参照してください。本文の説明も続きます。</p></article>","keep":["研究結果","公式資料","統計資料"],"remove":[]},
+  {"id":"quoted-source","html":"<article><blockquote>これは引用文です。<a href='#'>出典</a>を確認できます。</blockquote></article>","keep":["引用文","出典"],"remove":[]},
+  {"id":"dense-related","html":"<article><div><h3>おすすめ記事</h3><a href='#'>A</a><a href='#'>B</a><a href='#'>C</a><a href='#'>D</a></div></article>","keep":[],"remove":["おすすめ記事"]},
+  {"id":"membership-cta","html":"<article><p>本文の前に説明です。</p><div><h3>会員登録</h3><a href='#'>登録はこちら</a><a href='#'>ログイン</a></div><p>本文の後です。</p></article>","keep":["本文の前","本文の後"],"remove":["会員登録"]},
+  {"id":"membership-explanation","html":"<article><p>会員登録制度について、対象者と登録方法を詳しく説明します。登録後も記事を読めます。</p></article>","keep":["会員登録制度","詳しく説明"],"remove":[]},
+  {"id":"short-paragraph","html":"<article><p>速報です。</p><p>次の段落です。</p></article>","keep":["速報です","次の段落"],"remove":[]},
+  {"id":"long-linked-prose","html":"<article><p>これは長い本文です。<a href='#'>参考リンク</a>を含みますが、自然文として十分な長さがあり、事実関係と背景を複数の文で説明しています。読者に必要な情報を提供するための段落です。</p></article>","keep":["長い本文","参考リンク"],"remove":[]}
+]

@@ -1,0 +1,23 @@
+{
+  "article_id": "article-013",
+  "origin": "initial-23",
+  "added_at": "2026-09-20",
+  "title": "大企業の7〜9月景況感、2四半期ぶりのプラスに",
+  "description": "内閣府と財務省が11日発表した7〜9月期の法人企業景気予測調査によると、大企業全産業の景況判断指数(BSI)はプラス5.3だった。2四半期ぶりのプラスとなった。調査時点は8月1",
+  "source": {
+    "type": "newsdata",
+    "source_id": "b91172e8cc449816135ce59ea9022be3",
+    "source_name": "Nikkei Shimbun",
+    "published_at": "2026-09-10T23:56:49.000Z",
+    "url": "https://www.nikkei.com/article/DGXZQOUA103YZ0Q6A910C2000000/",
+    "normalized_url": "https://www.nikkei.com/article/DGXZQOUA103YZ0Q6A910C2000000/",
+    "newsdata_categories": [
+      "other"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "サブカル"
+    ]
+  }
+}

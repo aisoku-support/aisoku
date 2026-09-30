@@ -1,0 +1,41 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "マッチ1本で「殴り、跳ぶ」ダークメトロイドヴァニア『井戸の鳥』、貫禄の「好評率96％」スタート。「圧倒的に好評」作品を数々手がけた開発者新作",
+  "description": "Kyle Thompson氏は9月22日、メトロイドヴァニア『井戸の鳥 (Well Dweller)』をリリースした。本作はダークなおとぎ話風の世界を舞台にしたメトロイドヴァニアとして、さっそく高い評価を獲得している。",
+  "source": {
+    "type": "newsdata",
+    "source_id": "70ac433519118808ad6d986e2af8d140",
+    "source_name": "Automaton",
+    "published_at": "2026-09-26 02:02:41",
+    "url": "https://automaton-media.com/articles/newsjp/well-dweller-20260926-470120/",
+    "normalized_url": "https://automaton-media.com/articles/newsjp/well-dweller-20260926-470120/",
+    "newsdata_categories": [
+      "entertainment"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "エンタメ"
+    ]
+  },
+  "extracted_body": "インディー開発者のKyle Thompson氏は9月22日、メトロイドヴァニア『井戸の鳥 (Well Dweller)』を配信。対応プラットフォームはPC（Steam/GOG.com/Microsoft Store）/PS5/XBOX Series X|S/XBOX One/Nintendo Switch/Nintendo Switch 2で、XBOX Game Passにも展開されている。また本作は日本語表示に対応している。そんな本作はリリース後まもなく、「圧倒的に好評」を記録する盛況を博している。 『井戸の鳥』はダークなおとぎ話風の世界を舞台にしたメトロイドヴァニアだ。本作の主人公は、森の奥深くの井戸の底に住む小さな鳥の「グリマー」。本作の世界では邪悪な女王が王国を支配している。ガウンを作るために鳥を狩り続ける女王から家族を救うために、グリマーは女王を討つための旅に出る。 グリマーは一本のマッチ棒を武器にして戦う。マッチは振るって戦うだけでなく、弓矢の矢として射出し、“しなり”を利用してジャンプ台として使うこともできる。さらにマッチに火が灯っている間は攻撃力が上昇。一方体力が減少し火が消えると受けるダメージが増え、攻撃力も低下する。そのため火を絶やさずできるかぎり燃やし続ける立ち回りが重要となる。消えてしまった場合は、体力回復アイテムである油の瓶を使うことで再点火できる。なお遠距離攻撃も可能で、スライディングでの回避などのアクションも活かしつつ戦っていくわけだ。 主人公を強化する要素としては、「コレクション」が存在する。コレクションは世界各地に落ちており、スロットに収まる範囲で自由に装備ができる。そのほか作中のおとぎ話のページを集めていく要素などもあり、ゲームプレイ的強化要素や、背景設定などが探索を通じて収集できる。 本作は9月22日にリリースされ、さっそく盛況を博している。SteamDBを確認するとピーク時に1700人以上のプレイヤーが集っており、盛況な様子がうかがえる。またSteamユーザーレビューでは約600件中96％が好評を投じる「圧倒的に好評」ステータスを獲得している。本作はメトロイドヴァニアらしく、各種アクションを通じて新能力を獲得しつつ、探索できるエリアが広がっていく。マッチを使うという一風変わったスタイルから繰り出される多様なアクションは高い評価を獲得。さらに可愛らしい雰囲気と不気味な雰囲気が同居した世界観も、本作につい引き込まれてしまう要因のひとつだろう。 本作を手がけるKyle Thompson氏は、アメリカ在住のインディーゲーム開発者だ。主に個人でのゲーム制作を手がけており、手描きイラスト調ビジュアルの探索型アクションゲーム開発を得意としている人物だ。過去には浮島が合体することでマップが変化する『Islets』、見下ろし視点のメトロイドヴァニア『クリプトカストディアン』などをリリースしており、そのいずれもSteamユーザーレビューにて「圧倒的に好評」ステータスを獲得していた。そんな“メトロイドヴァニアの雄”ともいえるThompson氏の新作『井戸の鳥』もまた、圧倒的な評価でスタートを切ったかたちだ。 『井戸の鳥 (Well Dweller)』はPC（Steam/GOG.com/Microsoft Store）/PS5/XBOX Series X|S/XBOX One/Nintendo Switch/Nintendo Switch 2向けに配信中。XBOX Game Pass向けにも展開されている。各ストアではリリース記念セールとして定価の15％オフで購入可能。価格や終了時期はストアごとに少しずつ違いがあるため、詳細は各ストアページを確認されたい。 この記事にはアフィリエイトリンクが含まれる場合があります。 Kosuke Takenaka ジャンルを問わず遊びますが、ホラーは苦手で、毎度飛び上がっています。プレイだけでなく観戦も大好きで、モニターにかじりつく日々です。 記事本文: 2167",
+  "body_extraction": {
+    "requested_url": "https://automaton-media.com/articles/newsjp/well-dweller-20260926-470120/",
+    "final_url": "https://automaton-media.com/articles/newsjp/well-dweller-20260926-470120/",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 1811,
+    "cleaned_chars": 1687,
+    "fetched_at": "2026-09-26T14:03:34.864Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 356,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-041"
+}

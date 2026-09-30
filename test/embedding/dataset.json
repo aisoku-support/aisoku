@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.0",
+  "synthetic": true,
+  "language": "ja",
+  "input_format": "subject | event",
+  "articles": [
+    {
+      "id": "N01",
+      "subject": "任天堂",
+      "event": "次世代ゲーム機を正式発表",
+      "embedding_input": "任天堂 | 次世代ゲーム機を正式発表",
+      "ground_truth_topic": "T01"
+    },
+    {
+      "id": "N02",
+      "subject": "任天堂",
+      "event": "新型家庭用ゲーム機の仕様を公開",
+      "embedding_input": "任天堂 | 新型家庭用ゲーム機の仕様を公開",
+      "ground_truth_topic": "T01"
+    },
+    {
+      "id": "N03",
+      "subject": "任天堂",
+      "event": "次世代ゲーム機の発売日を延期",
+      "embedding_input": "任天堂 | 次世代ゲーム機の発売日を延期",
+      "ground_truth_topic": "T02"
+    },
+    {
+      "id": "N04",
+      "subject": "任天堂",
+      "event": "新型ゲーム機の発売予定を後ろ倒し",
+      "embedding_input": "任天堂 | 新型ゲーム機の発売予定を後ろ倒し",
+      "ground_truth_topic": "T02"
+    },
+    {
+      "id": "N05",
+      "subject": "任天堂",
+      "event": "次世代ゲーム機の国内販売価格を発表",
+      "embedding_input": "任天堂 | 次世代ゲーム機の国内販売価格を発表",
+      "ground_truth_topic": "T03"
+    },
+    {
+      "id": "N06",
+      "subject": "任天堂",
+      "event": "新型ゲーム機の日本向け価格を公開",
+      "embedding_input": "任天堂 | 新型ゲーム機の日本向け価格を公開",
+      "ground_truth_topic": "T03"
+    },
+    {
+      "id": "N07",
+      "subject": "ソニー",
+      "event": "新型家庭用ゲーム機を発表",
+      "embedding_input": "ソニー | 新型家庭用ゲーム機を発表",
+      "ground_truth_topic": "T04"
+    },
+    {
+      "id": "N08",
+      "subject": "ソニー",
+      "event": "次世代ゲーム機の仕様を初公開",
+      "embedding_input": "ソニー | 次世代ゲーム機の仕様を初公開",
+      "ground_truth_topic": "T04"
+    },
+    {
+      "id": "N09",
+      "subject": "ソニー",
+      "event": "新型ゲーム機の発売を延期",
+      "embedding_input": "ソニー | 新型ゲーム機の発売を延期",
+      "ground_truth_topic": "T05"
+    },
+    {
+      "id": "N10",
+      "subject": "ソニー",
+      "event": "次世代ゲーム機の発売時期を変更",
+      "embedding_input": "ソニー | 次世代ゲーム機の発売時期を変更",
+      "ground_truth_topic": "T05"
+    },
+    {
+      "id": "N11",
+      "subject": "大阪市",
+      "event": "市営地下鉄の新路線建設を発表",
+      "embedding_input": "大阪市 | 市営地下鉄の新路線建設を発表",
+      "ground_truth_topic": "T06"
+    },
+    {
+      "id": "N12",
+      "subject": "大阪市",
+      "event": "地下鉄新路線の整備計画を公表",
+      "embedding_input": "大阪市 | 地下鉄新路線の整備計画を公表",
+      "ground_truth_topic": "T06"
+    },
+    {
+      "id": "N13",
+      "subject": "大阪市",
+      "event": "地下鉄新路線の開業を延期",
+      "embedding_input": "大阪市 | 地下鉄新路線の開業を延期",
+      "ground_truth_topic": "T07"
+    },
+    {
+      "id": "N14",
+      "subject": "大阪市",
+      "event": "建設中の地下鉄新路線の開業時期を変更",
+      "embedding_input": "大阪市 | 建設中の地下鉄新路線の開業時期を変更",
+      "ground_truth_topic": "T07"
+    },
+    {
+      "id": "N15",
+      "subject": "気象庁",
+      "event": "台風の大阪接近に伴う大雨警戒を呼びかけ",
+      "embedding_input": "気象庁 | 台風の大阪接近に伴う大雨警戒を呼びかけ",
+      "ground_truth_topic": "T08"
+    },
+    {
+      "id": "N16",
+      "subject": "気象庁",
+      "event": "大阪に接近する台風による豪雨への警戒を発表",
+      "embedding_input": "気象庁 | 大阪に接近する台風による豪雨への警戒を発表",
+      "ground_truth_topic": "T08"
+    },
+    {
+      "id": "N17",
+      "subject": "大阪府",
+      "event": "大雨被害を受けた住宅への支援策を発表",
+      "embedding_input": "大阪府 | 大雨被害を受けた住宅への支援策を発表",
+      "ground_truth_topic": "T09"
+    },
+    {
+      "id": "N18",
+      "subject": "大阪府",
+      "event": "豪雨被災世帯向けの補助制度を公表",
+      "embedding_input": "大阪府 | 豪雨被災世帯向けの補助制度を公表",
+      "ground_truth_topic": "T09"
+    },
+    {
+      "id": "N19",
+      "subject": "国内半導体メーカーA社",
+      "event": "新工場の建設計画を発表",
+      "embedding_input": "国内半導体メーカーA社 | 新工場の建設計画を発表",
+      "ground_truth_topic": "T10"
+    },
+    {
+      "id": "N20",
+      "subject": "半導体メーカーA社",
+      "event": "国内に半導体工場を新設すると公表",
+      "embedding_input": "半導体メーカーA社 | 国内に半導体工場を新設すると公表",
+      "ground_truth_topic": "T10"
+    },
+    {
+      "id": "N21",
+      "subject": "国内半導体メーカーA社",
+      "event": "新工場の稼働開始を延期",
+      "embedding_input": "国内半導体メーカーA社 | 新工場の稼働開始を延期",
+      "ground_truth_topic": "T11"
+    },
+    {
+      "id": "N22",
+      "subject": "半導体メーカーA社",
+      "event": "建設中の工場の操業開始時期を変更",
+      "embedding_input": "半導体メーカーA社 | 建設中の工場の操業開始時期を変更",
+      "ground_truth_topic": "T11"
+    },
+    {
+      "id": "N23",
+      "subject": "国内航空会社B社",
+      "event": "国内線の新路線就航を発表",
+      "embedding_input": "国内航空会社B社 | 国内線の新路線就航を発表",
+      "ground_truth_topic": "T12"
+    },
+    {
+      "id": "N24",
+      "subject": "航空会社B社",
+      "event": "新たな国内航空路線の開設を公表",
+      "embedding_input": "航空会社B社 | 新たな国内航空路線の開設を公表",
+      "ground_truth_topic": "T12"
+    },
+    {
+      "id": "N25",
+      "subject": "国内航空会社B社",
+      "event": "国内線の一部運休を発表",
+      "embedding_input": "国内航空会社B社 | 国内線の一部運休を発表",
+      "ground_truth_topic": "T13"
+    },
+    {
+      "id": "N26",
+      "subject": "航空会社B社",
+      "event": "一部国内路線の運航を一時停止",
+      "embedding_input": "航空会社B社 | 一部国内路線の運航を一時停止",
+      "ground_truth_topic": "T13"
+    },
+    {
+      "id": "N27",
+      "subject": "国内小売チェーンC社",
+      "event": "全店舗でレジ袋を有料化",
+      "embedding_input": "国内小売チェーンC社 | 全店舗でレジ袋を有料化",
+      "ground_truth_topic": "T14"
+    },
+    {
+      "id": "N28",
+      "subject": "小売チェーンC社",
+      "event": "全店で買い物袋の無料配布を終了",
+      "embedding_input": "小売チェーンC社 | 全店で買い物袋の無料配布を終了",
+      "ground_truth_topic": "T14"
+    },
+    {
+      "id": "N29",
+      "subject": "国内小売チェーンC社",
+      "event": "一部店舗で営業時間を短縮",
+      "embedding_input": "国内小売チェーンC社 | 一部店舗で営業時間を短縮",
+      "ground_truth_topic": "T15"
+    },
+    {
+      "id": "N30",
+      "subject": "小売チェーンC社",
+      "event": "対象店舗の閉店時間を繰り上げ",
+      "embedding_input": "小売チェーンC社 | 対象店舗の閉店時間を繰り上げ",
+      "ground_truth_topic": "T15"
+    }
+  ],
+  "evaluation_pairs": [
+    {
+      "a": "N01",
+      "b": "N02",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N03",
+      "b": "N04",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N05",
+      "b": "N06",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N07",
+      "b": "N08",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N09",
+      "b": "N10",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N11",
+      "b": "N12",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N13",
+      "b": "N14",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N15",
+      "b": "N16",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N17",
+      "b": "N18",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N19",
+      "b": "N20",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N21",
+      "b": "N22",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N23",
+      "b": "N24",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N25",
+      "b": "N26",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N27",
+      "b": "N28",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N29",
+      "b": "N30",
+      "same_event": true,
+      "kind": "positive"
+    },
+    {
+      "a": "N01",
+      "b": "N03",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N01",
+      "b": "N05",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N03",
+      "b": "N05",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N07",
+      "b": "N09",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N11",
+      "b": "N13",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N15",
+      "b": "N17",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N19",
+      "b": "N21",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N23",
+      "b": "N25",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N27",
+      "b": "N29",
+      "same_event": false,
+      "kind": "hard_negative"
+    },
+    {
+      "a": "N01",
+      "b": "N11",
+      "same_event": false,
+      "kind": "easy_negative"
+    },
+    {
+      "a": "N07",
+      "b": "N19",
+      "same_event": false,
+      "kind": "easy_negative"
+    },
+    {
+      "a": "N15",
+      "b": "N27",
+      "same_event": false,
+      "kind": "easy_negative"
+    },
+    {
+      "a": "N21",
+      "b": "N29",
+      "same_event": false,
+      "kind": "easy_negative"
+    },
+    {
+      "a": "N09",
+      "b": "N23",
+      "same_event": false,
+      "kind": "easy_negative"
+    },
+    {
+      "a": "N05",
+      "b": "N17",
+      "same_event": false,
+      "kind": "easy_negative"
+    }
+  ],
+  "note": "架空データ。正解Topicはモデル入力に含めない。"
+}

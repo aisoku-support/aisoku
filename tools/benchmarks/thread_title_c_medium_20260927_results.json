@@ -1,0 +1,605 @@
+{
+  "started_at": "2026-09-26T17:43:10.755Z",
+  "dataset": "thread_title_ab_20260927_dataset.json",
+  "model": "gemini-3.5-flash-lite",
+  "prompt": "C (reused verbatim from run_thread_title_prompt_bc_20260927.mjs)",
+  "protocol": {
+    "batchSize": 4,
+    "temperature": 0,
+    "thinkingLevel": "medium",
+    "maxOutputTokens": 8192,
+    "timeoutMs": 30000,
+    "retries": 0,
+    "titleMaxCodepoints": 47,
+    "minModelRequestIntervalMs": 4100
+  },
+  "requests": [
+    {
+      "batch": 0,
+      "started_at": "2026-09-26T17:43:10.759Z",
+      "topic_ids": [
+        "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+        "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+        "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+        "27414090-21bc-4207-be64-73d41612af9c"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 454,
+        "candidatesTokenCount": 247,
+        "totalTokenCount": 701,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 454
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 1685,
+      "titles": [
+        {
+          "id": "81eb9a9d-b04c-48a6-b8c4-1527be15879a",
+          "title": "米陸軍の小型ドローン計画、磁石の供給元がガチで選定される",
+          "length": 28,
+          "status": "success"
+        },
+        {
+          "id": "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+          "title": "ファーウェイ、独自理論の新型チップ「麒麟9050 Pro」を発表してしまう",
+          "length": 37,
+          "status": "success"
+        },
+        {
+          "id": "8a6df992-b7b3-4068-abc0-355c62e9b0cc",
+          "title": "NVIDIA、Hugging Faceを買収合意へ…AI界隈どうなっちゃうの？",
+          "length": 39,
+          "status": "success"
+        },
+        {
+          "id": "27414090-21bc-4207-be64-73d41612af9c",
+          "title": "次世代PC「Googlebook」実機披露、ついに本気出すのか？",
+          "length": 32,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 1,
+      "started_at": "2026-09-26T17:43:14.867Z",
+      "topic_ids": [
+        "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+        "861d0873-175c-46c9-8212-c5285564647b",
+        "5ed06eeb-1aa6-4368-aea6-911223607533",
+        "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 446,
+        "candidatesTokenCount": 245,
+        "totalTokenCount": 691,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 446
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 1562.4,
+      "titles": [
+        {
+          "id": "6247f89c-4d5f-4c2a-9405-7e722a84048f",
+          "title": "AIのデータセンター、ついにGPUを担保にお金を借り始めるwwww",
+          "length": 33,
+          "status": "success"
+        },
+        {
+          "id": "861d0873-175c-46c9-8212-c5285564647b",
+          "title": "アルバック、半導体後工程の先端パッケージ装置を開発へ 2028年量産開始",
+          "length": 36,
+          "status": "success"
+        },
+        {
+          "id": "5ed06eeb-1aa6-4368-aea6-911223607533",
+          "title": "マウス操作だけで最大5倍の拡大表示ができる「QuickLoupe」が便利そう",
+          "length": 38,
+          "status": "success"
+        },
+        {
+          "id": "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412",
+          "title": "iPhone 18 Proさん、ガチで冷却重視の設計になってしまう",
+          "length": 33,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 2,
+      "started_at": "2026-09-26T17:43:18.971Z",
+      "topic_ids": [
+        "41d99bb3-493c-4156-9597-8e531583bdcf",
+        "9b6638d0-58eb-4af8-8256-2b27014882ce",
+        "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+        "10c06596-ae8e-47c9-b484-a7350a13fd16"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 445,
+        "candidatesTokenCount": 270,
+        "totalTokenCount": 715,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 445
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 2449.4,
+      "titles": [
+        {
+          "id": "41d99bb3-493c-4156-9597-8e531583bdcf",
+          "title": "VAB WRX STIに19インチのTE37 SAGA S-plusが適合！お前らの財布の準備はいいか？",
+          "length": 52,
+          "status": "too_long"
+        },
+        {
+          "id": "9b6638d0-58eb-4af8-8256-2b27014882ce",
+          "title": "スバル「ジャスティ」など110万円台コンパクトカーが本気出しすぎワロタ",
+          "length": 35,
+          "status": "success"
+        },
+        {
+          "id": "dff524cc-5c2c-408a-a1a1-fe05b88f2a58",
+          "title": "Windowsのプロファイル移行に悩む社畜共、全員集合！マジセミがウェビナー開催へ",
+          "length": 41,
+          "status": "success"
+        },
+        {
+          "id": "10c06596-ae8e-47c9-b484-a7350a13fd16",
+          "title": "中国のPaXini TechがA株上場へ！IPO準備開始だけど波乱の予感しかしない件",
+          "length": 42,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "partial_failure"
+    },
+    {
+      "batch": 3,
+      "started_at": "2026-09-26T17:43:23.073Z",
+      "topic_ids": [
+        "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+        "c9d060df-d9d6-48dc-a063-413681ca43c6",
+        "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+        "506693dc-43f3-4aaf-bd77-c8de311401b1"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 456,
+        "candidatesTokenCount": 246,
+        "totalTokenCount": 1047,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 456
+          }
+        ],
+        "thoughtsTokenCount": 345,
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 2899.8,
+      "titles": [
+        {
+          "id": "bedd2b56-d067-4f86-90a4-5a14a789c4f0",
+          "title": "【悲報】Win11さん、シャットダウンじゃ意味がないことが判明",
+          "length": 31,
+          "status": "success"
+        },
+        {
+          "id": "c9d060df-d9d6-48dc-a063-413681ca43c6",
+          "title": "札幌で「インクルーシブダンスフェス」初開催へ！10月3日",
+          "length": 28,
+          "status": "success"
+        },
+        {
+          "id": "b97f070f-5b5e-45ee-a53b-88f3e2e0f74f",
+          "title": "ユニクロ：シーの新作パンツ試着レビューキタ━━━━(ﾟ∀ﾟ)━━━━!!",
+          "length": 36,
+          "status": "success"
+        },
+        {
+          "id": "506693dc-43f3-4aaf-bd77-c8de311401b1",
+          "title": "コスメデコルテのホリデー限定コフレがガチで良さそう",
+          "length": 25,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 4,
+      "started_at": "2026-09-26T17:43:27.174Z",
+      "topic_ids": [
+        "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+        "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+        "fcb679a3-ae01-4369-8933-2ed0f7719737",
+        "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 455,
+        "candidatesTokenCount": 249,
+        "totalTokenCount": 1246,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 455
+          }
+        ],
+        "thoughtsTokenCount": 542,
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 3416.4,
+      "titles": [
+        {
+          "id": "2d7ac9f7-dc87-4646-8820-e5b411fbbe1c",
+          "title": "大分県臼杵市にある民間製防空壕、平和学習の場として観光公開へ",
+          "length": 30,
+          "status": "success"
+        },
+        {
+          "id": "ba6d7d36-0e2d-4475-afdf-e448ded0758d",
+          "title": "中学生が「収繭」作業って渋すぎだろ…岡谷北部中の3年生が秋蚕の繭を収穫",
+          "length": 35,
+          "status": "success"
+        },
+        {
+          "id": "fcb679a3-ae01-4369-8933-2ed0f7719737",
+          "title": "eスポーツ、ついにガチの職業として確立されてしまうｗｗｗ",
+          "length": 28,
+          "status": "success"
+        },
+        {
+          "id": "4c1e968e-3ca3-4ebf-b3b7-5fa9019c1177",
+          "title": "ダイソーの「謎の商品」、ガチで有能すぎるとThreadsで大絶賛される",
+          "length": 35,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 5,
+      "started_at": "2026-09-26T17:43:31.278Z",
+      "topic_ids": [
+        "281e7195-fdb5-4449-83ff-bb01f36668fa",
+        "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+        "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+        "45a3f7a0-fefd-4e09-b844-6667301f4494"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 481,
+        "candidatesTokenCount": 244,
+        "totalTokenCount": 725,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 481
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 1538.8,
+      "titles": [
+        {
+          "id": "281e7195-fdb5-4449-83ff-bb01f36668fa",
+          "title": "神戸ストークス、9月26日に大阪エヴェッサとBプレミア初戦へ",
+          "length": 30,
+          "status": "success"
+        },
+        {
+          "id": "b05ff166-2f7e-437d-828a-0fe3c9968a3e",
+          "title": "YOASOBI「夜に駆ける」とかいう永遠に聴かれてる曲ｗｗｗｗ",
+          "length": 31,
+          "status": "success"
+        },
+        {
+          "id": "6181e403-cefc-4aec-9d3d-5d3d14345cae",
+          "title": "Snow Man佐久間とKEY TO LIT猪狩がベビーワセリンのCM出演",
+          "length": 37,
+          "status": "success"
+        },
+        {
+          "id": "45a3f7a0-fefd-4e09-b844-6667301f4494",
+          "title": "1日15時間ゲームしてた医師「ゲームでセルフコントロール力高まる」",
+          "length": 33,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 6,
+      "started_at": "2026-09-26T17:43:35.383Z",
+      "topic_ids": [
+        "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+        "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+        "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+        "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 467,
+        "candidatesTokenCount": 246,
+        "totalTokenCount": 1205,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 467
+          }
+        ],
+        "thoughtsTokenCount": 492,
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 2687.7,
+      "titles": [
+        {
+          "id": "7d9bc034-6a81-4b6f-a984-1f40631a3a65",
+          "title": "F1ガスリーへの誹謗中傷にブリアトーレ激怒！メディアへ警告",
+          "length": 29,
+          "status": "success"
+        },
+        {
+          "id": "013ac0c0-b5df-4439-9a9e-1c8761e5c5d7",
+          "title": "スノーマン阿部亮平「WEST.解散はこの結末しかなかったのかな」",
+          "length": 32,
+          "status": "success"
+        },
+        {
+          "id": "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+          "title": "映画「リターン・トゥ・サイレントヒル」Blu-ray発売決定！",
+          "length": 31,
+          "status": "success"
+        },
+        {
+          "id": "1b7a2b17-7933-4418-82ac-1eab4c0a1cf0",
+          "title": "ロード・オブ・ザ・リング25周年記念の特別公演が東京で開催へ",
+          "length": 30,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 7,
+      "started_at": "2026-09-26T17:43:39.493Z",
+      "topic_ids": [
+        "7823d0ee-8761-4cb0-826e-49d0d4406205",
+        "56c17078-33c3-4de3-8636-c7da00b61cd0",
+        "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+        "7b1301b5-4cc7-4a19-9355-a86d74d7880e"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 476,
+        "candidatesTokenCount": 263,
+        "totalTokenCount": 739,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 476
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 1886.1,
+      "titles": [
+        {
+          "id": "7823d0ee-8761-4cb0-826e-49d0d4406205",
+          "title": "神木隆之介とかいうガチですごい俳優ｗｗｗ山本由伸にノーバン投球達成",
+          "length": 33,
+          "status": "success"
+        },
+        {
+          "id": "56c17078-33c3-4de3-8636-c7da00b61cd0",
+          "title": "宇宙人「地球人、数学のルールを語れ」←これに備えて高水裕一の本読んどけ",
+          "length": 35,
+          "status": "success"
+        },
+        {
+          "id": "a2299b5f-af3d-482c-bfd3-d8e3aac762b6",
+          "title": "『ゼルダの伝説』もう40周年マジかよ…コンサートの先行予約始まるぞ",
+          "length": 33,
+          "status": "success"
+        },
+        {
+          "id": "7b1301b5-4cc7-4a19-9355-a86d74d7880e",
+          "title": "『魔女の宅急便』が4K UHD化決定！ジブリ本気出しすぎだろ",
+          "length": 30,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 8,
+      "started_at": "2026-09-26T17:43:43.607Z",
+      "topic_ids": [
+        "f930eab6-78d9-40ad-a256-6922d00bef4a",
+        "1ace7966-f798-488f-a7b8-8336c096dff1",
+        "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+        "5c600faa-e9b5-4ca8-9dbc-9108e6244401"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 453,
+        "candidatesTokenCount": 250,
+        "totalTokenCount": 1426,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 453
+          }
+        ],
+        "thoughtsTokenCount": 723,
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 7004.1,
+      "titles": [
+        {
+          "id": "f930eab6-78d9-40ad-a256-6922d00bef4a",
+          "title": "中国上海で「ロード・オブ・ミステリーズ」のポップアップストア開催！",
+          "length": 33,
+          "status": "success"
+        },
+        {
+          "id": "1ace7966-f798-488f-a7b8-8336c096dff1",
+          "title": "グラストNOVELSの新刊4作品、9月25日発売決定！特典もあるぞ",
+          "length": 33,
+          "status": "success"
+        },
+        {
+          "id": "21104e1f-9359-466e-9889-b8fdbfccc8fe",
+          "title": "経済産業省、内閣府の要職を独占して「人事の偏り」だと懸念されてしまう",
+          "length": 34,
+          "status": "success"
+        },
+        {
+          "id": "5c600faa-e9b5-4ca8-9dbc-9108e6244401",
+          "title": "経産省、アニメやゲームの海外展開に約4.5兆円の支援を要求へ",
+          "length": 30,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    },
+    {
+      "batch": 9,
+      "started_at": "2026-09-26T17:43:50.654Z",
+      "topic_ids": [
+        "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+        "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+        "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+        "21071a54-da3b-4234-ad8a-3392949e71b6"
+      ],
+      "http_status": 200,
+      "retry_after": null,
+      "usage": {
+        "promptTokenCount": 475,
+        "candidatesTokenCount": 245,
+        "totalTokenCount": 1312,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 475
+          }
+        ],
+        "thoughtsTokenCount": 592,
+        "serviceTier": "standard"
+      },
+      "elapsed_ms": 3434.9,
+      "titles": [
+        {
+          "id": "0d436a98-fce2-4a74-a8e2-7c2115432fff",
+          "title": "25歳孫、祖母の築50年団地をガチリノベしたら秒で売れてワロタ",
+          "length": 31,
+          "status": "success"
+        },
+        {
+          "id": "f122866a-cfae-4852-bcaf-204e5ec7ae77",
+          "title": "インテルさんとエヌビディアさん、ガチで格差がついてしまう",
+          "length": 28,
+          "status": "success"
+        },
+        {
+          "id": "c27463d3-6b7d-4c59-bad6-671e7b2deeec",
+          "title": "日経平均さん、上下どっちに行きたいのかマジで分からない",
+          "length": 27,
+          "status": "success"
+        },
+        {
+          "id": "21071a54-da3b-4234-ad8a-3392949e71b6",
+          "title": "日経平均急に爆上げしててワロタｗｗｗ 804円高ｗｗ",
+          "length": 26,
+          "status": "success"
+        }
+      ],
+      "errors": [],
+      "json_valid": true,
+      "schema_valid": true,
+      "finish_reason": "STOP",
+      "status": "success"
+    }
+  ],
+  "api_calls": 10,
+  "summary": {
+    "requests": 10,
+    "httpSuccess": 10,
+    "jsonSchemaSuccess": 10,
+    "titleSuccess": 39,
+    "titleOutputs": 40,
+    "lengthCompliant": 39,
+    "failureReasons": {
+      "too_long": 1
+    },
+    "timeoutCount": 0,
+    "latencyMs": {
+      "mean": 2856.5,
+      "median": 2568.55,
+      "p95": 7004.1
+    },
+    "inputTokens": 4608,
+    "outputTokens": 2505,
+    "thinkingTokens": 2694
+  },
+  "finished_at": "2026-09-26T17:43:54.090Z"
+}

@@ -1,0 +1,41 @@
+{
+  "article_id": "article-032",
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "10/3(土)・10/4(日) ZIP-FM 33rd Anniversary「ZIP AUTUMN SQUARE」開催！",
+  "description": "10/3(土)・10/4(日) ZIP-FM 33rd Anniversary「ZIP AUTUMN SQUARE」開催！ 株式会社ZIP-FMのプレスリリース",
+  "source": {
+    "type": "newsdata",
+    "source_id": "17b373a6c02f5e6ebcd2c536912ecf33",
+    "source_name": "Pr Times",
+    "published_at": "2026-09-26 01:00:02",
+    "url": "https://prtimes.jp/main/html/rd/p/000000244.000048223.html",
+    "normalized_url": "https://prtimes.jp/main/html/rd/p/000000244.000048223.html",
+    "newsdata_categories": [
+      "technology",
+      "business"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "IT・ガジェット"
+    ]
+  },
+  "extracted_body": "名古屋のFMラジオ局・ZIP-FMは、2026年10月に開局33周年を迎えます。これを記念し、10月3日（土）・4日（日）の2日間、久屋大通公園 エディオン久屋広場にて、開局記念イベント「ZIP AUTUMN SQUARE」を開催します。 「ZIP AUTUMN SQUARE」は、ZIP-FMが日頃の感謝の気持ちを込めてZIPPIE（ZIP-FMリスナー）の皆さんにお届けする、毎年恒例のアニバーサリーイベントです。 今年も2日間にわたり、ZIP-FMでおなじみのアーティストによるスペシャルライブを開催。10月3日（土）は、オカモトショウ（OKAMOTO'S）、カメレオン・ライム・ウーピーパイ、紬衣（Conton Candy）、とまとくらぶ、PURPLE BUBBLE、Baby Canta、望月ヒナタ、RIVA、れんが出演。10月4日（日）は、THE AGUL、QOOPIE（Acoustic）、さらさ、JIJIM、gb、スーパー登山部、大東まみ、NakamuraEmi、リアクション ザ ブッタが登場し、開局33周年を音楽で盛り上げます。 さらに、会場すぐの「ドリームカプセル Main Labo」をサテライト会場として、ZIP-FMの番組の公開生放送＆公開収録を実施します。10月3日（土）は「Sparkling」の公開生放送をはじめ、「THUMBS UP」「ROCKER ROOM」の公開収録を実施。10月4日（日）は「Toi Toi Toi」「NONSTOP CALLING」「SUNDAY AWESOME WAVE」「ON THE ROCK」の公開生放送・公開収録をお届けします。イベントに出演するアーティストをゲストに迎え、普段はラジオを通してお届けしているZIP-FMの番組を、間近で楽しめる2日間です。 また、メイン会場では、日本酒イベント「秋酒祭 愛知」も同時開催。 音楽と秋酒とともに、ZIP-FM開局33周年をZIPPIEの皆さんと一緒にお祝いする特別な2日間。ぜひお越しください。 イベント名：ZIP-FM 33rd Anniversary「ZIP AUTUMN SQUARE」 日時：2026年10月3日（土）・4日（日）11:00～20:00 ※雨天中止の場合あり メイン会場：久屋大通公園 エディオン久屋広場 サテライト会場：ドリームカプセル Main Labo 主催：ZIP-FM 特設ウェブサイト：「ZIP AUTUMN SQUARE 2026」特設サイト 10月3日（土） ＜SPECIAL LIVE＞ 会場：久屋大通公園 エディオン久屋広場 オカモトショウ（OKAMOTO'S） / カメレオン・ライム・ウーピーパイ / 紬衣（Conton Candy） / とまとくらぶ / PURPLE BUBBLE / Baby Canta / 望月ヒナタ / RIVA /れん ＜サテライト会場 公開生放送・公開収録＞ 会場：ドリームカプセル Main Labo 1階 スタジオ ドリームカプセル ◆13:00～16:00「Sparkling」公開生放送 NAVIGATOR：清里千聖 GUEST：カメレオン・ライム・ウーピーパイ / PURPLE BUBBLE ◆16:30～17:00「THUMBS UP」公開収録 NAVIGATOR：上野正明 GUEST：紬衣（Conton Candy） ◆18:00～18:30「ROCKER ROOM」公開収録 NAVIGATOR：加藤玲那 GUEST：とまとくらぶ 10月4日（日） ＜SPECIAL LIVE＞ 会場：久屋大通公園 エディオン久屋広場 THE AGUL / QOOPIE（Acoustic） / さらさ / JIJIM / gb / スーパー登山部 / 大東まみ / NakamuraEmi / リアクション ザ ブッタ ＜サテライト会場 公開生放送・公開収録＞ 会場：ドリームカプセル Main Labo 1階 スタジオ ドリームカプセル ◆13:00～13:40「Toi Toi Toi」公開収録 NAVIGATOR：神原真理 GUEST：さらさ ◆14:30～15:00「NONSTOP CALLING」公開収録 NAVIGATOR：小林拓一郎 GUEST：NakamuraEmi ◆16:00～17:30「SUNDAY AWESOME WAVE」公開生放送 NAVIGATOR：神原真理 GUEST：スーパー登山部 ◆18:00～19:00「ON THE ROCK」公開収録 NAVIGATOR：岡本隆根",
+  "body_extraction": {
+    "requested_url": "https://prtimes.jp/main/html/rd/p/000000244.000048223.html",
+    "final_url": "https://prtimes.jp/main/html/rd/p/000000244.000048223.html",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 1922,
+    "cleaned_chars": 1907,
+    "fetched_at": "2026-09-26T13:26:43.213Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 1200,
+      "unique_chars": 258,
+      "min_unique_chars": 60,
+      "http_success": true
+    }
+  }
+}

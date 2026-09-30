@@ -1,0 +1,6 @@
+{
+  "name": "article-cleanup-experiment",
+  "private": true,
+  "type": "module",
+  "scripts": { "run": "node src/run.mjs" }
+}

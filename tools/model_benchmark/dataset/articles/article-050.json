@@ -1,0 +1,41 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "“Suicaの新キャラ候補”を描いた美大生、教室に貼ると…⇨4日後の光景に「もはや個展レベル」と12万いいね(ハフポスト日本版)",
+  "description": "美大生が“Suicaの新キャラ候補”を描いて、教室の壁に貼ると…。数日後の光景がXで話題になり、12万もの「いいね」が寄せられています。 投稿したのは、Sakkさん（@mikan__kudasai）",
+  "source": {
+    "type": "newsdata",
+    "source_id": "5195041d68db82d6fe24074be416c562",
+    "source_name": "Yahoo Japan",
+    "published_at": "2026-09-26 02:01:35",
+    "url": "https://news.yahoo.co.jp/articles/9f7b44d7ae8b030acbd03a69577c2fcaa04718c5",
+    "normalized_url": "https://news.yahoo.co.jp/articles/9f7b44d7ae8b030acbd03a69577c2fcaa04718c5",
+    "newsdata_categories": [
+      "lifestyle"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "サブカル"
+    ]
+  },
+  "extracted_body": "美大生が“Suicaの新キャラ候補”を描いて、教室の壁に貼ると…。数日後の光景がXで話題になり、12万もの「いいね」が寄せられています。 【画像】日ごとに増えていった“Suicaの新キャラ候補” 投稿したのは、Sakkさん（@mikan__kudasai）。 「美大生の制作意欲舐めない方が良い」というコメントとともに、4日間で変化していく教室の壁を写した写真を公開しました。 そこには、最初は1枚だけだった白いうさぎのイラストが、日を追うごとに増えていき、最後は壁一面を覆い尽くすまでになった様子が写っています。 話を聞くと、最初の1枚を描いたのは投稿主自身。話題になっていたSuicaの新キャラクター候補の中から、うさぎらしくない毒々しい紫色とのギャップに惹かれ、「B案」を描いたのだそう。 すると、その絵を見たクラスメイトが休み時間に次々と描き、それぞれ壁に貼っていったものだといいます。ノリの良さからイラストは日に日に増加。「ここまでになるとは思っていなかった」のだとか。 教室を使う授業の時間には、クラスメイトから「12万バズの壁だ！」と言われたそうです。 この投稿には「頭から離れなくなってる」「もはや個展レベルで好き」「やっぱり余白が想像力の源泉だわ」といった声が続出。 投稿主は「このようなブームになるとは思っていなかったので、とても面白いものを見ている気持ちです」と明かしています。 Suicaの新キャラクターは、JR東日本が実施中のデザイン投票で3案から選ばれます。B案は「周囲の声に耳を傾け、未来へ跳び進む」うさぎで、紫色は安心を表す青と感動を表す赤を混ぜた色だとのこと。投票は9月23日まで受け付けており、11月18日のお披露目式で結果が発表されます。",
+  "body_extraction": {
+    "requested_url": "https://news.yahoo.co.jp/articles/9f7b44d7ae8b030acbd03a69577c2fcaa04718c5",
+    "final_url": "https://news.yahoo.co.jp/articles/9f7b44d7ae8b030acbd03a69577c2fcaa04718c5",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 748,
+    "cleaned_chars": 738,
+    "fetched_at": "2026-09-26T14:03:40.935Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 229,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-050"
+}

@@ -1,0 +1,1 @@
+Return JSON only: {"category":"one allowed category","subject":"within 40 characters","event":"within 50 characters"}. Allowed categories: トレンド, エンタメ, サブカル, マネー, IT・ガジェット, 除外. Do not invent facts.

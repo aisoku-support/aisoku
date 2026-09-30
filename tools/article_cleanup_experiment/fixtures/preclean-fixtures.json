@@ -1,0 +1,12 @@
+[
+  {"id":"pre-body-related-body","html":"<article><p>本文A。正常本文です。</p><div><h3>関連記事</h3><ul><li><a href='#'>記事1</a></li><li><a href='#'>記事2</a></li><li><a href='#'>記事3</a></li></ul></div><p>本文B。続きです。</p></article>","keep":["本文A","本文B"],"remove":["関連記事"],"expect_removed":true},
+  {"id":"pre-inner-min-safe","html":"<section><p>長い正常本文Aです。これは本文です。事実を説明します。十分な文章を保持します。</p><div><h3>関連記事</h3><ul><li><a href='#'>記事1</a></li><li><a href='#'>記事2</a></li><li><a href='#'>記事3</a></li></ul></div><p>長い正常本文Bです。これは後半本文です。結論を説明します。</p></section>","keep":["長い正常本文A","長い正常本文B"],"remove":["関連記事"],"expect_removed":true},
+  {"id":"pre-word-related","html":"<article><p>本文中で関連記事という言葉の意味を説明します。自然文として保持してください。</p></article>","keep":["関連記事という言葉"],"remove":[],"expect_removed":false},
+  {"id":"pre-heading-no-links","html":"<article><h3>関連記事</h3><p>本文として説明が続きます。</p></article>","keep":["関連記事","本文として"],"remove":[],"expect_removed":false},
+  {"id":"pre-one-link","html":"<article><div><h3>関連記事</h3><a href='#'>記事1</a></div></article>","keep":["関連記事","記事1"],"remove":[],"expect_removed":false},
+  {"id":"pre-dense-related","html":"<article><div><h3>関連記事</h3><a href='#'>A</a><a href='#'>B</a><a href='#'>C</a></div></article>","keep":[],"remove":["関連記事"],"expect_removed":true},
+  {"id":"pre-reference-list","html":"<article><p>参考資料を確認してください。<a href='#'>資料A</a>と<a href='#'>資料B</a>を本文の根拠として示します。自然文です。</p></article>","keep":["参考資料","資料A","資料B"],"remove":[],"expect_removed":false},
+  {"id":"pre-inline-links","html":"<article><p>本文中の<a href='#'>リンクA</a>と<a href='#'>リンクB</a>は説明のためです。文章を保持します。</p></article>","keep":["本文中","リンクA","リンクB"],"remove":[],"expect_removed":false},
+  {"id":"pre-sponsored","html":"<article><p>本文です。説明があります。</p><div><span rel='sponsored'><a href='#'>商品</a></span><a href='#'>商品を見る</a></div><p>続きです。</p></article>","keep":["本文です","続きです"],"remove":["商品"],"expect_removed":false},
+  {"id":"pre-cta-prose","html":"<article><p>会員登録について説明します。登録方法と対象者を詳しく説明する普通の本文です。</p></article>","keep":["会員登録について","普通の本文"],"remove":[],"expect_removed":false}
+]

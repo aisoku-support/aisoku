@@ -1,0 +1,41 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "フラアニ枠のアニメ『これ描いて死ね』、第2期制作決定！",
+  "description": "",
+  "source": {
+    "type": "newsdata",
+    "source_id": "67f78869556282f8b891dfb92a167e1a",
+    "source_name": "Esuteru Japanese Gaming Blog",
+    "published_at": "2026-09-26 02:00:47",
+    "url": "http://blog.esuteru.com/archives/10571128.html",
+    "normalized_url": "http://blog.esuteru.com/archives/10571128.html",
+    "newsdata_categories": [
+      "entertainment"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "エンタメ"
+    ]
+  },
+  "extracted_body": "話題のツイートより — TVアニメ『これ描いて死ね』公式 (@korekaite_shine) September 25, 2026 ／ 漫画を愛する全ての人へ──── この先も、届け──ッ‼︎ ＼ ╋━━━━━━ TVアニメ『これ描いて死ね』 第2期 制作決定✍️ ━━━━━━╋ ぜひご期待ください!!🏝️これ描いて死ねこれ描いて死ね（１） (ゲッサン少年サンデーコミックス)発売日：2022/5/12評価：4.8TVアニメ「これ描いて死ね」 [Blu-ray]発売日：2026/12/13 この記事への反応 ・改めて思うけど、よくこのタイトルで アニメ化企画通ったよなｗ ・先生役の早見沙織一人がめちゃくちゃ演技頑張ってた印象しかない ・悪くはない作品だけど サンデーはもう少し他に弾なかったんか？ 感すごい ・主役の女子高生を魅力的に描けなかった 教師ばかり描いてしょうもな ・今期一番面白かった 2期決定うれしい ・天幕のジャードゥーガルとこれしか観てなかったわ 夏アニメが豊作すぎて埋もれちゃったのは残念だった ・最初はイマイチやったんやが、後半から面白くなっていったわ アニメスタッフやるやん 実質的な主人公は燃え尽きた先生で、 周りのJKが先生の背中を押して火をつけてく演出なんよね 声優さんも巧かった 実質主人公の先生が 良い演技で良いキャラだったし 高校漫研の話と思うと出来すぎだけど 面白かったわ フラアニ枠だけあってめっちゃ金かけてんな 9/29まで期間限定で1冊100円セール！ 辻次夕日郎『スノウボールアース』スノウボールアース 9/30まで期間限定で1冊100円セール！ きただりょうま『ド級編隊エグゼロス』ド級編隊エグゼロス セミカラー版ファイナルファンタジー レゾナンス -PS5発売日：2026/10/22ゼルダの伝説 時のオカリナ -Switch2 【パッケージ版早期購入特典】オリジナルアートカードセット/オリジナルステッカー 同梱発売日：2026/11/5",
+  "body_extraction": {
+    "requested_url": "http://blog.esuteru.com/archives/10571128.html",
+    "final_url": "http://blog.esuteru.com/archives/10571128.html",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 890,
+    "cleaned_chars": 850,
+    "fetched_at": "2026-09-26T14:03:38.466Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 284,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-046"
+}

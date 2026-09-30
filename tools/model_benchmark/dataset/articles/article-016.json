@@ -1,0 +1,25 @@
+{
+  "article_id": "article-016",
+  "origin": "initial-23",
+  "added_at": "2026-09-20",
+  "title": "「こども未来館ここにこ」累計来館者数1000万人達成!",
+  "description": "豊橋市のプレスリリース(2026年9月8日 14時46分)「こども未来館ここにこ」累計来館者数1000万人達成!",
+  "source": {
+    "type": "newsdata",
+    "source_id": "c4f66fdd6c0f5c38ffeb7b913f353285",
+    "source_name": "Pr Times",
+    "published_at": "2026-09-08T05:46:39.000Z",
+    "url": "https://prtimes.jp/main/html/rd/p/000001018.000025583.html",
+    "normalized_url": "https://prtimes.jp/main/html/rd/p/000001018.000025583.html",
+    "newsdata_categories": [
+      "technology",
+      "business"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "IT・ガジェット",
+      "マネー"
+    ]
+  }
+}

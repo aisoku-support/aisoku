@@ -1,0 +1,13 @@
+name = "news-topic-pregen"
+main = "src/index.ts"
+compatibility_date = "2026-09-24"
+
+[durable_objects]
+bindings = [{ name = "TOPIC_PREGEN", class_name = "TopicPregenCoordinator" }]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["TopicPregenCoordinator"]
+
+[vars]
+SUPABASE_URL = "https://svlzdbkhrfysjdobfkxt.supabase.co"

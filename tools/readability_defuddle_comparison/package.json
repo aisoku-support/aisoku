@@ -1,0 +1,10 @@
+{
+  "name": "readability-defuddle-comparison",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@mozilla/readability": "latest",
+    "defuddle": "latest",
+    "jsdom": "latest"
+  }
+}

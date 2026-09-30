@@ -1,0 +1,23 @@
+{
+  "article_id": "article-011",
+  "origin": "initial-23",
+  "added_at": "2026-09-20",
+  "title": "米消費者の失業率上昇予想、20年4月以来の高水準 NY連銀調査",
+  "description": "【ニューヨーク=佐藤璃子】米ニューヨーク連銀が8日発表した8月の消費者調査によると、失業率が今後1年で上昇すると見込む確率の平均は44.4%と前月比1.6ポイント上昇し、2020年4月以来の高水準となった。米消費者の間で、労働市場に対する不安感が高まっている。NY連銀は「今後12カ月後に、米国の失業率が現在よりも高くなっている確率はどれくらいか」とする設問への回答を集計した。消費者が見込む確率",
+  "source": {
+    "type": "newsdata",
+    "source_id": "7d50efdc9b32caac8a29562b1e165a4b",
+    "source_name": "nikkei_com",
+    "published_at": "2026-09-08T17:54:34.000Z",
+    "url": "https://www.nikkei.com/article/DGXZQOGN08BFJ0Y6A900C2000000/",
+    "normalized_url": "https://www.nikkei.com/article/DGXZQOGN08BFJ0Y6A900C2000000/",
+    "newsdata_categories": [
+      "other"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "サブカル"
+    ]
+  }
+}

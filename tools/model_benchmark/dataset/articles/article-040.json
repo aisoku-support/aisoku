@@ -1,0 +1,42 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "【アジア大会】開幕から約１週間 日本の金メダル数は全体２位 井上康生氏「うれしさを感じている」 | 記事 | 東スポWEB",
+  "description": "愛知・名古屋アジア大会日本選手団の団長を務める井上康生氏が２６日、名古屋市内で記者会見を行い、日本勢のここまでの戦いぶりを振り返った...",
+  "source": {
+    "type": "newsdata",
+    "source_id": "515f16b17437e2bec6afbf53c9b675be",
+    "source_name": "東スポweb",
+    "published_at": "2026-09-26 02:02:00",
+    "url": "https://www.tokyo-sports.co.jp/articles/-/404462",
+    "normalized_url": "https://www.tokyo-sports.co.jp/articles/-/404462",
+    "newsdata_categories": [
+      "sports",
+      "top"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "トレンド"
+    ]
+  },
+  "extracted_body": "愛知・名古屋アジア大会日本選手団の団長を務める井上康生氏が２６日、名古屋市内で記者会見を行い、日本勢のここまでの戦いぶりを振り返った。 １９日に開幕した「アジア版大会」において、２５日時点で金メダル２８個、銀メダル４３個、銅メダル４４個を獲得。金メダル数、総メダル数は中国に次ぐ２位につけている。また卓球男子団体が６０年ぶりに金メダルを獲得、競泳男子２００メートル平泳ぎで大橋信（枚方ＳＳ）が世界記録をマークするなど、多くの競技で快挙が生まれている。 井上氏は「今回は世界記録が出たり、ジュニア記録が出たり、何十年ぶりの優勝というものを勝ち取ったり、さまざまな記録を更新している。その現状というものは、一人ひとり、一つひとつのチームがベストパフォーマンスをいかに出すかという目標を掲げ、それを達成したというところで、大変うれしさというものを感じている」と声を弾ませた。 その上で「結果を出した選手もいれば、破れた選手たちもいる。しっかりと大会が終わった後に振り返りを行いたいが、中間地点としては順調に金メダルの数、総合メダル数においても進んでいると思う。何度も言うように、選手たちがベストパフォーマンスを発揮できるように引き続き戦っていきたい」と展望を語った。 今大会の金メダル数、総メダル数は中国がダントツ１位。「もちろん今後のスポーツの発展という中で、大きな刺激や学びというものをいただいているのが正直な気持ち。中国チームにいろいろ学びをいただきながら、われわれも成長していき、少しでも追いついていけるようにこれからも努力していきたい」と意気込んだ。",
+  "body_extraction": {
+    "requested_url": "https://www.tokyo-sports.co.jp/articles/-/404462",
+    "final_url": "https://www.tokyo-sports.co.jp/articles/-/404462",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 685,
+    "cleaned_chars": 677,
+    "fetched_at": "2026-09-26T14:03:32.773Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 210,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-040"
+}

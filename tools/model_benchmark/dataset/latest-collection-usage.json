@@ -1,0 +1,71 @@
+{
+  "approved_max_search_calls": 5,
+  "approved_max_article_page_requests": 50,
+  "search_api_calls": 5,
+  "article_page_requests": 50,
+  "attempted_categories": [
+    "trend",
+    "entertainment",
+    "subculture",
+    "money",
+    "technology"
+  ],
+  "outcomes": [
+    {
+      "category": "トレンド",
+      "search_api_calls": 1,
+      "candidates_returned": 10,
+      "candidates_checked": 10,
+      "body_extraction_successes": 3,
+      "body_extraction_failures": 7,
+      "persisted": 0,
+      "article_page_requests": 11,
+      "note": "first_attempt_quality_passed_not_persisted"
+    },
+    {
+      "category": "エンタメ",
+      "search_api_calls": 1,
+      "candidates_returned": 10,
+      "candidates_checked": 10,
+      "body_extraction_successes": 2,
+      "body_extraction_failures": 8,
+      "persisted": 2,
+      "article_page_requests": 11,
+      "reason": "fewer_than_six_quality_articles_in_candidate_batch"
+    },
+    {
+      "category": "サブカル",
+      "search_api_calls": 1,
+      "candidates_returned": 10,
+      "candidates_checked": 10,
+      "body_extraction_successes": 2,
+      "body_extraction_failures": 8,
+      "persisted": 2,
+      "article_page_requests": 12,
+      "reason": "fewer_than_six_quality_articles_in_candidate_batch"
+    },
+    {
+      "category": "マネー",
+      "search_api_calls": 1,
+      "candidates_returned": 10,
+      "candidates_checked": 10,
+      "body_extraction_successes": 4,
+      "body_extraction_failures": 6,
+      "persisted": 4,
+      "article_page_requests": 12,
+      "reason": "fewer_than_six_quality_articles_in_candidate_batch"
+    },
+    {
+      "category": "IT・ガジェット",
+      "search_api_calls": 1,
+      "candidates_returned": 10,
+      "candidates_checked": 5,
+      "body_extraction_successes": 3,
+      "body_extraction_failures": 2,
+      "persisted": 3,
+      "article_page_requests": 4,
+      "reason": "article_request_budget_reached"
+    }
+  ],
+  "finished": true
+}

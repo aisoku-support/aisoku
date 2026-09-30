@@ -1,0 +1,42 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "男子バレー開幕2日前…ファン悶絶の出来事「かわいぃぃぃ」「愛され末っ子」仲間に囲まれた23歳",
+  "description": "愛知・名古屋アジア大会の男子バレーボールは27日に開幕する。大会を前にした25日、代表メンバーの甲斐優斗が23歳の誕生日を迎え、同僚が公開した1枚で粋な祝福が判明した。",
+  "source": {
+    "type": "newsdata",
+    "source_id": "82629a273f7643abee5235938ec803df",
+    "source_name": "The Answer",
+    "published_at": "2026-09-26 02:03:00",
+    "url": "https://the-ans.jp/news/731536/",
+    "normalized_url": "https://the-ans.jp/news/731536/",
+    "newsdata_categories": [
+      "sports",
+      "top"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "トレンド"
+    ]
+  },
+  "extracted_body": "愛知・名古屋アジア大会の男子バレーボールは27日に開幕する。大会を前にした25日、代表メンバーの甲斐優斗が23歳の誕生日を迎え、同僚が公開した1枚で粋な祝福が判明した。 甲斐優斗【写真：中戸川知世】 愛知・名古屋アジア大会 愛知・名古屋アジア大会の男子バレーボールは27日に開幕する。大会を前にした25日、代表メンバーの甲斐優斗が23歳の誕生日を迎え、同僚が公開した1枚で粋な祝福が判明した。 室内で撮影された写真。中央では、日本代表のウェアを着た甲斐が、「23」のデコレーションがされたケーキを持っている。周りを囲むのは代表のチームメート。誕生日を祝ってもらったようだ。 後藤陸翔が自身のインスタグラムのストーリーズで実際の写真を公開。ネット上でも話題となり、国内外のファンから「カイの誕生日をチームで祝ってる。超かわいい」「かわいぃぃぃ」「練習後にみんなでお祝いできるの、いいね」「愛され末っ子を観測」「甲斐くんアジア大会のメンバーからお祝いしてもらっててニコリ」などの声が上がった。 （THE ANSWER編集部）",
+  "body_extraction": {
+    "requested_url": "https://the-ans.jp/news/731536/",
+    "final_url": "https://the-ans.jp/news/731536/",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 470,
+    "cleaned_chars": 460,
+    "fetched_at": "2026-09-26T14:19:11.134Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 162,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-036"
+}

@@ -1,0 +1,43 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "『オールスター感謝祭』放送70回記念SP 豪華出演者が集結",
+  "description": "TBSでは、10月10日午後5時40分から今田耕司と島崎和歌子がMCを務める『オールスター感謝祭’26秋 放送70回記念SP』を、6時間10分にわたって生放送…",
+  "source": {
+    "type": "newsdata",
+    "source_id": "544dc09a565e645e0539355e81f004a0",
+    "source_name": "産経ニュース",
+    "published_at": "2026-09-26 02:01:09",
+    "url": "https://www.sankei.com/article/20260926-YGTQOBTE2VOR5AO5AG32NFO3GQ/?outputType=theme_oriconnews",
+    "normalized_url": "https://www.sankei.com/article/20260926-YGTQOBTE2VOR5AO5AG32NFO3GQ/?outputType=theme_oriconnews",
+    "newsdata_categories": [
+      "lifestyle",
+      "top",
+      "entertainment"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "エンタメ"
+    ]
+  },
+  "extracted_body": "配信元：無印良品、月～金の“秋の通勤コーデ”を紹介 セットアップやレイヤードなど表情豊かな5つのスタイリングを提案『格付けチェック』浜田雅功、“絶対ありえへん”カレーを作る土屋アンナ、2008年に死去した元夫との思い出明かす 強烈に惹かれ合った出会い「その気持ちにグッときた」ハイヒール・リンゴ、“髪バッサリ”でショートボブに ビフォー・アフター公開 自毛でウィッグ制作へ「スッキリされましたね」「ショートもお似合い」『VIVANT』“実在の日本企業”登場で反響「めっちゃ目立ってました」「友人の勤め先だし！」 なんばグランド花月と読む人も【ガルアワ】日向坂46・小坂菜緒、甘さあふれる“ふわふわ”コーデで会場を虜に本田響矢、エレガントで高貴な雰囲気に 体調管理やメンタルキープの秘けつ「ごはんの時間を大事にしています」FANTASTICS八木勇征、歌唱前は「白米を食べる」 “塩なし・具なし”が一番好きテレ東新ドラマ、新たな出演者を発表 10月8日スタート『赤灯えれじい』寺田心、ムキムキタンクトップ姿で進行役 テレ東できょう日本一意識と敷居の“低い”健康番組放送",
+  "body_extraction": {
+    "requested_url": "https://www.sankei.com/article/20260926-YGTQOBTE2VOR5AO5AG32NFO3GQ/?outputType=theme_oriconnews",
+    "final_url": "https://www.sankei.com/article/20260926-YGTQOBTE2VOR5AO5AG32NFO3GQ/?outputType=theme_oriconnews",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 506,
+    "cleaned_chars": 483,
+    "fetched_at": "2026-09-26T14:03:35.493Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 247,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-043"
+}

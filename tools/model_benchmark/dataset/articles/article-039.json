@@ -1,0 +1,42 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "震度2 熊本県熊本地方 2026年09月26日10:43ごろ 地震詳細",
+  "description": "نُشر هذا المقال أولاً عبر Cedarnews.net . لمتابعة المزيد من الأخبار والتقارير الحصرية، زورونا على موقعنا. 「どこ」が「どれだけ」揺れたか詳細な地震情報に加え、地震被害などを最新記事でお伝えします。熊本県で最大震度2の地震 熊本県・熊本中央区、熊本東区、熊本西区、熊本南区、嘉島町、益城町、26日午前10時43分ごろ、 تم نشر هذا الخبر عبر موقع Cedarnews الإخباري . للاطلاع على مزيد من الأخبار العاجلة والتقارير الحصرية، زوروا موقعنا الرسمي.",
+  "source": {
+    "type": "newsdata",
+    "source_id": "f2422282e337e446342bde3f3ce93e98",
+    "source_name": "Cedar News",
+    "published_at": "2026-09-26 02:02:09",
+    "url": "https://cedarnews.net/japanese/1007288/%E9%9C%87%E5%BA%A62-%E7%86%8A%E6%9C%AC%E7%9C%8C%E7%86%8A%E6%9C%AC%E5%9C%B0%E6%96%B9-2026%E5%B9%B409%E6%9C%8826%E6%97%A51043%E3%81%94%E3%82%8D-%E5%9C%B0%E9%9C%87%E8%A9%B3%E7%B4%B0/",
+    "normalized_url": "https://cedarnews.net/japanese/1007288/%E9%9C%87%E5%BA%A62-%E7%86%8A%E6%9C%AC%E7%9C%8C%E7%86%8A%E6%9C%AC%E5%9C%B0%E6%96%B9-2026%E5%B9%B409%E6%9C%8826%E6%97%A51043%E3%81%94%E3%82%8D-%E5%9C%B0%E9%9C%87%E8%A9%B3%E7%B4%B0/",
+    "newsdata_categories": [
+      "lifestyle",
+      "top"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "トレンド"
+    ]
+  },
+  "extracted_body": "「どこ」が「どれだけ」揺れたか詳細な地震情報に加え、地震被害などを最新記事でお伝えします。熊本県で最大震度2の地震 熊本県・熊本中央区、熊本東区、熊本西区、熊本南区、嘉島町、益城町、26日午前10時43分ごろ、熊本県で最大震度2を観測する地震がありました。気象庁によりますと、震源地は熊本県熊本地方で、震源の深さはおよそ10km、地震の規模を示すマグニチュードは2.9と推定されます。DIG：掘り起こす、探求する、発見する。TBS系JNN28局のニュースサイト、「TBS NEWS DIG」は、国内外の取材網を生かし、いち速く正確な情報・動画と、より深い調査報道・より分かりやすい解説で、社会の関心に応えます。 Follow Us Related Articles زر الذهاب إلى الأعلى",
+  "body_extraction": {
+    "requested_url": "https://cedarnews.net/japanese/1007288/%E9%9C%87%E5%BA%A62-%E7%86%8A%E6%9C%AC%E7%9C%8C%E7%86%8A%E6%9C%AC%E5%9C%B0%E6%96%B9-2026%E5%B9%B409%E6%9C%8826%E6%97%A51043%E3%81%94%E3%82%8D-%E5%9C%B0%E9%9C%87%E8%A9%B3%E7%B4%B0/",
+    "final_url": "https://cedarnews.net/japanese/1007288/%E9%9C%87%E5%BA%A62-%E7%86%8A%E6%9C%AC%E7%9C%8C%E7%86%8A%E6%9C%AC%E5%9C%B0%E6%96%B9-2026%E5%B9%B409%E6%9C%8826%E6%97%A51043%E3%81%94%E3%82%8D-%E5%9C%B0%E9%9C%87%E8%A9%B3%E7%B4%B0/",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 380,
+    "cleaned_chars": 353,
+    "fetched_at": "2026-09-26T14:03:31.178Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 175,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-039"
+}

@@ -1,0 +1,24 @@
+﻿# Flutter / Dart generated
+.dart_tool/
+build/
+
+# Android / Gradle generated
+.gradle/
+android/.gradle/
+android/app/build/
+
+# Dependencies
+node_modules/
+
+# Temporary / logs
+*.log
+*.tmp
+*.bak
+
+# Large RSS candidate data
+tools/rss/data/
+
+# Local artifacts / diagnostics
+.artifacts/
+diagnostics/
+build_log.txt

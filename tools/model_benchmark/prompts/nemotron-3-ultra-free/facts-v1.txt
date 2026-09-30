@@ -1,0 +1,1 @@
+Return JSON only as {"facts":["..."]}. Extract concrete facts from the article. Do not invent facts; an empty array is allowed.

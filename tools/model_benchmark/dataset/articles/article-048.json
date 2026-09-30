@@ -1,0 +1,41 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "【たった5分で完成】プロ直伝！生ハムとカマンベールのとろける絶品ブルスケッタがウマい…イタリアビールとの至高ペアリングを検証(MonoMax Web)",
+  "description": "短時間＆手間いらずで作れる絶品肉つまみを紹介する人気連載「男の肉つまみ講座」。今回登場するのは、バゲットに生ハムとカマンベールチーズをのせたイタリアの超簡単おつまみです！たった5分で作れるのにありえな",
+  "source": {
+    "type": "newsdata",
+    "source_id": "00de690449aba77fd74f2229650b7e59",
+    "source_name": "Yahoo Japan",
+    "published_at": "2026-09-26 02:02:56",
+    "url": "https://news.yahoo.co.jp/articles/4564c6d22112e9b4d4fd4cae8ead400cbeee7792",
+    "normalized_url": "https://news.yahoo.co.jp/articles/4564c6d22112e9b4d4fd4cae8ead400cbeee7792",
+    "newsdata_categories": [
+      "lifestyle"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "サブカル"
+    ]
+  },
+  "extracted_body": "イタリア語で「青いリボン」を意味する、軽快で爽快なビール「ペローニ ナストロアズーロ」ペローニ ペローニ ナストロアズーロ 店頭想定価格￥280前後（税込・350ml） 1963年に誕生したプレミアムビール。ブランドの専売特許であるノストラーノ・デリソラ種のトウモロコシなど厳選された素材を使用し、さっぱりとして爽やかな苦みと、すっきりとした後味が特長。「ナストロアズーロ」とはイタリア語で青いリボンのこと。8月25日より全国通年販売を開始。所要時間たった5分！絶品肉つまみ「夜のブル～スケッタ ブランドニュ～デイ」の簡単3STEPレシピバゲット（フランスパンでも可）／4枚（3cmぐらいの厚さで斜め薄切り） 生ハム ハーフカット／4枚 カマンベールチーズ／1/6カット2～3切れぐらい 粗挽き黒胡椒／適量 乾燥パセリ／適量 【STEP1】バゲットにチーズをのせてトースターで焼く オーブントースターの天板にバゲットをのせ、カマンベールチーズをちぎってのせ、2～3分焼く。バゲットのサイズや好みに合わせてチーズの量を調整してもOK。 【STEP2】カマンベールチーズの上に生ハムをのせる カマンベールチーズが溶けない程度に柔らかくなったらトースターから出して、生ハムをバゲットにのるぐらいのサイズにちぎってのせる。生ハム好きなら多めにしてもOK！ 【STEP3】お皿に盛り付けて乾燥パセリをふる バゲットをお皿にのせて粗挽き黒胡椒をふり、乾燥パセリを散らす。お好みでクリームチーズやベーコンにカスタマイズしてもいい。はちみつをかければ朝食やブランチにもなる！",
+  "body_extraction": {
+    "requested_url": "https://news.yahoo.co.jp/articles/4564c6d22112e9b4d4fd4cae8ead400cbeee7792",
+    "final_url": "https://news.yahoo.co.jp/articles/4564c6d22112e9b4d4fd4cae8ead400cbeee7792",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 684,
+    "cleaned_chars": 679,
+    "fetched_at": "2026-09-26T14:03:39.871Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 208,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-048"
+}

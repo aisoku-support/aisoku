@@ -1,0 +1,25 @@
+{
+  "article_id": "article-003",
+  "origin": "initial-23",
+  "added_at": "2026-09-20",
+  "title": "「ゴロゴロ、ドサドサと...」未明の崩落に住民避難 さらに崩れる危険も 東京・大島町は今夜から再び雨が降る予報",
+  "description": "「ゴロゴロ、ドサドサと...」未明の崩落に住民避難 さらに崩れる危険も 東京・大島町は今夜から再び雨が降る予報",
+  "source": {
+    "type": "newsdata",
+    "source_id": "34a0bac0462856b1ef07e228967a2c5e",
+    "source_name": "Fnnプライムオンライン",
+    "published_at": "2026-09-08T03:18:00.000Z",
+    "url": "https://www.fnn.jp/articles/-/1110014",
+    "normalized_url": "https://www.fnn.jp/articles/-/1110014",
+    "newsdata_categories": [
+      "top",
+      "sports"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "トレンド",
+      "エンタメ"
+    ]
+  }
+}

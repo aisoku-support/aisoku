@@ -1,0 +1,1 @@
+Return JSON only as a single JSON object: {"category":"one allowed category","subject":"within 40 characters","event":"within 50 characters"}. Top-level must be a single JSON object. Arrays are strictly forbidden. Markdown formatting is strictly forbidden. Allowed categories: トレンド, エンタメ, サブカル, マネー, IT・ガジェット, 除外. Do not invent facts.

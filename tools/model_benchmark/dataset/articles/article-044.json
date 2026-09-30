@@ -1,0 +1,42 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "ロバート馬場、簡単かつヘルシー「ニンニク砂肝」 1人前260円でできるレシピに反響「スタミナつきそう！」",
+  "description": "お笑いトリオ・ロバートの馬場裕之が26日までに、自身のYouTubeを更新。「おそらく…宇宙一簡単でウマい砂肝！260円でできるニンニク爆弾レシピ」と題した動…",
+  "source": {
+    "type": "newsdata",
+    "source_id": "32e2f5f1e13d0ea783299e618834cf11",
+    "source_name": "産経ニュース",
+    "published_at": "2026-09-26 02:01:08",
+    "url": "https://www.sankei.com/article/20260926-VUVBTXQ5JZK5DME257VXVW6AME/?outputType=theme_oriconnews",
+    "normalized_url": "https://www.sankei.com/article/20260926-VUVBTXQ5JZK5DME257VXVW6AME/?outputType=theme_oriconnews",
+    "newsdata_categories": [
+      "top",
+      "entertainment"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "エンタメ"
+    ]
+  },
+  "extracted_body": "ロバート・馬場裕之 （C）ORICON NewS inc.お笑いトリオ・ロバートの馬場裕之が26日までに、自身のYouTubeを更新。「おそらく…宇宙一簡単でウマい砂肝！260円でできるニンニク爆弾レシピ」と題した動画をアップした。【動画】安くて簡単かつヘルシー「ニンニク砂肝」レシピ概要欄では「今回は、ニンニクをたっぷり使った「ニンニク砂肝」を作りました。砂肝に切り込みを入れることで、食べやすくなるだけでなく、火も通りやすくなりますよ。材料費も1人前約260円とお値打ち♪さらに、残ったソースはパスタや卵、ご飯などにもアレンジできますので、ぜひ最後まで楽しんでみてください」との文言とともに、レシピを公開。難易度も低めとあって、ファンからは「ヘルシーなレシピうれしいです！」「スタミナつきそう！」「おいしそう！」などといった感想が相次いで寄せられている。関連記事【動画】暑い夏にぴったり「旨辛つけ素麺」レシピ【動画】100円＆10分で“神惣菜”「切り干し大根の浅漬け」レシピ【動画】8分でできる！飲めるくらいフワとろ「禁断の長芋チーズ焼き」【動画】フライパンひとつで簡単！SNSでも話題の「絶望パスタ」再現【動画】ナイスアイデア！家計と時間を救済する“130円激ウマ麺”レシピ配信元：無印良品、月～金の“秋の通勤コーデ”を紹介 セットアップやレイヤードなど表情豊かな5つのスタイリングを提案『格付けチェック』浜田雅功、“絶対ありえへん”カレーを作る土屋アンナ、2008年に死去した元夫との思い出明かす 強烈に惹かれ合った出会い「その気持ちにグッときた」ハイヒール・リンゴ、“髪バッサリ”でショートボブに ビフォー・アフター公開 自毛でウィッグ制作へ「スッキリされましたね」「ショートもお似合い」『VIVANT』“実在の日本企業”登場で反響「めっちゃ目立ってました」「友人の勤め先だし！」 なんばグランド花月と読む人も【ガルアワ】日向坂46・小坂菜緒、甘さあふれる“ふわふわ”コーデで会場を虜に本田響矢、エレガントで高貴な雰囲気に 体調管理やメンタルキープの秘けつ「ごはんの時間を大事にしています」FANTASTICS八木勇征、歌唱前は「白米を食べる」 “塩なし・具なし”が一番好きテレ東新ドラマ、新たな出演者を発表 10月8日スタート『赤灯えれじい』60歳・彦摩呂、結婚願望に変化「考えたことあったけど、もうやめた」 独身生活は「1人が楽」",
+  "body_extraction": {
+    "requested_url": "https://www.sankei.com/article/20260926-VUVBTXQ5JZK5DME257VXVW6AME/?outputType=theme_oriconnews",
+    "final_url": "https://www.sankei.com/article/20260926-VUVBTXQ5JZK5DME257VXVW6AME/?outputType=theme_oriconnews",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 1045,
+    "cleaned_chars": 1022,
+    "fetched_at": "2026-09-26T14:03:36.416Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 366,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 1,
+      "http_success": true
+    }
+  },
+  "article_id": "article-044"
+}

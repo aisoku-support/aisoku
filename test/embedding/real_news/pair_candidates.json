@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "same_topic_pairs": [
+    {
+      "article_id_a": "e3863f18edffded836b207273a8119da",
+      "article_id_b": "f504d670266de30bb2722ff15ccd3f90",
+      "topic_id": "758b0c72-b2ea-47e0-afaf-cc7eec560cd0",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": 0.95884
+    },
+    {
+      "article_id_a": "eb8cc7b98e4ffc69d5af2d8b3df32800",
+      "article_id_b": "fab190426d00fbe7d392fe65c1d34818",
+      "topic_id": "1e7c8813-5faa-44bb-bfaa-80bdfcd8ca1c",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": 0.895689
+    },
+    {
+      "article_id_a": "eb8cc7b98e4ffc69d5af2d8b3df32800",
+      "article_id_b": "cfa10f452b67d114539b772806419201",
+      "topic_id": "1e7c8813-5faa-44bb-bfaa-80bdfcd8ca1c",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": null
+    },
+    {
+      "article_id_a": "fab190426d00fbe7d392fe65c1d34818",
+      "article_id_b": "cfa10f452b67d114539b772806419201",
+      "topic_id": "1e7c8813-5faa-44bb-bfaa-80bdfcd8ca1c",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": null
+    },
+    {
+      "article_id_a": "a0ec5eb84434ab0e8bd90752dbdb0791",
+      "article_id_b": "c2cf7a2bb65bbb7bcbdd995a0b1cd34d",
+      "topic_id": "5839161a-2303-4ba3-abf5-f5cd699544d4",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": 0.91804
+    },
+    {
+      "article_id_a": "553c15657bdf30350e6602f397e08bf7",
+      "article_id_b": "ffccb11303232a1d79b63b09d340e256",
+      "topic_id": "aa6e6e30-f786-4f83-acbb-f8354f710f37",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": null
+    },
+    {
+      "article_id_a": "c2fc53e4968b55dd5abab530dd4c0231",
+      "article_id_b": "3f135d697288237bbb51f83a87be447d",
+      "topic_id": "c9b56538-ff20-41f6-b7ef-3e3e4ad6a412",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": null
+    },
+    {
+      "article_id_a": "e55a9e5144d2454b4dbdc6163d7157a4",
+      "article_id_b": "f7dd7140938e7990b366b6327ebfb4d6",
+      "topic_id": "78343614-83a9-4bd3-9f75-e5a2561ae7da",
+      "pair_type": "same_topic_from_existing_merge_history",
+      "label_status": "historical_merge_candidate_not_manually_verified",
+      "merge_similarity": 0.951031
+    }
+  ],
+  "different_topic_similar_candidates": [
+    {
+      "article_id_a": "63acafd247e79b4ee037b90f67cfc138",
+      "article_id_b": "b3e0e351995ab5604b1eeb4dd03db981",
+      "topic_id_a": "8725228b-930a-4288-a10d-80021ac448e9",
+      "topic_id_b": "6cb73e4f-ef4d-4587-9cc6-4440aba2e57c",
+      "pair_type": "different_topic_lexical_similarity_candidate",
+      "label_status": "manual_review_required_not_ground_truth",
+      "same_category": true,
+      "title_bigram_jaccard": 0.42,
+      "event_bigram_jaccard": 0.18181818181818182
+    },
+    {
+      "article_id_a": "f0460a945a2c497f733901809772b457",
+      "article_id_b": "5f1e766344e866536271356201420330",
+      "topic_id_a": "8d5795f6-1843-4463-afc1-45ed9121ca23",
+      "topic_id_b": "22a4aa49-6676-4968-8323-a74ff3dd295d",
+      "pair_type": "different_topic_lexical_similarity_candidate",
+      "label_status": "manual_review_required_not_ground_truth",
+      "same_category": true,
+      "title_bigram_jaccard": 0.2682926829268293,
+      "event_bigram_jaccard": 0.023255813953488372
+    },
+    {
+      "article_id_a": "554a1623a9eb9b6422b2c064b8651187",
+      "article_id_b": "8c838383ac5f956243e6f34b81fb225a",
+      "topic_id_a": "0b09be32-aa31-4525-9835-eee70bb4bba7",
+      "topic_id_b": "bd5b9adb-a8fa-4970-ab9e-0bf5789e8483",
+      "pair_type": "different_topic_lexical_similarity_candidate",
+      "label_status": "manual_review_required_not_ground_truth",
+      "same_category": true,
+      "title_bigram_jaccard": 0.010309278350515464,
+      "event_bigram_jaccard": 1
+    },
+    {
+      "article_id_a": "729c53515addffcf4cb62e1cf075fadd",
+      "article_id_b": "a0ec5eb84434ab0e8bd90752dbdb0791",
+      "topic_id_a": "ca3568b2-383d-483e-9e96-d5664301b67f",
+      "topic_id_b": "5839161a-2303-4ba3-abf5-f5cd699544d4",
+      "pair_type": "different_topic_lexical_similarity_candidate",
+      "label_status": "manual_review_required_not_ground_truth",
+      "same_category": true,
+      "title_bigram_jaccard": 0,
+      "event_bigram_jaccard": 0.25925925925925924
+    },
+    {
+      "article_id_a": "729c53515addffcf4cb62e1cf075fadd",
+      "article_id_b": "c2cf7a2bb65bbb7bcbdd995a0b1cd34d",
+      "topic_id_a": "ca3568b2-383d-483e-9e96-d5664301b67f",
+      "topic_id_b": "5839161a-2303-4ba3-abf5-f5cd699544d4",
+      "pair_type": "different_topic_lexical_similarity_candidate",
+      "label_status": "manual_review_required_not_ground_truth",
+      "same_category": true,
+      "title_bigram_jaccard": 0,
+      "event_bigram_jaccard": 0.25925925925925924
+    },
+    {
+      "article_id_a": "2347c00960c05b1204ce66bbc1d8fc67",
+      "article_id_b": "596812fb60bb2444cdffe783d624d68e",
+      "topic_id_a": "4a3b8036-1162-48ae-aff7-fbdef706abf6",
+      "topic_id_b": "45a3f7a0-fefd-4e09-b844-6667301f4494",
+      "pair_type": "different_topic_lexical_similarity_candidate",
+      "label_status": "manual_review_required_not_ground_truth",
+      "same_category": true,
+      "title_bigram_jaccard": 0,
+      "event_bigram_jaccard": 1
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "groq-120b": {
+    "free": true,
+    "quotas": [
+      {
+        "scope": "groq-gpt-oss-120b",
+        "rpm": 30,
+        "tpm": 8000,
+        "rpd": 1000,
+        "tpd": 200000,
+        "day": "rolling"
+      }
+    ]
+  },
+  "openai/gpt-oss-20b": {
+    "free": true,
+    "quotas": [
+      {
+        "scope": "groq-gpt-oss-20b",
+        "rpm": 30,
+        "tpm": 8000,
+        "rpd": 1000,
+        "tpd": 200000,
+        "day": "rolling"
+      }
+    ]
+  },
+  "qwen/qwen3.8-27b": {
+    "free": true,
+    "quotas": [
+      {
+        "scope": "groq-qwen-27b",
+        "rpm": 30,
+        "tpm": 8000,
+        "rpd": 1000,
+        "tpd": 200000,
+        "otpm": 1000,
+        "day": "rolling"
+      }
+    ]
+  },
+  "google-gemma": {
+    "free": true,
+    "quotas": [
+      {
+        "scope": "project-gemma",
+        "rpm": 30,
+        "tpm": 16000,
+        "rpd": 14400,
+        "day": "PT",
+        "inputOnly": true,
+        "factsReserveRpm": 1,
+        "factsReserveTpm": 4096
+      }
+    ]
+  },
+  "gemini-3.1": {
+    "free": true,
+    "quotas": [
+      {
+        "scope": "project-gemini-3-1-flash-lite",
+        "rpm": 15,
+        "tpm": 250000,
+        "rpd": 500,
+        "day": "PT",
+        "inputOnly": true
+      }
+    ]
+  },
+  "cloudflare-gemma": {
+    "free": true,
+    "provider": "cloudflare",
+    "quotas": [
+      {
+        "scope": "cloudflare-workers-ai-neurons",
+        "rpm": 300,
+        "neuronsPerDay": 10000,
+        "inputNeuronsPerMillionTokens": 9091,
+        "outputNeuronsPerMillionTokens": 27273,
+        "day": "UTC"
+      }
+    ]
+  },
+  "openrouter-nemotron": {
+    "free": true,
+    "provider": "openrouter",
+    "dailyTier": "base",
+    "quotas": [
+      {
+        "scope": "openrouter-free-models",
+        "rpm": 20,
+        "day": "rolling"
+      }
+    ]
+  }
+}

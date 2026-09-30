@@ -1,0 +1,379 @@
+{
+  "dataset_version": 1,
+  "created_at": "2026-09-20",
+  "source": {
+    "file": "newsdata_articles.json",
+    "note": "ローカルに保存されていたNewsData記事キャッシュの選定レコード。記事本文の再取得・要約・補完はしていない。"
+  },
+  "generation_input_schema": {
+    "standard": {
+      "newsTitle": "title",
+      "articleBody": "description"
+    },
+    "topic_context": [
+      "topicThreadTitle",
+      "topicSubject",
+      "topicEvent",
+      "topicFacts"
+    ],
+    "note": "topic_context fieldsは元記事キャッシュに存在しないため、推測で追加していない。"
+  },
+  "articles": [
+    {
+      "id": "4caff8d9b9eaba33bae0658c25110657",
+      "app_categories": [
+        "トレンド"
+      ],
+      "title": "大麻所持容疑で建設業の男(20)を逮捕<宮城・石巻市>(ミヤギテレビ)",
+      "description": "警察によりますと、大麻所持の疑いで逮捕されたのは、女川町浦宿浜の建設業の男(20)です。 男は8月17日、石巻市内の商業施設駐車場に停めた車内で大麻を所持していた疑いです。 警察の調べに対し、男は",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-07T13:06:00.000Z",
+      "url": "https://news.yahoo.co.jp/articles/9fd7857e37de7d6e41f490830d0da87e514d86ae",
+      "normalized_url": "https://news.yahoo.co.jp/articles/9fd7857e37de7d6e41f490830d0da87e514d86ae",
+      "newsdata_categories": [
+        "domestic"
+      ]
+    },
+    {
+      "id": "3738dd066ba14d440e27d1ea8abbf675",
+      "app_categories": [
+        "トレンド"
+      ],
+      "title": "積水ハウス株価、午後買い続かず 27年1月期純利益3%減に上方修正",
+      "description": "(12時45分、プライム、コード1928)積ハウスが後場上昇に転じ、前日比7円(0.21%)高の3328円を付けた。10日正午、2027年1月期(今期)の連結純利益が前期比3%減の2240億円になるとの見通しを発表した。2〜7月期の利益が伸びたこと",
+      "source": "Nikkei Shimbun",
+      "published_at": "2026-09-10T04:16:35.000Z",
+      "url": "https://www.nikkei.com/article/DGXZQOFL102YB0Q6A910C2000000/",
+      "normalized_url": "https://www.nikkei.com/article/DGXZQOFL102YB0Q6A910C2000000/",
+      "newsdata_categories": [
+        "top"
+      ]
+    },
+    {
+      "id": "34a0bac0462856b1ef07e228967a2c5e",
+      "app_categories": [
+        "トレンド",
+        "エンタメ"
+      ],
+      "title": "「ゴロゴロ、ドサドサと...」未明の崩落に住民避難 さらに崩れる危険も 東京・大島町は今夜から再び雨が降る予報",
+      "description": "「ゴロゴロ、ドサドサと...」未明の崩落に住民避難 さらに崩れる危険も 東京・大島町は今夜から再び雨が降る予報",
+      "source": "Fnnプライムオンライン",
+      "published_at": "2026-09-08T03:18:00.000Z",
+      "url": "https://www.fnn.jp/articles/-/1110014",
+      "normalized_url": "https://www.fnn.jp/articles/-/1110014",
+      "newsdata_categories": [
+        "top",
+        "sports"
+      ]
+    },
+    {
+      "id": "a173ae86f8f1aa04fd48b8cef7e67b37",
+      "app_categories": [
+        "トレンド"
+      ],
+      "title": "ブルーボトルコーヒーの秋限定「ミソキャラメルラテ」 清澄白河・豊洲で提供(みんなの経済新聞ネットワーク)",
+      "description": "ブルーボトルコーヒーが9月10日、秋限定の新メニュー「ミソキャラメルラテ」の提供を全国32店舗で始め、江東区内では清澄白川フラッグシップ(江東区平野1)と豊洲パークカフェ(豊洲2)で販売する。(江東",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-08T00:47:06.000Z",
+      "url": "https://news.yahoo.co.jp/articles/1fbdaacafcab1af14d4b4a464345b4cbbdca02f0",
+      "normalized_url": "https://news.yahoo.co.jp/articles/1fbdaacafcab1af14d4b4a464345b4cbbdca02f0",
+      "newsdata_categories": [
+        "domestic"
+      ]
+    },
+    {
+      "id": "7a2956dc64fa1ce69b2e31e51e1f921e",
+      "app_categories": [
+        "トレンド"
+      ],
+      "title": "「深く深くお詫び」中道・野田佳彦氏、3党合流断念に 落選者から「無知蒙昧」の批判も(産経新聞)",
+      "description": "中道改革連合の野田佳彦前共同代表は7日、自身のブログを更新し、中道と立憲民主党、公明党の3党の合流断念について「誠に悔しく残念でなりません。ご支援、ご期待をいただいた皆様に、深く深くお詫び申し上げます",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-07T03:55:43.000Z",
+      "url": "https://news.yahoo.co.jp/articles/ee403d02f359fc51923799caf881697be779adfb",
+      "normalized_url": "https://news.yahoo.co.jp/articles/ee403d02f359fc51923799caf881697be779adfb",
+      "newsdata_categories": [
+        "domestic"
+      ]
+    },
+    {
+      "id": "8f4ad71bdb24c183190513fc279d5dc6",
+      "app_categories": [
+        "エンタメ"
+      ],
+      "title": "ローソン、公式Xアカウントのフォロワー数が国内の企業単独アカウントとして初の1000万人突破(グルメ Watch)",
+      "description": "ローソンは、公式Xアカウントのフォロワー数が、8月18日に国内の企業単独アカウントとして初めて1000万人を突破したことを発表した。 ローソンは、2010年にTwitter(現X)の公式アカウン",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-07T03:22:00.000Z",
+      "url": "https://news.yahoo.co.jp/articles/27f56f16aae3a8627d9bee390845d8a988344625",
+      "normalized_url": "https://news.yahoo.co.jp/articles/27f56f16aae3a8627d9bee390845d8a988344625",
+      "newsdata_categories": [
+        "lifestyle"
+      ]
+    },
+    {
+      "id": "8615c1d8d8230f8f0c8e8298f708ef94",
+      "app_categories": [
+        "エンタメ"
+      ],
+      "title": "JO1のROCK IN JAPANフェス2026ライブレポと写真、セトリが到着 「東リべ」OP曲“IGNITE”を特攻服姿で初披露 - イベント&ライブ・レポート",
+      "description": "JO1のROCK IN JAPANフェス2026ライブレポと写真、セトリが到着 「東リべ」OP曲“IGNITE”を特攻服姿で初披露",
+      "source": "Mikiki",
+      "published_at": "2026-09-13T03:45:00.000Z",
+      "url": "https://mikiki.tokyo.jp/articles/-/46097",
+      "normalized_url": "https://mikiki.tokyo.jp/articles/-/46097",
+      "newsdata_categories": [
+        "entertainment"
+      ]
+    },
+    {
+      "id": "df41ce38f6b72f57a6951bf701867d1e",
+      "app_categories": [
+        "エンタメ"
+      ],
+      "title": "筋トレで成果が出にくい人がやっている「NG習慣」とは?(ダイヤモンド・オンライン)",
+      "description": "健康のために筋トレが重要だという認識は、いまや広く浸透している。しかし、ただ筋トレをすれば、それだけで十分な効果が得られるわけではない。医師で老年医学の専門家であるガブリエル・ライオン博士は、著書『",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-11T21:06:18.000Z",
+      "url": "https://news.yahoo.co.jp/articles/aeb76f37f7879d0fac36bdee0eda5d1f61cddfa1",
+      "normalized_url": "https://news.yahoo.co.jp/articles/aeb76f37f7879d0fac36bdee0eda5d1f61cddfa1",
+      "newsdata_categories": [
+        "lifestyle"
+      ]
+    },
+    {
+      "id": "2a2a1e3acb7cd257a37991b1d9377065",
+      "app_categories": [
+        "エンタメ"
+      ],
+      "title": "アトレティコの新星FWが“2年越し”の出場停止処分...リバプールとのCL初戦は欠場へ",
+      "description": "アトレティコ・マドリーは9日、UEFAチャンピオンズリーグ(欧州CL)のリーグフェーズ第1節でリバプールの本拠地アンフィールドに乗り込む。この試合ではFWアルナウ・オルティスが“2年越し”の出場停止処分で欠場することになった。 スペイン人の24歳は、過去に母国のジローナやムルシアなど複数クラブでプレーし、2024年7月にポーランドのシロンスク・ブロツワフへ移籍。同年8月のUEFAカンフ",
+      "source": "Gexaka",
+      "published_at": "2026-09-08T06:18:12.000Z",
+      "url": "https://web.gekisaka.jp/news/ucl/detail/?458483-458483-fl=",
+      "normalized_url": "https://web.gekisaka.jp/news/ucl/detail/?458483-458483-fl=",
+      "newsdata_categories": [
+        "sports"
+      ]
+    },
+    {
+      "id": "76a97e7a0c99e7e0b1934e4faacf03c6",
+      "app_categories": [
+        "サブカル"
+      ],
+      "title": "経産相、対米投資第3弾「電力に重点」 原発事故責任「日本負わず」",
+      "description": "赤沢亮正経済産業相は日米関税合意に基づく対米投融資の新規案件について、電力分野が有力との見方を示した。第2弾案件だった次世代原子力発電が改めて対象になる可能性にも触れた。トランプ米大統領による日米合意の大統領令署名から4日で1年を迎えたのを受けて、日本経済新聞のインタビューに答えた。第3弾以降の案件について「確実にあるのは電力分野だ。米国の電力確保に一緒に取り組む」と述べた。次世代原発の「小",
+      "source": "Nikkei Shimbun",
+      "published_at": "2026-09-11T07:30:00.000Z",
+      "url": "https://www.nikkei.com/article/DGXZQOUA042ZW0U6A900C2000000/",
+      "normalized_url": "https://www.nikkei.com/article/DGXZQOUA042ZW0U6A900C2000000/",
+      "newsdata_categories": [
+        "other"
+      ]
+    },
+    {
+      "id": "7d50efdc9b32caac8a29562b1e165a4b",
+      "app_categories": [
+        "サブカル"
+      ],
+      "title": "米消費者の失業率上昇予想、20年4月以来の高水準 NY連銀調査",
+      "description": "【ニューヨーク=佐藤璃子】米ニューヨーク連銀が8日発表した8月の消費者調査によると、失業率が今後1年で上昇すると見込む確率の平均は44.4%と前月比1.6ポイント上昇し、2020年4月以来の高水準となった。米消費者の間で、労働市場に対する不安感が高まっている。NY連銀は「今後12カ月後に、米国の失業率が現在よりも高くなっている確率はどれくらいか」とする設問への回答を集計した。消費者が見込む確率",
+      "source": "nikkei_com",
+      "published_at": "2026-09-08T17:54:34.000Z",
+      "url": "https://www.nikkei.com/article/DGXZQOGN08BFJ0Y6A900C2000000/",
+      "normalized_url": "https://www.nikkei.com/article/DGXZQOGN08BFJ0Y6A900C2000000/",
+      "newsdata_categories": [
+        "other"
+      ]
+    },
+    {
+      "id": "968fa749472840d58b2cfff384e788f8",
+      "app_categories": [
+        "サブカル"
+      ],
+      "title": "夫婦の出会い、SNSやアプリが2割 出生動向基本調査を読む",
+      "description": "国立社会保障・人口問題研究所は11日、2025年の出生動向基本調査を公表した。およそ5年に1度の統計を時系列で追うと、結婚や子育てについての価値観の変化が浮かぶ。夫婦の知り合ったきっかけはインターネットが20%に達した。SNSやアプリを通じた出会いはコロナ禍を経て急増し、職場や友人の紹介などに並ぶチャンネルになった。1982年に29.3%を占めた見合いは廃れ、1.1%まで下がった。18〜34",
+      "source": "Nikkei Shimbun",
+      "published_at": "2026-09-11T05:00:00.000Z",
+      "url": "https://www.nikkei.com/article/DGXZTS00022351Y6A900C2000000/",
+      "normalized_url": "https://www.nikkei.com/article/DGXZTS00022351Y6A900C2000000/",
+      "newsdata_categories": [
+        "other"
+      ]
+    },
+    {
+      "id": "b91172e8cc449816135ce59ea9022be3",
+      "app_categories": [
+        "サブカル"
+      ],
+      "title": "大企業の7〜9月景況感、2四半期ぶりのプラスに",
+      "description": "内閣府と財務省が11日発表した7〜9月期の法人企業景気予測調査によると、大企業全産業の景況判断指数(BSI)はプラス5.3だった。2四半期ぶりのプラスとなった。調査時点は8月1",
+      "source": "Nikkei Shimbun",
+      "published_at": "2026-09-10T23:56:49.000Z",
+      "url": "https://www.nikkei.com/article/DGXZQOUA103YZ0Q6A910C2000000/",
+      "normalized_url": "https://www.nikkei.com/article/DGXZQOUA103YZ0Q6A910C2000000/",
+      "newsdata_categories": [
+        "other"
+      ]
+    },
+    {
+      "id": "3754faf1769efa169a9a2dd7c0364ee4",
+      "app_categories": [
+        "サブカル"
+      ],
+      "title": "「余命デザイン」のススメ 限りある時間、よりよく生きる",
+      "description": "私は2018年に最も進行した上顎洞がんで「余命1年」と宣告を受けた。治療が功を奏し、8年が過ぎた今も生きている。副作用で満身創痍(そうい)だ。あと何年、何日生きられるのか、余命を知るすべはない。余命宣告を受けて生き方は大きくシフトした。一分一秒も無駄にできない。誰と会い、何をするのか。逆に言えば、何を切り捨てるのかという選択でもある。がん発症前の「シーズン1」では貴重な時間を浪費していた。発症",
+      "source": "Nikkei Shimbun",
+      "published_at": "2026-09-11T17:00:00.000Z",
+      "url": "https://www.nikkei.com/article/DGXZQOCD160I30W6A810C2000000/",
+      "normalized_url": "https://www.nikkei.com/article/DGXZQOCD160I30W6A810C2000000/",
+      "newsdata_categories": [
+        "other"
+      ]
+    },
+    {
+      "id": "59ebf63a6af91b23200b25da3199fa83",
+      "app_categories": [
+        "マネー"
+      ],
+      "title": "「一人で悩まず、まずは早めの相談を」~ 中小企業活性化全国本部 インタビュー ~(東京商工リサーチ)",
+      "description": "中小企業の伴走者として、中小企業活性化協議会(以下、活性協)の存在感が高まっている。従来は不振企業の再生支援のイメージが強かったが、現在は役割を広げ、様々なフェーズに対応する公的な経営相談の窓口とし",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-11T22:03:09.000Z",
+      "url": "https://news.yahoo.co.jp/articles/1d34b09dfb8422a19063e1cd2c52c083e3ce7031",
+      "normalized_url": "https://news.yahoo.co.jp/articles/1d34b09dfb8422a19063e1cd2c52c083e3ce7031",
+      "newsdata_categories": [
+        "business"
+      ]
+    },
+    {
+      "id": "c4f66fdd6c0f5c38ffeb7b913f353285",
+      "app_categories": [
+        "IT・ガジェット",
+        "マネー"
+      ],
+      "title": "「こども未来館ここにこ」累計来館者数1000万人達成!",
+      "description": "豊橋市のプレスリリース(2026年9月8日 14時46分)「こども未来館ここにこ」累計来館者数1000万人達成!",
+      "source": "Pr Times",
+      "published_at": "2026-09-08T05:46:39.000Z",
+      "url": "https://prtimes.jp/main/html/rd/p/000001018.000025583.html",
+      "normalized_url": "https://prtimes.jp/main/html/rd/p/000001018.000025583.html",
+      "newsdata_categories": [
+        "technology",
+        "business"
+      ]
+    },
+    {
+      "id": "3881ec70018566709249b14b12802ca8",
+      "app_categories": [
+        "マネー",
+        "トレンド"
+      ],
+      "title": "アンソロCEO、AI業界に開発減速要求",
+      "description": "アンソロCEO、AI業界に開発減速要求 匿名 (未認証ユーザー) 2026/09/13(日) - 00:01",
+      "source": "熊日",
+      "published_at": "2026-09-12T15:01:00.000Z",
+      "url": "https://kumanichi.com/articles/2035374",
+      "normalized_url": "https://kumanichi.com/articles/2035374",
+      "newsdata_categories": [
+        "business",
+        "top"
+      ]
+    },
+    {
+      "id": "8d6694b62c042dfc3464d5c99a856614",
+      "app_categories": [
+        "マネー"
+      ],
+      "title": "欧州責任者が語る『フィアット』のあるべき姿 原点に立ち返り再出発 課題はパンダ後継車 新型『グリズリー』の車名に込めた意味とは(AUTOCAR JAPAN)",
+      "description": "再び「ビッグ」な存在になるために、フィアットは「スモール」という自身のアイデンティティを受け入れる必要があった。 これは一見すると矛盾しているように聞こえるかもしれないが、イタリアの国民的自動車ブラ",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-10T08:05:00.000Z",
+      "url": "https://news.yahoo.co.jp/articles/e202b19aec842c6f6281ea07d99c643700fe3b2e",
+      "normalized_url": "https://news.yahoo.co.jp/articles/e202b19aec842c6f6281ea07d99c643700fe3b2e",
+      "newsdata_categories": [
+        "business"
+      ]
+    },
+    {
+      "id": "6fda86fd7ecc57aaae2d7f67badabd1f",
+      "app_categories": [
+        "マネー"
+      ],
+      "title": "食料品消費減税の財源に法人税増税は「賛成できない」 経団連 筒井会長(テレビ朝日系(ANN))",
+      "description": "食料品の消費減税の財源に法人税の引き上げを求める声があることについて、経団連の筒井会長は「賛成できない」としました。 経団連・筒井義信会長 「結論から申し上げますと、賛成できないということであります",
+      "source": "Yahoo Japan",
+      "published_at": "2026-09-07T10:21:01.000Z",
+      "url": "https://news.yahoo.co.jp/articles/fa3c37e1259fb45cce3b5cb898b33538c2f31190",
+      "normalized_url": "https://news.yahoo.co.jp/articles/fa3c37e1259fb45cce3b5cb898b33538c2f31190",
+      "newsdata_categories": [
+        "business"
+      ]
+    },
+    {
+      "id": "9b7faeeb3a6fb1aa11c8a096d8f5a150",
+      "app_categories": [
+        "IT・ガジェット"
+      ],
+      "title": "『紅の砂漠Enhanced』初DLC「未知なる旅路」が10月16日発売、海洋探索や新強敵を追加 - AppBank",
+      "description": "『紅の砂漠Enhanced』初DLC「未知なる旅路」が10月16日発売、海洋探索や新強敵を追加 AppBank 「未知なる旅路」DLC 予約購入に関するご案内 Pearl Abyss Pearl Abyss、『紅の砂漠Enhanced』初のDLC「未知なる旅路」を10月16日に発売!海洋探索や新たな強敵、経営コンテンツも登場 gamebiz.jp 『紅の砂漠』の追加DLC「CHARTING THE UNKNOWN」発表。10月15日に発売へ news.denfaminicogamer.jp 『紅の砂漠』最新DLC「Charting the Unknown」10月15日リリース!水中探索や拠点構築などの要素を紹介する最新トレイラー【State of Play】 Game*Spark",
+      "source": "Google News",
+      "published_at": "2026-09-07T02:04:46.000Z",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5BbFNqZl9kTEF6bU11R18wRGZwUEkyaEFiMFRndzZoY25lbnhCNXFXOTVzektsNWl5VlhNSEcwRGcwRnFrYUZ5NnR1d2w2aC15S0cyTTFOeDMwTndlNThBdQ?oc=5",
+      "normalized_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5BbFNqZl9kTEF6bU11R18wRGZwUEkyaEFiMFRndzZoY25lbnhCNXFXOTVzektsNWl5VlhNSEcwRGcwRnFrYUZ5NnR1d2w2aC15S0cyTTFOeDMwTndlNThBdQ?oc=5",
+      "newsdata_categories": [
+        "technology",
+        "science"
+      ]
+    },
+    {
+      "id": "febbbecaf373a208b8307382734f6bed",
+      "app_categories": [
+        "マネー",
+        "IT・ガジェット"
+      ],
+      "title": "金熊香水から八ヶ岳の 風景を 香りで 綴る 新しいフレグランスシリーズ 「YATSUGATAKE SCENT JOURNAL」が誕生します",
+      "description": "金熊香水から八ヶ岳の​風景を​香りで​綴る​新しいフレグランスシリーズ​「YATSUGATAKE SCENT JOURNAL」が誕生します 株式会社ピノーレのプレスリリース",
+      "source": "Pr Times",
+      "published_at": "2026-09-07T00:53:58.000Z",
+      "url": "https://prtimes.jp/main/html/rd/p/000000019.000087048.html",
+      "normalized_url": "https://prtimes.jp/main/html/rd/p/000000019.000087048.html",
+      "newsdata_categories": [
+        "business",
+        "technology"
+      ]
+    },
+    {
+      "id": "a4eb16fda20e63f34bf1888b746e0362",
+      "app_categories": [
+        "IT・ガジェット"
+      ],
+      "title": "エッジコネックス、シンガポールの「Sustainable Tropical Data Centre Testbed 2.0」にトップティアのアンカーパートナーとして参画",
+      "description": "シンガポール--(BUSINESS WIRE)--(ビジネスワイヤ) -- エッジコネックス®は、Build-to-SuitおよびBuild-to-Densityのインフラストラクチャー・ソリューションを世界に先駆けて提供するグローバル企業として、「Sustainable Tropical Data Centre Testbed Phase 2.0(STDCT 2.0)」コンソーシアムにトップティアのアンカーパートナーとして参加したことを発表いたします。この新たなパートナーシップにより、世界で最も過酷な運用環境において、持続可能かつ効率的なデータセンターのイノベーションに向けた当社のコミットメントがさらに強化されることになります。シンガポールは、同社のアジア太平洋地域本部の所在地であり、エッジコネックスにとって戦略的に重要な拠点です。当社は、同国が次世代AI導入の拠点となるための取り組みを支援できることを誇りに思います。 エッジコネックスのコミットメントは数年間にわたり、プログラムチームが管理する共有インフラストラクチャー・プールへの資金提供に加え、エッジコネックスが高密度データセン",
+      "source": "Businesswire",
+      "published_at": "2026-09-08T01:01:00.000Z",
+      "url": "http://www.businesswire.com/news/home/20260907141500/ja/",
+      "normalized_url": "http://www.businesswire.com/news/home/20260907141500/ja/",
+      "newsdata_categories": [
+        "technology"
+      ]
+    },
+    {
+      "id": "59cf57b6017d3d273437c70cead322e6",
+      "app_categories": [
+        "IT・ガジェット",
+        "マネー"
+      ],
+      "title": "アスカネットがツーリズムEXPOジャパン2026に出展 ~バーチャルとリアルを繋ぐ 新しい地方創生~",
+      "description": "アスカネットがツーリズムEXPOジャパン2026に出展 ~バーチャルとリアルを繋ぐ 新しい地方創生~ 株式会社アスカネットのプレスリリース",
+      "source": "Pr Times",
+      "published_at": "2026-09-10T05:30:09.000Z",
+      "url": "https://prtimes.jp/main/html/rd/p/000000175.000018498.html",
+      "normalized_url": "https://prtimes.jp/main/html/rd/p/000000175.000018498.html",
+      "newsdata_categories": [
+        "technology",
+        "business"
+      ]
+    }
+  ]
+}

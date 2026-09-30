@@ -1,0 +1,23 @@
+{
+  "article_id": "article-012",
+  "origin": "initial-23",
+  "added_at": "2026-09-20",
+  "title": "夫婦の出会い、SNSやアプリが2割 出生動向基本調査を読む",
+  "description": "国立社会保障・人口問題研究所は11日、2025年の出生動向基本調査を公表した。およそ5年に1度の統計を時系列で追うと、結婚や子育てについての価値観の変化が浮かぶ。夫婦の知り合ったきっかけはインターネットが20%に達した。SNSやアプリを通じた出会いはコロナ禍を経て急増し、職場や友人の紹介などに並ぶチャンネルになった。1982年に29.3%を占めた見合いは廃れ、1.1%まで下がった。18〜34",
+  "source": {
+    "type": "newsdata",
+    "source_id": "968fa749472840d58b2cfff384e788f8",
+    "source_name": "Nikkei Shimbun",
+    "published_at": "2026-09-11T05:00:00.000Z",
+    "url": "https://www.nikkei.com/article/DGXZTS00022351Y6A900C2000000/",
+    "normalized_url": "https://www.nikkei.com/article/DGXZTS00022351Y6A900C2000000/",
+    "newsdata_categories": [
+      "other"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "サブカル"
+    ]
+  }
+}

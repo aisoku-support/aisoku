@@ -1,0 +1,41 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "「仮面ライダーマイス」第4話あらすじ オオカミの新フォームが登場",
+  "description": "特撮ドラマ「仮面ライダーマイス」（テレビ朝日系）の第4話「狼には裏がある」が、27日午前9時から放送される。",
+  "source": {
+    "type": "newsdata",
+    "source_id": "0bab6074e5d618c970e9ae0b925988f9",
+    "source_name": "Cinema Today: Movie Information Updated Daily!",
+    "published_at": "2026-09-26 02:02:00",
+    "url": "https://www.cinematoday.jp/news/N0157075",
+    "normalized_url": "https://www.cinematoday.jp/news/N0157075",
+    "newsdata_categories": [
+      "entertainment"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "エンタメ"
+    ]
+  },
+  "extracted_body": "リドが再び割り込み！ - (C)2026 石森プロ・テレビ朝日・ADK EM・東映 特撮ドラマ「仮面ライダーマイス」（テレビ朝日系）の第4話「狼には裏がある」が、27日午前9時から放送される。 【第4話場面カット】宙が達臣に協力を依頼！ 詩織（水田あみ）の父親を取り戻すため、不可思議（ふかしぎ）対策に余念がない音澄宙（秋谷郁甫）と瑞生優菜（堀川梨心）。あるヒントを見出すと、宙は麻尾達臣（安宅波颯）に協力を依頼する。 ADVERTISEMENT 不可思議が再び現れた。宙はマイスに変身するが、またもリドが割りこんできた。マイスはウルフフレームにチェンジ、リドを横目に不可思議を追い詰めるが……!? 本作は、古くから続く名家に仕える“マイスター”の主人公・音澄宙が、仮面ライダーマイスに変身し、人間を捕食する謎のモンスター「不可思議」に立ち向かう令和仮面ライダーシリーズ第8作。脚本は荒川稔久、第4話の監督は田崎竜太が務めた。（編集部・倉本拓弥）",
+  "body_extraction": {
+    "requested_url": "https://www.cinematoday.jp/news/N0157075",
+    "final_url": "https://www.cinematoday.jp/news/N0157075",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 725,
+    "cleaned_chars": 423,
+    "fetched_at": "2026-09-26T14:03:35.251Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 209,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-042"
+}

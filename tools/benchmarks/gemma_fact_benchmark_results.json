@@ -1,0 +1,356 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-10T12:29:36.147Z",
+    "models": [
+      "gemma-4-26b-a4b-it",
+      "gemma-4-31b-it"
+    ]
+  },
+  "articles": [
+    {
+      "input": {
+        "title": "iOS 27ベータからカメラ新機能5つ発見。iPhone 18 Proの可変絞りを示唆するものも - Gadget Gate",
+        "description": "iOS 27ベータからカメラ新機能5つ発見。iPhone 18 Proの可変絞りを示唆するものも Gadget Gate iOS 27のコードから未公開カメラ機能5つ判明。手動フォーカスはiPhone 18 Proなど新型iPhone限定に GAZLOG iOS27のカメラの新機能!UIや操作性の刷新やSiriモード、RAW9対応など - iPhone Mania iPhone Mania 2台のiPhoneで同じ電話番号を使えるように iOS 27の新機能が便利そう 週刊アスキー 自分のiPhoneで「Siri AI」を使えない理由は? - いまさら聞けないiPhoneのなぜ news.mynavi.jp"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 51219,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 480,
+        "output_tokens": 267,
+        "thought_tokens": 2134,
+        "total_tokens": 2881,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Constraints:\n        1. Use only information explicitly stated.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` format: `{\"entity\": \"main subject\", \"event\": \"main event\"}`.\n        8. Treat different events for the same entity separately (e.g., release vs. delay).\n        9. Output *only* valid, parseable JSON. No Markdown, no extra text.\n\n    *   Title: `iOS 27ベータからカメラ新機能5つ発見。iPhone 18 Proの可変絞りを示唆するものも - Gadget Gate`\n    *   Description: `iOS 27ベータからカメラ新機能5つ発見。iPhone 18 Proの可変絞りを示唆するものも Gadget Gate iOS 27のコードから未公開カメラ機能5つ判明。手動フォーカスはiPhone 18 Proなど新型iPhone限定に GAZLOG iOS27のカメラの新機能!UIや操作性の刷新やSiriモード、RAW9対応など - iPhone Mania iPhone Mania 2台のiPhoneで同じ電話番号を使えるように iOS 27の新機能が便利そう 週刊アスキー 自分のiPhoneで「Siri AI」を使えない理由は? - いまさら聞けないiPhoneのなぜ news.mynavi.jp`\n\n    *   *Entity:* iOS 27 (beta)\n    *   *Event:* Discovery of 5 new camera features.\n    *   *Subtopics/Details:*\n        *   Discovery of 5 unreleased camera features from iOS 27 code.\n        *   Variable aperture suggested for iPhone 18 Pro.\n        *   Manual focus limited to new iPhones like iPhone 18 Pro.\n        *   UI and usability refresh.\n        *   Siri mode.\n        *   RAW9 support.\n        *   Ability to use the same phone number on two iPhones.\n        *   \"Siri AI\" usage question (though the text asks \"why can't I use it?\", it's a topic mentioned).\n\n    *   *Subject:*\n        *   Entity: \"iOS 27\"\n        *   Event: \"カメラ新機能5つの発見\" (Discovery of 5 new camera features)\n\n    *   *Subtopics:*\n        *   \"iPhone 18 Proの可変絞りを示唆\"\n        *   \"UIや操作性の刷新\"\n        *   \"Siriモード\"\n        *   \"RAW9対応\"\n        *   \"2台のiPhoneで同じ電話番号を使用可能\"\n\n    *   *Facts:*\n        *   Type: \"新機能の数\", Value: \"5つ\"\n        *   Type: \"対象OS\", Value: \"iOS 27ベータ\"\n        *   Type: \"手動フォーカスの制限\", Value: \"iPhone 18 Proなど新型iPhone限定\"\n        *   Type: \"示唆される機能\", Value: \"iPhone 18 Proの可変絞り\"\n        *   Type: \"対応フォーマット\", Value: \"RAW9\"\n\n    *   `subject`: `{\"entity\": \"iOS 27\", \"event\": \"カメラ新機能5つの発見\"}`\n    *   `subtopics`: `[\"iPhone 18 Proの可変絞りを示唆\", \"UIや操作性の刷新\", \"Siriモード\", \"RAW9対応\", \"2台のiPhoneで同じ電話番号を使用可能\"]`\n    *   `facts`:\n        *   `{\"type\": \"新機能の数\", \"value\": \"5つ\"}`\n        *   `{\"type\": \"対象OS\", \"value\": \"iOS 27ベータ\"}`\n        *   `{\"type\": \"手動フォーカスの対象\", \"value\": \"iPhone 18 Proなど新型iPhone限定\"}`\n        *   `{\"type\": \"新機能の内容\", \"value\": \"UIや操作性の刷新、Siriモード、RAW9対応\"}`\n        *   `{\"type\": \"電話番号に関する機能\", \"value\": \"2台のiPhoneで同じ電話番号を使える\"}`\n\n    *   Only title/description info? Yes.\n    *   No speculation? Yes.\n    *   No general knowledge? Yes.\n    *   No fabrication? Yes.\n    *   Accurate numbers/names? Yes (iOS 27, iPhone 18 Pro, 5 features, RAW9).\n    *   Subject format correct? Yes.\n    *   JSON only? Yes.\n\n    *Self-Correction during drafting:* The description mentions \"Siri AI\" in a question format (\"Why can't I use Siri AI?\"). I should be careful not to state \"Siri AI is a feature\" as a fact if the text is asking a question, but \"Siri mode\" is explicitly listed as a feature in the \"iPhone Mania\" snippet. I will stick to the explicit features.\n\n    *Refined Facts:*\n    1. Type: \"発見された新機能の数\", Value: \"5つ\"\n    2. Type: \"対象OS\", Value: \"iOS 27ベータ\"\n    3. Type: \"iPhone 18 Proに関する示唆\", Value: \"可変絞り\"\n    4. Type: \"手動フォーカスの条件\", Value: \"iPhone 18 Proなど新型iPhone限定\"\n    5. Type: \"カメラの新機能\", Value: \"UIや操作性の刷新、Siriモード、RAW9対応\"\n    6. Type: \"電話番号に関する新機能\", Value: \"2台のiPhoneで同じ電話番号を使える\"\n\n    *Refined Subtopics:*\n    [\"iPhone 18 Proの可変絞りを示唆\", \"UIや操作性の刷新\", \"Siriモード\", \"RAW9対応\", \"2台のiPhoneで同じ電話番号を使用可能\"]\n\n    *Final JSON Structure Check:*\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"iOS 27\",\n        \"event\": \"カメラ新機能5つの発見\"\n      },\n      \"subtopics\": [\n        \"iPhone 18 Proの可変絞りを示唆\",\n        \"UIや操作性の刷新\",\n        \"Siriモード\",\n        \"RAW9対応\",\n        \"2台のiPhoneで同じ電話番号を使用可能\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"新機能の数\",\n          \"value\": \"5つ\"\n        },\n        {\n          \"type\": \"対象OS\",\n          \"value\": \"iOS 27ベータ\"\n        },\n        {\n          \"type\": \"手動フォーカスの制限\",\n          \"value\": \"iPhone 18 Proなど新型iPhone限定\"\n        },\n        {\n          \"type\": \"カメラの新機能\",\n          \"value\": \"UIや操作性の刷新、Siriモード、RAW9対応\"\n        },\n        {\n          \"type\": \"電話番号に関する機能\",\n          \"value\": \"2台のiPhoneで同じ電話番号を使える\"\n        }\n      ]\n    }\n    ```\n\n    Wait, the prompt says \"If a user requests multiple JSON, always return a single parseable JSON array.\" This is a single request, so a single object is fine.\n\n    Double check the \"Siri AI\" part. The text says \"自分のiPhoneで「Siri AI」を使えない理由は?\". This is a question/article title. It doesn't explicitly say \"Siri AI is a feature of iOS 27\", though it's in the context. However, \"Siriモード\" is explicitly listed as a feature. I will include \"Siriモード\" but avoid \"Siri AI\" as a fact to be safe.\n\n    Final check on \"subject\": \"iOS 27\" (entity) + \"カメラ新機能5つの発見\" (event). Correct.\n\n    One more check: \"iPhone 18 Proの可変絞りを示唆するものも\".\n    Fact: \"iPhone 18 Proの可変絞りを示唆\".\n\n    Let's finalize the JSON.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"iOS 27\",\n        \"event\": \"カメラ新機能5つの発見\"\n      },\n      \"subtopics\": [\n        \"iPhone 18 Proの可変絞りを示唆\",\n        \"UIや操作性の刷新\",\n        \"Siriモード\",\n        \"RAW9対応\",\n        \"2台のiPhoneで同じ電話番号を使用可能\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"新機能の数\",\n          \"value\": \"5つ\"\n        },\n        {\n          \"type\": \"対象OS\",\n          \"value\": \"iOS 27ベータ\"\n        },\n        {\n          \"type\": \"手動フォーカスの制限\",\n          \"value\": \"iPhone 18 Proなど新型iPhone限定\"\n        },\n        {\n          \"type\": \"カメラの新機能\",\n          \"value\": \"UIや操作性の刷新、Siriモード、RAW9対応\"\n        },\n        {\n          \"type\": \"電話番号に関する機能\",\n          \"value\": \"2台のiPhoneで同じ電話番号を使える\"\n        }\n      ]\n    }\n    ",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 1043,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "「霊長類最強」の可愛い愛犬刺繍入り水色グローブに吉田沙保里さんも「始球式はこのグローブで」",
+        "description": "レスリング女子でオリンピック(五輪)金メダリストの吉田沙保里さん(43)が8日までにインスタグラムを更新。グローブをプレゼントされたことを報告した。 ローリングス社のグローブは全面水色で、吉田さんの愛犬リリーの刺繍がウェブ部分に施されて..."
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 41596,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 405,
+        "output_tokens": 300,
+        "thought_tokens": 1640,
+        "total_tokens": 2345,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Input: `title` and `description`.\n    *   Output Format: A single valid, parseable JSON object.\n    *   Constraints:\n        1. Use only information explicitly stated in the title/description.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` = `entity` + `event`.\n        8. Treat different events for the same entity separately.\n        9. Return *only* JSON (no Markdown, no extra text).\n\n    *   Title: 「霊長類最強」の可愛い愛犬刺繍入り水色グローブに吉田沙保里さんも「始球式はこのグローブで」\n    *   Description: レスリング女子でオリンピック(五輪)金メダリストの吉田沙保里さん(43)が8日までにインスタグラムを更新。グローブをプレゼントされたことを報告した。 ローリングス社のグローブは全面水色で、吉田さんの愛犬リリーの刺繍がウェブ部分に施されて...\n\n    *   Entity: 吉田沙保里 (Saori Yoshida)\n    *   Event: グローブをプレゼントされたことの報告 (Reporting receiving a glove as a gift)\n    *   Subtopics:\n        *   愛犬リリーの刺繍入り水色グローブ (Light blue glove with embroidery of pet dog Lily)\n        *   ローリングス社のグローブ (Rawlings glove)\n    *   Facts:\n        *   Person: 吉田沙保里 (Saori Yoshida)\n        *   Age: 43\n        *   Achievement: レスリング女子でオリンピック(五輪)金メダリスト (Olympic gold medalist in women's wrestling)\n        *   Platform: インスタグラム (Instagram)\n        *   Date: 8日までに (By the 8th)\n        *   Glove Brand: ローリングス社 (Rawlings)\n        *   Glove Color: 全面水色 (All light blue)\n        *   Glove Detail: 愛犬リリーの刺繍がウェブ部分に施されている (Embroidery of pet dog Lily on the web part)\n\n    *   `subject`:\n        *   `entity`: \"吉田沙保里\"\n        *   `event`: \"グローブをプレゼントされたことの報告\"\n    *   `subtopics`: [\"愛犬リリーの刺繍入り水色グローブ\", \"ローリングス社のグローブ\"]\n    *   `facts`:\n        *   {\"type\": \"人物\", \"value\": \"吉田沙保里\"}\n        *   {\"type\": \"年齢\", \"value\": \"43\"}\n        *   {\"type\": \"肩書き\", \"value\": \"レスリング女子でオリンピック(五輪)金メダリスト\"}\n        *   {\"type\": \"報告媒体\", \"value\": \"インスタグラム\"}\n        *   {\"type\": \"報告時期\", \"value\": \"8日までに\"}\n        *   {\"type\": \"グローブメーカー\", \"value\": \"ローリングス社\"}\n        *   {\"type\": \"グローブの色\", \"value\": \"全面水色\"}\n        *   {\"type\": \"グローブの特徴\", \"value\": \"ウェブ部分に愛犬リリーの刺繍\"}\n\n    *   Valid JSON? Yes.\n    *   No Markdown? Yes.\n    *   No extra text? Yes.\n    *   Only info from text? Yes.\n    *   Subject format correct? Yes.\n\n    *Self-Correction during drafting:* The prompt asks for \"subject\" as \"entity + event\".\n    Entity: 吉田沙保里\n    Event: グローブをプレゼントされたことの報告\n\n    Let's refine the facts to be concise.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"吉田沙保里\",\n        \"event\": \"グローブをプレゼントされたことの報告\"\n      },\n      \"subtopics\": [\n        \"愛犬リリーの刺繍入り水色グローブ\",\n        \"ローリングス社のグローブ\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"人物\",\n          \"value\": \"吉田沙保里\"\n        },\n        {\n          \"type\": \"年齢\",\n          \"value\": \"43\"\n        },\n        {\n          \"type\": \"肩書き\",\n          \"value\": \"レスリング女子でオリンピック(五輪)金メダリスト\"\n        },\n        {\n          \"type\": \"報告媒体\",\n          \"value\": \"インスタグラム\"\n        },\n        {\n          \"type\": \"報告時期\",\n          \"value\": \"8日までに\"\n        },\n        {\n          \"type\": \"グローブメーカー\",\n          \"value\": \"ローリングス社\"\n        },\n        {\n          \"type\": \"グローブの色\",\n          \"value\": \"全面水色\"\n        },\n        {\n          \"type\": \"グローブの特徴\",\n          \"value\": \"ウェブ部分に愛犬リリーの刺繍\"\n        }\n      ]\n    }\n    ```\n\n    Wait, the prompt says \"Do not include any extra text outside of the JSON string.\" and \"Do not include any comments inside the json block.\" and \"Do not include Markdown decoration\".\n\n    Final check of the input text:\n    \"吉田沙保里さん(43)が8日までにインスタグラムを更新。グローブをプレゼントされたことを報告した。\"\n    \"ローリングス社のグローブは全面水色で、吉田さんの愛犬リリーの刺繍がウェブ部分に施されて...\"\n\n    Everything looks good.\n\n    One detail: \"subject\" should be \"entity + event\".\n    Entity: 吉田沙保里\n    Event: グローブをプレゼントされたことの報告\n\n    Let's ensure the JSON is strictly valid.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"吉田沙保里\",\n        \"event\": \"グローブをプレゼントされたことの報告\"\n      },\n      \"subtopics\": [\n        \"愛犬リリーの刺繍入り水色グローブ\",\n        \"ローリングス社のグローブ\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"人物\",\n          \"value\": \"吉田沙保里\"\n        },\n        {\n          \"type\": \"年齢\",\n          \"value\": \"43\"\n        },\n        {\n          \"type\": \"肩書き\",\n          \"value\": \"レスリング女子でオリンピック(五輪)金メダリスト\"\n        },\n        {\n          \"type\": \"報告媒体\",\n          \"value\": \"インスタグラム\"\n        },\n        {\n          \"type\": \"報告時期\",\n          \"value\": \"8日までに\"\n        },\n        {\n          \"type\": \"グローブメーカー\",\n          \"value\": \"ローリングス社\"\n        },\n        {\n          \"type\": \"グローブの色\",\n          \"value\": \"全面水色\"\n        },\n        {\n          \"type\": \"グローブの特徴\",\n          \"value\": \"ウェブ部分に愛犬リリーの刺繍\"\n        }\n      ]\n    }\n    ",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 27929,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 503,
+            "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+            "status": "UNAVAILABLE"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "【渋谷餃子】「きゅうりのキューちゃん」が餃子に!? 東海漬物と初コラボ!「キューちゃん餃子」など6種の限定メニューが登場",
+        "description": "【渋谷餃子】「きゅうりのキューちゃん」が餃子に!? 東海漬物と初コラボ!「キューちゃん餃子」など6種の限定メニューが登場 株式会社SAKIGAKEホールディングスのプレスリリース"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 23296,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 388,
+        "output_tokens": 198,
+        "thought_tokens": 849,
+        "total_tokens": 1435,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Input: `title` and `description`.\n    *   Output Format: A specific JSON structure.\n    *   Constraints:\n        *   Only use information explicitly stated in the text.\n        *   No inference, no general knowledge, no fabrication.\n        *   Keep numbers, dates, and proper nouns accurate.\n        *   `subject` = `entity` + `event`.\n        *   `subtopics` = list of sub-themes.\n        *   `facts` = list of objects with `type` and `value`.\n        *   Output *only* valid, parseable JSON. No Markdown, no extra text.\n\n    *   Title: 【渋谷餃子】「きゅうりのキューちゃん」が餃子に!? 東海漬物と初コラボ!「キューちゃん餃子」など6種の限定メニューが登場\n    *   Description: 【渋谷餃子】「きゅうりのキューちゃん」が餃子に!? 東海漬物と初コラボ!「キューちゃん餃子」など6種の限定メニューが登場 株式会社SAKIGAKEホールディングスのプレスリリース\n\n    *   Entity: 渋谷餃子 (Shibuya Gyoza)\n    *   Event: 東海漬物との初コラボによる限定メニューの登場 (Appearance of limited menu through first collaboration with Tokai Tsukemono)\n    *   Subtopics:\n        *   「きゅうりのキューちゃん」が餃子に\n        *   「キューちゃん餃子」など6種の限定メニューが登場\n    *   Facts:\n        *   Collaborator: 東海漬物 (Tokai Tsukemono)\n        *   Menu item example: 「キューちゃん餃子」 (Kyuchan Gyoza)\n        *   Number of limited menus: 6種 (6 types)\n        *   Press release issuer: 株式会社SAKIGAKEホールディングス (SAKIGAKE Holdings Co., Ltd.)\n\n    *   `subject`:\n        *   `entity`: \"渋谷餃子\"\n        *   `event`: \"東海漬物との初コラボによる限定メニューの登場\"\n    *   `subtopics`: [\"「きゅうりのキューちゃん」が餃子に\", \"「キューちゃん餃子」など6種の限定メニューが登場\"]\n    *   `facts`:\n        *   {\"type\": \"コラボ相手\", \"value\": \"東海漬物\"}\n        *   {\"type\": \"限定メニュー数\", \"value\": \"6種\"}\n        *   {\"type\": \"メニュー例\", \"value\": \"キューちゃん餃子\"}\n        *   {\"type\": \"プレスリリース発行元\", \"value\": \"株式会社SAKIGAKEホールディングス\"}\n\n    *   Valid JSON? Yes.\n    *   No Markdown? Yes.\n    *   No extra text? Yes.\n    *   Only info from text? Yes.\n    *   Subject format correct? Yes.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"渋谷餃子\",\n        \"event\": \"東海漬物との初コラボによる限定メニューの登場\"\n      },\n      \"subtopics\": [\n        \"「きゅうりのキューちゃん」が餃子に\",\n        \"「キューちゃん餃子」など6種の限定メニューが登場\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"コラボ相手\",\n          \"value\": \"東海漬物\"\n        },\n        {\n          \"type\": \"限定メニュー数\",\n          \"value\": \"6種\"\n        },\n        {\n          \"type\": \"メニュー例\",\n          \"value\": \"キューちゃん餃子\"\n        },\n        {\n          \"type\": \"プレスリリース発行元\",\n          \"value\": \"株式会社SAKIGAKEホールディングス\"\n        }\n      ]\n    }\n    ",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": true,
+        "elapsed_ms": 52274,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 388,
+        "output_tokens": 149,
+        "thought_tokens": 607,
+        "total_tokens": 1144,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Input: `title` and `description`.\n    *   Output: Valid, parseable JSON.\n    *   Constraints:\n        1.  Use only provided info.\n        2.  No guessing.\n        3.  No general knowledge.\n        4.  No fabrication.\n        5.  Keep numbers, dates, proper nouns accurate.\n        6.  Do not fill unknown info.\n        7.  `subject` = `entity` + `event`.\n        8.  Distinct events for same entity.\n        9.  JSON only (no markdown, no extra text).\n\n    *   Title: 【渋谷餃子】「きゅうりのキューちゃん」が餃子に!? 東海漬物と初コラボ!「キューちゃん餃子」など6種の限定メニューが登場\n    *   Description: 【渋谷餃子】「きゅうりのキューちゃん」が餃子に!? 東海漬物と初コラボ!「キューちゃん餃子」など6種の限定メニューが登場 株式会社SAKIGAKEホールディングスのプレスリリース\n\n    *   Entity: 渋谷餃子 (Shibuya Gyoza) / 東海漬物 (Tokai Tsukemono)\n    *   Event: コラボレーション (Collaboration) / 限定メニューの登場 (Appearance of limited menus)\n    *   Subject:\n        *   Entity: 渋谷餃子と東海漬物\n        *   Event: 初コラボによる限定メニューの登場\n    *   Subtopics:\n        *   「キューちゃん餃子」などの限定メニュー\n    *   Facts:\n        *   Collaboration partners: 渋谷餃子, 東海漬物\n        *   Product: キューちゃん餃子\n        *   Number of limited menus: 6種\n        *   Source: 株式会社SAKIGAKEホールディングスのプレスリリース\n\n    *   `subject`:\n        *   `entity`: \"渋谷餃子と東海漬物\"\n        *   `event`: \"初コラボによる限定メニューの登場\"\n    *   `subtopics`: [\"限定メニューの内容\"]\n    *   `facts`:\n        *   `{\"type\": \"コラボレーション相手\", \"value\": \"東海漬物\"}`\n        *   `{\"type\": \"限定メニュー数\", \"value\": \"6種\"}`\n        *   `{\"type\": \"メニュー例\", \"value\": \"キューちゃん餃子\"}`\n        *   `{\"type\": \"プレスリリース発行元\", \"value\": \"株式会社SAKIGAKEホールディングス\"}`\n\n    *   Valid JSON? Yes.\n    *   No markdown? Yes.\n    *   No extra text? Yes.\n    *   No guessing? Yes.\n    *   Subject format correct? Yes.",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      }
+    },
+    {
+      "input": {
+        "title": "復興相苦言「福島に偏見」 福島大やゆ投稿動画(共同通信)",
+        "description": "学歴や受験をテーマとするユーチューバーが投稿動画で福島大の研究活動をやゆした問題を巡り、牧野京夫復興相は8日の記者会見で「福島の復興に対するある種の偏見の表れではないか。福島の現状や努力を正確に理解"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 39583,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 391,
+        "output_tokens": 207,
+        "thought_tokens": 1588,
+        "total_tokens": 2186,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Constraints:\n        1. Use only information explicitly stated in title/description.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` format: `{\"entity\": \"Main Entity\", \"event\": \"Main Event\"}`.\n        8. Treat different events for the same entity separately (e.g., release vs. delay).\n        9. Output *only* valid JSON (no Markdown, no extra text).\n\n    *   Title: 復興相苦言「福島に偏見」 福島大やゆ投稿動画(共同通信)\n    *   Description: 学歴や受験をテーマとするユーチューバーが投稿動画で福島大の研究活動をやゆした問題を巡り、牧野京夫復興相は8日の記者会見で「福島の復興に対するある種の偏見の表れではないか。福島の現状や努力を正確に理解\n\n    *   *Entity:* 牧野京夫復興相 (Minister for Reconstruction Kyōio Makino)\n    *   *Event:* 福島大やゆ投稿動画に対し苦言 (Expressing complaints regarding the video mocking Fukushima University)\n    *   *Subtopics:*\n        *   ユーチューバーによる福島大の研究活動へのやゆ (YouTuber mocking Fukushima University's research activities)\n        *   福島の復興に対する偏見の可能性 (Possibility of prejudice against Fukushima's reconstruction)\n    *   *Facts:*\n        *   Type: Person, Value: 牧野京夫復興相\n        *   Type: Date, Value: 8日\n        *   Type: Event, Value: 記者会見\n        *   Type: Content, Value: ユーチューバーが投稿動画で福島大の研究活動をやゆした\n\n    *   `subject`:\n        *   `entity`: \"牧野京夫復興相\"\n        *   `event`: \"福島大やゆ投稿動画に対し苦言\"\n    *   `subtopics`:\n        *   \"ユーチューバーによる福島大の研究活動へのやゆ\"\n        *   \"福島の復興に対する偏見の可能性\"\n    *   `facts`:\n        *   `{\"type\": \"人物\", \"value\": \"牧野京夫復興相\"}`\n        *   `{\"type\": \"日付\", \"value\": \"8日\"}`\n        *   `{\"type\": \"出来事\", \"value\": \"記者会見\"}`\n        *   `{\"type\": \"内容\", \"value\": \"学歴や受験をテーマとするユーチューバーが投稿動画で福島大の研究活動をやゆした\"}`\n\n    *   Check against constraints:\n        *   Only info from text? Yes.\n        *   No speculation? Yes.\n        *   No general knowledge? Yes.\n        *   No fabrication? Yes.\n        *   Subject format correct? Yes.\n        *   JSON only? Yes.\n\n    *Self-Correction during drafting:*\n    The description is cut off (\"正確に理解\"). I must only use what is provided.\n    \"福島の現状や努力を正確に理解\" is incomplete, so I shouldn't finish the sentence.\n\n    *Refined Facts:*\n    - 牧野京夫復興相 (Person)\n    - 8日 (Date)\n    - 記者会見 (Event)\n    - ユーチューバーが投稿動画で福島大の研究活動をやゆした (Event/Content)\n\n    *Refined Subject:*\n    - Entity: 牧野京夫復興相\n    - Event: 福島大やゆ投稿動画に対し苦言\n\n    *Refined Subtopics:*\n    - ユーチューバーによる福島大の研究活動へのやゆ\n    - 福島の復興に対する偏見の可能性\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"牧野京夫復興相\",\n        \"event\": \"福島大やゆ投稿動画に対し苦言\"\n      },\n      \"subtopics\": [\n        \"ユーチューバーによる福島大の研究活動へのやゆ\",\n        \"福島の復興に対する偏見の可能性\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"人物\",\n          \"value\": \"牧野京夫復興相\"\n        },\n        {\n          \"type\": \"日付\",\n          \"value\": \"8日\"\n        },\n        {\n          \"type\": \"出来事\",\n          \"value\": \"記者会見\"\n        },\n        {\n          \"type\": \"内容\",\n          \"value\": \"学歴や受験をテーマとするユーチューバーが投稿動画で福島大の研究活動をやゆした\"\n        }\n      ]\n    }\n    ```\n\n    Wait, the prompt says \"Do not include any extra text outside of the JSON string.\" and \"Do not include Markdown decoration\".\n\n    Final check of the input text:\n    Title: 復興相苦言「福島に偏見」 福島大やゆ投稿動画(共同通信)\n    Description: 学歴や受験をテーマとするユーチューバーが投稿動画で福島大の研究活動をやゆした問題を巡り、牧野京夫復興相は8日の記者会見で「福島の復興に対するある種の偏見の表れではないか。福島の現状や努力を正確に理解\n\n    Subject:\n    Entity: 牧野京夫復興相\n    Event: 福島大やゆ投稿動画に対し苦言\n\n    Subtopics:\n    - ユーチューバーによる福島大の研究活動へのやゆ\n    - 福島の復興に対するある種の偏見\n\n    Facts:\n    - 牧野京夫復興相\n    - 8日\n    - 記者会見\n    - ユーチューバーが投稿動画で福島大の研究活動をやゆした\n\n    Let's ensure the JSON is valid and strictly follows the format.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"牧野京夫復興相\",\n        \"event\": \"福島大やゆ投稿動画に対し苦言\"\n      },\n      \"subtopics\": [\n        \"ユーチューバーによる福島大の研究活動へのやゆ\",\n        \"福島の復興に対するある種の偏見\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"人物\",\n          \"value\": \"牧野京夫復興相\"\n        },\n        {\n          \"type\": \"日付\",\n          \"value\": \"8日\"\n        },\n        {\n          \"type\": \"出来事\",\n          \"value\": \"記者会見\"\n        },\n        {\n          \"type\": \"内容\",\n          \"value\": \"学歴や受験をテーマとするユーチューバーが投稿動画で福島大の研究活動をやゆした\"\n        }\n      ]\n    }\n    ",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 751,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "9日明け方 細い月と木星が大接近 晴れる所はどこ? 観察チャンスは限定的(tenki.jp)",
+        "description": "明日9日(水)の明け方、東の低い空で細い月と木星が大接近します。肉眼でも楽しめる注目の天体ショーですが、広い範囲で曇りや雨となり、観察できる所は限られそうです。晴れ間が期待できる地域では、東の空に注目"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 25339,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 404,
+        "output_tokens": 178,
+        "thought_tokens": 985,
+        "total_tokens": 1567,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Constraints:\n        1. Use only information explicitly stated.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` format: `{\"entity\": \"...\", \"event\": \"...\"}`.\n        8. Treat different events for the same entity separately.\n        9. Output *only* valid, parseable JSON (no Markdown, no extra text).\n\n    *   Title: \"9日明け方 細い月と木星が大接近 晴れる所はどこ? 観察チャンスは限定的(tenki.jp)\"\n    *   Description: \"明日9日(水)の明け方、東の低い空で細い月と木星が大接近します。肉眼でも楽しめる注目の天体ショーですが、広い範囲で曇りや雨となり、観察できる所は限られそうです。晴れ間が期待できる地域では、東の空に注目\"\n\n    *   Entity: 細い月と木星 (Thin moon and Jupiter)\n    *   Event: 大接近 (Close approach)\n    *   Date/Time: 9日(水)の明け方 (Dawn of the 9th, Wednesday)\n    *   Location/Direction: 東の低い空 (Low eastern sky)\n    *   Observation condition: 広い範囲で曇りや雨となり、観察できる所は限られそう (Cloudy or rainy in wide areas, observation opportunities limited)\n    *   Observation method: 肉眼でも楽しめる (Can be enjoyed with the naked eye)\n\n    *   `subject`:\n        *   `entity`: \"細い月と木星\"\n        *   `event`: \"大接近\"\n    *   `subtopics`:\n        *   \"天体ショー\" (Mentioned as \"注目の天体ショー\")\n    *   `facts`:\n        *   `type`: \"日時\", `value`: \"9日(水)の明け方\"\n        *   `type`: \"場所\", `value`: \"東の低い空\"\n        *   `type`: \"観察条件\", `value`: \"広い範囲で曇りや雨となり、観察できる所は限られそう\"\n        *   `type`: \"観察方法\", `value`: \"肉眼でも楽しめる\"\n\n    *   `subject`: `{\"entity\": \"細い月と木星\", \"event\": \"大接近\"}`\n    *   `subtopics`: `[\"天体ショー\"]`\n    *   `facts`:\n        *   `{\"type\": \"日時\", \"value\": \"9日(水)の明け方\"}`\n        *   `{\"type\": \"位置\", \"value\": \"東の低い空\"}`\n        *   `{\"type\": \"観察条件\", \"value\": \"広い範囲で曇りや雨となり、観察できる所は限られそう\"}`\n        *   `{\"type\": \"観察方法\", \"value\": \"肉眼でも楽しめる\"}`\n\n    *   Valid JSON? Yes.\n    *   No Markdown? Yes.\n    *   No extra text? Yes.\n    *   Only info from text? Yes.\n    *   Subject format correct? Yes.\n\n    (Self-correction: The prompt asks for \"subject\" as \"entity + event\". I will use \"細い月と木星\" and \"大接近\".)\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"細い月と木星\",\n        \"event\": \"大接近\"\n      },\n      \"subtopics\": [\n        \"天体ショー\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"日時\",\n          \"value\": \"9日(水)の明け方\"\n        },\n        {\n          \"type\": \"位置\",\n          \"value\": \"東の低い空\"\n        },\n        {\n          \"type\": \"観察条件\",\n          \"value\": \"広い範囲で曇りや雨となり、観察できる所は限られそう\"\n        },\n        {\n          \"type\": \"観察方法\",\n          \"value\": \"肉眼でも楽しめる\"\n        }\n      ]\n    }\n    ",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 905,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "ホンダ、「二輪安全運転診断アプリ」体験会 Uberも導入した判定機能を実車で試してみた(Car Watch)",
+        "description": "世界では年間約119万人が交通事故で亡くなっていて、そのうち四輪車が約26万人、二輪車が約34万人を占める。 本田技研工業は、2050年に向けて「環境」と「安全」に関した目標を掲げているが、安全"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 41653,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 401,
+        "output_tokens": 239,
+        "thought_tokens": 1700,
+        "total_tokens": 2340,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Constraints:\n        1. Use only information explicitly stated in title/description.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` format: `{\"entity\": \"...\", \"event\": \"...\"}`.\n        8. Treat different events for the same entity separately.\n        9. Output *only* valid JSON (no Markdown, no extra text).\n\n    *   Title: ホンダ、「二輪安全運転診断アプリ」体験会 Uberも導入した判定機能を実車で試してみた(Car Watch)\n    *   Description: 世界では年間約119万人が交通事故で亡くなっていて、そのうち四輪車が約26万人、二輪車が約34万人を占める。 本田技研工業は、2050年に向けて「環境」と「安全」に関した目標を掲げているが、安全\n\n    *   Entity: ホンダ (Honda) / 本田技研工業 (Honda Motor Co., Ltd.)\n    *   Event: 「二輪安全運転診断アプリ」体験会 (Two-wheel safe driving diagnosis app trial session)\n    *   Subtopics:\n        *   Uberも導入した判定機能 (Judgment function also introduced by Uber)\n        *   実車で試してみた (Tested with actual vehicles)\n    *   Facts:\n        *   World annual traffic fatalities: approx. 1.19 million\n        *   Four-wheel vehicle fatalities: approx. 260,000\n        *   Two-wheel vehicle fatalities: approx. 340,000\n        *   Honda's goal target year: 2050\n        *   Honda's goal themes: \"Environment\" and \"Safety\"\n\n    *   `subject`:\n        *   `entity`: \"ホンダ\" (or \"本田技研工業\")\n        *   `event`: \"「二輪安全運転診断アプリ」体験会\"\n    *   `subtopics`:\n        *   \"Uberも導入した判定機能を実車で試してみた\"\n    *   `facts`:\n        *   `{\"type\": \"世界の年間交通事故死亡者数\", \"value\": \"約119万人\"}`\n        *   `{\"type\": \"そのうちの四輪車による死亡者数\", \"value\": \"約26万人\"}`\n        *   `{\"type\": \"そのうちの二輪車による死亡者数\", \"value\": \"約34万人\"}`\n        *   `{\"type\": \"本田技研工業の目標年\", \"value\": \"2050年\"}`\n        *   `{\"type\": \"本田技研工業の目標内容\", \"value\": \"「環境」と「安全」に関した目標\"}`\n\n    *   Check against constraints:\n        *   Only info from text? Yes.\n        *   No speculation? Yes.\n        *   No general knowledge? Yes.\n        *   No fabrication? Yes.\n        *   Accurate numbers? Yes.\n        *   Subject format correct? Yes.\n        *   JSON only? Yes.\n\n    *Self-Correction during drafting:*\n    The description is cut off (\"安全...\"). I must only use what is provided.\n    The description says: \"世界では年間約119万人が交通事故で亡くなっていて、そのうち四輪車が約26万人、二輪車が約34万人を占める。 本田技研工業は、2050年に向けて「環境」と「安全」に関した目標を掲げているが、安全\"\n    I will extract what is there.\n\n    *Refined Facts:*\n    1. 世界の年間交通事故死亡者数: 約119万人\n    2. 四輪車による死亡者数: 約26万人\n    3. 二輪車による死亡者数: 約34万人\n    4. 本田技研工業の目標年: 2050年\n    5. 本田技研工業の目標内容: 「環境」と「安全」に関した目標\n\n    *Refined Subtopics:*\n    1. Uberも導入した判定機能を実車で試してみた\n\n    *Refined Subject:*\n    Entity: ホンダ\n    Event: 「二輪安全運転診断アプリ」体験会\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"ホンダ\",\n        \"event\": \"「二輪安全運転診断アプリ」体験会\"\n      },\n      \"subtopics\": [\n        \"Uberも導入した判定機能を実車で試してみた\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"世界の年間交通事故死亡者数\",\n          \"value\": \"約119万人\"\n        },\n        {\n          \"type\": \"四輪車による交通事故死亡者数\",\n          \"value\": \"約26万人\"\n        },\n        {\n          \"type\": \"二輪車による交通事故死亡者数\",\n          \"value\": \"約34万人\"\n        },\n        {\n          \"type\": \"本田技研工業の目標年\",\n          \"value\": \"2050年\"\n        },\n        {\n          \"type\": \"本田技研工業の目標内容\",\n          \"value\": \"「環境」と「安全」に関した目標\"\n        }\n      ]\n    }\n    ```\n\n    *Wait, the prompt says \"Do not include any extra text outside of the JSON string.\" and \"Do not generate any comments inside the json block.\" and \"Only generate a valid, parseable JSON.\"*\n\n    Final check of the input text:\n    Title: ホンダ、「二輪安全運転診断アプリ」体験会 Uberも導入した判定機能を実車で試してみた(Car Watch)\n    Description: 世界では年間約119万人が交通事故で亡くなっていて、そのうち四輪車が約26万人、二輪車が約34万人を占める。 本田技研工業は、2050年に向けて「環境」と「安全」に関した目標を掲げているが、安全\n\n    The description ends abruptly. I will not include anything after \"安全\".\n\n    Final JSON structure check.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"ホンダ\",\n        \"event\": \"「二輪安全運転診断アプリ」体験会\"\n      },\n      \"subtopics\": [\n        \"Uberも導入した判定機能を実車で試してみた\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"世界の年間交通事故死亡者数\",\n          \"value\": \"約119万人\"\n        },\n        {\n          \"type\": \"四輪車による交通事故死亡者数\",\n          \"value\": \"約26万人\"\n        },\n        {\n          \"type\": \"二輪車による交通事故死亡者数\",\n          \"value\": \"約34万人\"\n        },\n        {\n          \"type\": \"本田技研工業の目標年\",\n          \"value\": \"2050年\"\n        },\n        {\n          \"type\": \"本田技研工業の目標内容\",\n          \"value\": \"「環境」と「安全」に関した目標\"\n        }\n      ]\n    }\n    ",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 646,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "M!LK5人が“新曲ダンス初披露”!ロングコートやショートパンツ×ロングブーツ姿でハートポーズも「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」 - THE FIRST TIMES",
+        "description": "M!LK5人が“新曲ダンス初披露”!ロングコートやショートパンツ×ロングブーツ姿でハートポーズも「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」 THE FIRST TIMES Google ニュースで見出しと意見をもっと見る"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 30731,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 411,
+        "output_tokens": 170,
+        "thought_tokens": 1264,
+        "total_tokens": 1845,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Constraints:\n        1. Use only information explicitly stated.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` format: `{\"entity\": \"...\", \"event\": \"...\"}`.\n        8. Treat different events for the same entity separately.\n        9. Output *only* valid JSON (no Markdown, no extra text).\n\n    *   Title: `M!LK5人が“新曲ダンス初披露”!ロングコートやショートパンツ×ロングブーツ姿でハートポーズも「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」 - THE FIRST TIMES`\n    *   Description: `M!LK5人が“新曲ダンス初披露”!ロングコートやショートパンツ×ロングブーツ姿でハートポーズも「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」 THE FIRST TIMES Google ニュースで見出しと意見をもっと見る`\n\n    *   Entity: `M!LK` (or `M!LK5人`)\n    *   Event: `新曲ダンス初披露`\n    *   Subtopics:\n        *   `ロングコートやショートパンツ×ロングブーツ姿でハートポーズ`\n        *   `「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」` (These are reactions/comments, but the prompt asks for subtopics. I'll include the visual description and the reactions as subtopics or facts).\n    *   Facts:\n        *   Type: `人数` (Number of people), Value: `5人`\n        *   Type: `衣装` (Costume), Value: `ロングコートやショートパンツ×ロングブーツ姿`\n        *   Type: `アクション` (Action), Value: `ハートポーズ`\n        *   Type: `内容` (Content), Value: `新曲ダンス初披露`\n\n    *   `subject`: `{\"entity\": \"M!LK\", \"event\": \"新曲ダンス初披露\"}`\n    *   `subtopics`: `[\"ロングコートやショートパンツ×ロングブーツ姿でハートポーズ\", \"「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」\"]`\n    *   `facts`:\n        *   `{\"type\": \"人数\", \"value\": \"5人\"}`\n        *   `{\"type\": \"衣装\", \"value\": \"ロングコートやショートパンツ×ロングブーツ姿\"}`\n        *   `{\"type\": \"アクション\", \"value\": \"ハートポーズ\"}`\n\n    *   Valid JSON? Yes.\n    *   No Markdown? Yes.\n    *   No extra text? Yes.\n    *   Only info from text? Yes.\n    *   Subject format correct? Yes.\n\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"M!LK\",\n        \"event\": \"新曲ダンス初披露\"\n      },\n      \"subtopics\": [\n        \"ロングコートやショートパンツ×ロングブーツ姿でハートポーズ\",\n        \"「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"人数\",\n          \"value\": \"5人\"\n        },\n        {\n          \"type\": \"衣装\",\n          \"value\": \"ロングコートやショートパンツ×ロングブーツ姿\"\n        },\n        {\n          \"type\": \"アクション\",\n          \"value\": \"ハートポーズ\"\n        }\n      ]\n    }\n    ```\n\n    *Self-Correction during drafting:* The prompt says \"subtopics\" are \"副題\" (subtitles/subtopics). The text contains descriptions of the event. I will put the visual description and the user reactions in subtopics.\n\n    Let's refine the facts to be strictly what's in the text.\n    - Entity: M!LK\n    - Event: 新曲ダンス初披露\n    - Facts:\n        - 人数: 5人\n        - 衣装: ロングコートやショートパンツ×ロングブーツ姿\n        - アクション: ハートポーズ\n\n    Final check on constraints: \"Do not include any extra text outside of the JSON string.\" \"Do not include Markdown decoration.\"\n\n    Wait, the prompt says \"Do not include any extra text outside of the JSON string.\" and \"Markdownの装飾も不要です\". This means I should not use ```json ... ```.\n\n    Let's re-read: \"Do not include any extra text outside of the JSON string. (Markdownの装飾も不要です)\".\n    Okay, raw JSON only.\n\n    Final JSON structure:\n    {\n      \"subject\": {\n        \"entity\": \"M!LK\",\n        \"event\": \"新曲ダンス初披露\"\n      },\n      \"subtopics\": [\n        \"ロングコートやショートパンツ×ロングブーツ姿でハートポーズ\",\n        \"「超かっこいい」「みんなスタイル良いから何着ても王子様」「振り付け最高」\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"人数\",\n          \"value\": \"5人\"\n        },\n        {\n          \"type\": \"衣装\",\n          \"value\": \"ロングコートやショートパンツ×ロングブーツ姿\"\n        },\n        {\n          \"type\": \"アクション\",\n          \"value\": \"ハートポーズ\"\n        }\n      ]\n    }",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 829,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "店舗トイレのカゴを燃やした疑い 近くの火事にも関与をほのめかし 63歳の男を逮捕<福島県福島市>",
+        "description": "福島市の店舗でトイレにあったカゴを燃やして壊した疑いで63歳の男が逮捕された。男はその直後に起きた別の火事についても関与をほのめかしているという。器物損壊の疑いで逮捕されたのは、本籍が郡山市で住所不定無職の63歳の男。警察によると、男は9月5日午後3時ごろ、福島市の小売店のトイレにあったかごに火をつけて焼き、壊した疑いがもたれている。店舗からの被害届を受けて捜査を進めていたところ、男が出頭した。男は警察の調べに対し「ライターで火をつけた」などと容疑を認めているという。事件があった約15分後には近くのアパートの駐輪場でも火事があり、警察によると男はこの火事についても関与をほのめかしているという。"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 37886,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 524,
+        "output_tokens": 283,
+        "thought_tokens": 1449,
+        "total_tokens": 2256,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Rules:\n        1. Use only information explicitly stated.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` = `entity` + `event`.\n        8. Treat different events for the same entity separately (though here it's one arrest for one main event with a hint of another).\n        9. Output *only* valid JSON (no Markdown, no extra text).\n\n    *   Title: 店舗トイレのカゴを燃やした疑い 近くの火事にも関与をほのめかし 63歳の男を逮捕<福島県福島市>\n    *   Description:\n        *   Location: 福島市の店舗 (Retail store in Fukushima City).\n        *   Incident: Toilet basket burned/destroyed.\n        *   Suspect: 63-year-old man, registered domicile in Koriyama City, homeless/unemployed.\n        *   Charge: 器物損壊 (Property damage).\n        *   Date/Time: September 5, around 3:00 PM.\n        *   Method: Used a lighter.\n        *   Context: Suspect surrendered (出頭).\n        *   Related info: Fire at a nearby apartment bicycle parking area about 15 minutes later; suspect hinted involvement.\n\n    *   `subject`:\n        *   `entity`: \"63歳の男\" (63-year-old man)\n        *   `event`: \"店舗トイレのカゴを燃やして壊した疑いで逮捕\" (Arrested on suspicion of burning and destroying a basket in a store toilet)\n    *   `subtopics`:\n        *   \"近くのアパートの駐輪場での火事への関与の示唆\" (Suggestion of involvement in a fire at a nearby apartment bicycle parking area)\n    *   `facts`:\n        *   Type: \"容疑\" (Charge), Value: \"器物損壊\"\n        *   Type: \"逮捕者\" (Arrested person), Value: \"本籍が郡山市で住所不定無職の63歳の男\"\n        *   Type: \"発生日時\" (Occurrence date/time), Value: \"9月5日午後3時ごろ\"\n        *   Type: \"発生場所\" (Occurrence location), Value: \"福島市の小売店\"\n        *   Type: \"被害内容\" (Damage), Value: \"トイレにあったかごを火をつけて焼き、壊した\"\n        *   Type: \"犯行方法\" (Method), Value: \"ライターで火をつけた\"\n        *   Type: \"関連事案\" (Related incident), Value: \"事件の約15分後に近くのアパートの駐輪場で火事が発生\"\n\n    *   `subject`: {\"entity\": \"63歳の男\", \"event\": \"店舗トイレのカゴを燃やして壊した疑いで逮捕\"}\n    *   `subtopics`: [\"近くのアパートの駐輪場での火事への関与の示唆\"]\n    *   `facts`:\n        *   {\"type\": \"容疑\", \"value\": \"器物損壊\"}\n        *   {\"type\": \"逮捕者の属性\", \"value\": \"本籍が郡山市で住所不定無職の63歳の男\"}\n        *   {\"type\": \"発生日時\", \"value\": \"9月5日午後3時ごろ\"}\n        *   {\"type\": \"発生場所\", \"value\": \"福島市の小売店\"}\n        *   {\"type\": \"犯行方法\", \"value\": \"ライターで火をつけた\"}\n        *   {\"type\": \"関連情報\", \"value\": \"事件の約15分後に近くのアパートの駐輪場でも火事があり、男は関与をほのめかしている\"}\n\n    *   Valid JSON? Yes.\n    *   No Markdown? Yes.\n    *   No extra text? Yes.\n    *   Only info from text? Yes.\n    *   Subject format correct? Yes.\n\n    (Self-Correction during drafting): The prompt asks for \"subject\" as \"entity + event\".\n    Entity: 63歳の男\n    Event: 店舗トイレのカゴを燃やして壊した疑いで逮捕\n\n    Let's refine the facts to be concise and accurate.\n\n    Facts list:\n    1. 容疑: 器物損壊\n    2. 逮捕者: 本籍が郡山市で住所不定無職の63歳の男\n    3. 発生日時: 9月5日午後3時ごろ\n    4. 発生場所: 福島市の小売店\n    5. 犯行方法: ライターで火をつけた\n    6. 関連事案: 事件の約15分後に近くのアパートの駐輪場で火事が発生し、男は関与をほのめかしている\n\n    Wait, the prompt says \"Do not include any extra text outside of the JSON string.\" and \"Do not include Markdown decoration\".\n\n    Final JSON structure check:\n    {\n      \"subject\": {\n        \"entity\": \"63歳の男\",\n        \"event\": \"店舗トイレのカゴを燃やして壊した疑いで逮捕\"\n      },\n      \"subtopics\": [\n        \"近くのアパートの駐輪場での火事への関与の示唆\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"容疑\",\n          \"value\": \"器物損壊\"\n        },\n        {\n          \"type\": \"逮捕者の属性\",\n          \"value\": \"本籍が郡山市で住所不定無職の63歳の男\"\n        },\n        {\n          \"type\": \"発生日時\",\n          \"value\": \"9月5日午後3時ごろ\"\n        },\n        {\n          \"type\": \"発生場所\",\n          \"value\": \"福島市の小売店\"\n        },\n        {\n          \"type\": \"犯行方法\",\n          \"value\": \"ライターで火をつけた\"\n        },\n        {\n          \"type\": \"関連事案\",\n          \"value\": \"事件の約15分後に近くのアパートの駐輪場でも火事があり、男は関与をほのめかしている\"\n        }\n      ]\n    }",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 900,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "高知県と徳島県に線状降水帯発生の半日前予測 気象庁が警戒を呼び掛け(ABCニュース)",
+        "description": "気象庁は8日午前11時、高知県と徳島県に線状降水帯半日前予測を出しました。 高知県では8日夕方から9日昼前にかけて、徳島県では8日夜遅くから9日昼前にかけて線状降水帯が発生し、大雨災害が発生する"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 48620,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 404,
+        "output_tokens": 232,
+        "thought_tokens": 2037,
+        "total_tokens": 2673,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Task: Extract information from \"title\" and \"description\" into a specific JSON format.\n    *   Constraints:\n        1. Use only information explicitly stated.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` format: `entity` + `event`.\n        8. Treat different events for the same entity separately (e.g., release vs. delay).\n        9. Output *only* valid, parseable JSON. No Markdown, no extra text.\n\n    *   Title: 高知県と徳島県に線状降水帯発生の半日前予測 気象庁が警戒を呼び掛け(ABCニュース)\n    *   Description: 気象庁は8日午前11時、高知県と徳島県に線状降水帯半日前予測を出しました。 高知県では8日夕方から9日昼前にかけて、徳島県では8日夜遅くから9日昼前にかけて線状降水帯が発生し、大雨災害が発生する\n\n    *   Entity: 気象庁 (Japan Meteorological Agency)\n    *   Event: 高知県と徳島県に線状降水帯発生の半日前予測を出した (Issued a half-day forecast for linear precipitation zones in Kochi and Tokushima prefectures)\n    *   *Alternative Subject approach:*\n        *   Entity: 高知県と徳島県 (Kochi and Tokushima prefectures)\n        *   Event: 線状降水帯発生の半日前予測 (Half-day forecast for linear precipitation zones)\n    *   Let's look at the prompt's instruction: `subject` is \"対象(entity) + 主要イベント(event)\".\n    *   The main actor is the JMA (気象庁) issuing the forecast.\n    *   Subject: `{\"entity\": \"気象庁\", \"event\": \"高知県と徳島県に線状降水帯発生の半日前予測を出した\"}`\n\n    *   Subtopics:\n        1. 高知県の線状降水帯発生予測 (Linear precipitation zone forecast for Kochi)\n        2. 徳島県の線状降水帯発生予測 (Linear precipitation zone forecast for Tokushima)\n\n    *   Facts:\n        1. Type: 予測発表日時 (Forecast announcement time), Value: 8日午前11時\n        2. Type: 高知県の予測期間 (Forecast period for Kochi), Value: 8日夕方から9日昼前にかけて\n        3. Type: 徳島県の予測期間 (Forecast period for Tokushima), Value: 8日夜遅くから9日昼前にかけて\n        4. Type: 予測内容 (Forecast content), Value: 線状降水帯が発生し、大雨災害が発生する\n\n    *   `subject`: `{\"entity\": \"気象庁\", \"event\": \"高知県と徳島県に線状降水帯発生の半日前予測を出した\"}`\n    *   `subtopics`: `[\"高知県の線状降水帯発生予測\", \"徳島県の線状降水帯発生予測\"]`\n    *   `facts`:\n        *   `{\"type\": \"予測発表日時\", \"value\": \"8日午前11時\"}`\n        *   `{\"type\": \"高知県の予測期間\", \"value\": \"8日夕方から9日昼前にかけて\"}`\n        *   `{\"type\": \"徳島県の予測期間\", \"value\": \"8日夜遅くから9日昼前にかけて\"}`\n        *   `{\"type\": \"予測内容\", \"value\": \"線状降水帯が発生し、大雨災害が発生する\"}`\n\n    *   Valid JSON? Yes.\n    *   No Markdown? Yes.\n    *   No extra text? Yes.\n    *   Only info from text? Yes.\n    *   Subject format correct? Yes.\n\n    *Self-Correction on Subject:* The prompt says \"subject is 'entity + event'\".\n    Entity: 気象庁\n    Event: 高知県と徳島県に線状降水帯発生の半日前予測を出した\n\n    *Refining Facts:*\n    - 予測発表日時: 8日午前11時\n    - 高知県の予測期間: 8日夕方から9日昼前にかけて\n    - 徳島県の予測期間: 8日夜遅くから9日昼前にかけて\n    - 予測される事象: 線状降水帯が発生し、大雨災害が発生する\n\n    *Final JSON Structure Check:*\n    ```json\n    {\n      \"subject\": {\n        \"entity\": \"気象庁\",\n        \"event\": \"高知県と徳島県に線状降水帯発生の半日前予測を出した\"\n      },\n      \"subtopics\": [\n        \"高知県の線状降水帯発生予測\",\n        \"徳島県の線状降水帯発生予測\"\n      ],\n      \"facts\": [\n        {\n          \"type\": \"予測発表日時\",\n          \"value\": \"8日午前11時\"\n        },\n        {\n          \"type\": \"高知県の予測期間\",\n          \"value\": \"8日夕方から9日昼前にかけて\"\n        },\n        {\n          \"type\": \"徳島県の予測期間\",\n          \"value\": \"8日夜遅くから9日昼前にかけて\"\n        },\n        {\n          \"type\": \"予測内容\",\n          \"value\": \"線状降水帯が発生し、大雨災害が発生する\"\n        }\n      ]\n    }\n    ```\n\n    Wait, the description says \"高知県では...徳島県では...線状降水帯が発生し、大雨災害が発生する\".\n    The subject could also be the weather event itself, but usually, in news extraction, the actor/subject is the one performing the action described in the title. The title says \"気象庁が警戒を呼び掛け\".\n\n    Let's stick to the JMA as the entity.\n\n    One more check: \"Do not include any extra text outside of the JSON string.\" \"Do not include Markdown decoration\".\n\n    Final check of the text:\n    Title: 高知県と徳島県に線状降水帯発生の半日前予測 気象庁が警戒を呼び掛け(ABCニュース)\n    Desc: 気象庁は8日午前11時、高知県と徳島県に線状降水帯半日前予測を出しました。 高知県では8日夕方から9日昼前にかけて、徳島県では8日夜遅くから9日昼前にかけて線状降水帯が発生し、大雨災害が発生する\n\n    Facts:\n    - 予測発表日時: 8日午前11時\n    - 高知県の予測期間: 8日夕方から9日昼前にかけて\n    - 徳島県の予測期間: 8日夜遅くから9日昼前にかけて\n    - 予測される事象: 線状降水帯が発生し、大雨災害が発生する\n\n    Subject:\n    Entity: 気象庁\n    Event: 高知県と徳島県に線状降水帯発生の半日前予測を出した\n\n    Subtopics:\n    - 高知県の線状降水帯発生予測\n    - 徳島県の線状降水帯発生予測\n\n    Looks good.\n\n    Wait, the prompt says \"Do not include any extra text outside of the JSON string. (Markdownの装飾も不要です)\". This means I should not use ```json ... ```.\n\n    Let's re-read: \"Do not include any extra text outside of the JSON string. (Markdownの装飾も不要です)\".\n    Okay, I will output the raw JSON.\n\n    One detail: \"subject(subject)は「対象(entity) + 主要イベント(event)」として抽出してください。\"\n    Entity: 気象庁\n    Event: 高知県と徳島県に線状降水帯発生の半日前予測を出した\n\n    Actually, looking at the title, the subject could be \"高知県と徳島県\" and the event \"線状降水帯発生の半日前予測\". But the JMA is the one doing the predicting. Usually, the subject of a news item is the main actor.\n\n    Let's refine the facts to be very precise.\n    Facts:\n    1. type: 予測発表日時, value: 8日午前11時\n    2. type: 高知県の予測期間, value: 8日夕方から9日昼前にかけて\n    3. type: 徳島県の予測期間, value: 8日夜遅くから9日昼前にかけて\n    4. type: 予測される事象, value: 線状降水帯が発生し、大雨災害が発生する\n\n    Wait, the description says \"線状降水帯が発生し、大雨災害が発生する\". It's a bit grammatically incomplete in the source (\"発生する\" at the end), but I must follow the text.\n\n    Final JSON construction.",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 731,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "title": "ノルウェーSWFが米債削減、日本国債増額|大橋ひろこ - note",
+        "description": "ノルウェーSWFが米債削減、日本国債増額|大橋ひろこ note ノルウェー政府系基金、米国債保有12兆円減少へ 投資基準を見直し 日本経済新聞 日本国債の保有引き上げ=ノルウェー政府系ファンド(時事通信) Yahoo!ファイナンス ノルウェー政府系ファンド、日本国債の保有割合引き上げ方針 時事ドットコム ノルウェー政府系ファンド、米国債を大幅削減方針 資産構成を変更 Reuters"
+      },
+      "gemma_26b": {
+        "success": true,
+        "elapsed_ms": 62156,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 444,
+        "output_tokens": 234,
+        "thought_tokens": 2663,
+        "total_tokens": 3341,
+        "raw_output": "*   Role: Expert in extracting fact data from news articles.\n    *   Input: `title` and `description`.\n    *   Output Format: A single valid, parseable JSON object.\n    *   Constraints:\n        1. Use only information explicitly stated.\n        2. No speculation.\n        3. No general knowledge supplementation.\n        4. No fabrication.\n        5. Keep numbers, dates, and proper nouns accurate.\n        6. Do not force unknown information.\n        7. `subject` = `entity` + `event`.\n        8. Treat different events for the same entity separately (e.g., \"release\" vs \"postponement\").\n        9. Return *only* JSON (no Markdown, no extra text).\n    *   Input Data:\n        *   `title`: ノルウェーSWFが米債削減、日本国債増額|大橋ひろこ - note\n        *   `description`: ノルウェーSWFが米債削減、日本国債増額|大橋ひろこ note ノルウェー政府系基金、米国債保有12兆円減少へ 投資基準を見直し 日本経済新聞 日本国債の保有引き上げ=ノルウェー政府系ファンド(時事通信) Yahoo!ファイナンス ノルウェー政府系ファンド、日本国債の保有割合引き上げ方針 時事ドットコム ノルウェー政府系ファンド、米国債を大幅削減方針 資産構成を変更 Reuters\n\n    *   Entity: ノルウェー政府系ファンド (Norway SWF / ノルウェー政府系基金)\n    *   Event 1: 米国債の保有削減 (Reduction of US Treasury holdings)\n    *   Event 2: 日本国債の保有引き上げ (Increase in Japanese Government Bond holdings)\n\n    *   *Event 1 (US Treasury Reduction):*\n        *   Entity: ノルウェー政府系基金 / ノルウェー政府系ファンド\n        *   Event: 米国債保有削減\n        *   Fact: 米国債保有12兆円減少へ\n        *   Fact: 投資基準を見直し\n        *   Fact: 資産構成を変更\n\n    *   *Event 2 (Japanese Bond Increase):*\n        *   Entity: ノルウェー政府系ファンド\n        *   Event: 日本国債の保有引き上げ\n        *   Fact: 日本国債の保有割合引き上げ方針\n\n    *   The prompt asks for a single JSON. Since there are two distinct events (US bond reduction and Japan bond increase), and rule 8 says \"Treat different events for the same entity as separate events\", I should return an array of JSON objects if I want to be precise, but the prompt says \"If a user requests multiple JSON, always return a single parseable JSON array.\"\n    *   Wait, the output format provided is a single object `{ \"subject\": ..., \"subtopics\": ..., \"facts\": ... }`.\n    *   If I follow the format strictly, I have to decide whether to combine them or provide an array.\n    *   Rule 8: \"同じ対象でも「発売」と「発売延期」等は別イベントとして扱ってください。\" (Treat different events for the same entity as separate events).\n    *   Rule: \"If a user requests multiple JSON, always return a single parseable JSON array.\"\n    *   Since the input describes two distinct events, I will return a JSON array containing two objects.\n\n    *   *Object 1 (US Bonds):*\n        *   `subject`: `{\"entity\": \"ノルウェー政府系ファンド\", \"event\": \"米国債保有削減\"}`\n        *   `subtopics`: `[\"投資基準の見直し\", \"資産構成の変更\"]`\n        *   `facts`: `[{\"type\": \"削減額\", \"value\": \"12兆円減少へ\"}, {\"type\": \"理由\", \"value\": \"投資基準を見直し\"}]`\n\n    *   *Object 2 (Japan Bonds):*\n        *   `subject`: `{\"entity\": \"ノルウェー政府系ファンド\", \"event\": \"日本国債保有引き上げ\"}`\n        *   `subtopics`: `[\"保有割合の引き上げ\"]`\n        *   `facts`: `[{\"type\": \"方針\", \"value\": \"日本国債の保有割合引き上げ方針\"}]`\n\n    *Refining based on text:*\n    Text: \"ノルウェー政府系基金、米国債保有12兆円減少へ 投資基準を見直し\"\n    Text: \"日本国債の保有引き上げ=ノルウェー政府系ファンド\"\n    Text: \"ノルウェー政府系ファンド、日本国債の保有割合引き上げ方針\"\n    Text: \"ノルウェー政府系ファンド、米国債を大幅削減方針 資産構成を変更\"\n\n    *Object 1:*\n    `subject`: `{\"entity\": \"ノルウェー政府系ファンド\", \"event\": \"米国債保有削減\"}`\n    `subtopics`: `[\"投資基準の見直し\", \"資産構成の変更\"]`\n    `facts`: `[{\"type\": \"保有額の変化\", \"value\": \"12兆円減少へ\"}, {\"type\": \"方針\", \"value\": \"米国債を大幅削減方針\"}]`\n\n    *Object 2:*\n    `subject`: `{\"entity\": \"ノルウェー政府系ファンド\", \"event\": \"日本国債保有引き上げ\"}`\n    `subtopics`: `[\"保有割合の引き上げ\"]`\n    `facts`: `[{\"type\": \"方針\", \"value\": \"日本国債の保有割合引き上げ方針\"}]`\n\n    *   Valid JSON? Yes.\n    *   No comments? Yes.\n    *   No extra text? Yes.\n    *   No Markdown? Yes.\n    *   Only info from text? Yes.\n    *   Subject = entity + event? Yes.\n    *   Separate events? Yes.\n\n    *Self-Correction on \"subtopics\":* The prompt doesn't define \"subtopics\" strictly, but usually, they are secondary themes.\n    *Self-Correction on \"facts\":* I will extract the specific values mentioned.\n\n    *Drafting final JSON array:*\n    [\n      {\n        \"subject\": {\n          \"entity\": \"ノルウェー政府系ファンド\",\n          \"event\": \"米国債保有削減\"\n        },\n        \"subtopics\": [\n          \"投資基準の見直し\",\n          \"資産構成の変更\"\n        ],\n        \"facts\": [\n          {\n            \"type\": \"保有額の変化\",\n            \"value\": \"12兆円減少へ\"\n          },\n          {\n            \"type\": \"方針\",\n            \"value\": \"米国債を大幅削減方針\"\n          }\n        ]\n      },\n      {\n        \"subject\": {\n          \"entity\": \"ノルウェー政府系ファンド\",\n          \"event\": \"日本国債保有引き上げ\"\n        },\n        \"subtopics\": [\n          \"保有割合の引き上げ\"\n        ],\n        \"facts\": [\n          {\n            \"type\": \"方針\",\n            \"value\": \"日本国債の保有割合引き上げ方針\"\n          }\n        ]\n      }\n    ]\n\n    *Wait, looking at the input again:*\n    \"ノルウェー政府系基金、米国債保有12兆円減少へ 投資基準を見直し\"\n    \"日本国債の保有引き上げ=ノルウェー政府系ファンド\"\n    \"ノルウェー政府系ファンド、日本国債の保有割合引き上げ方針\"\n    \"ノルウェー政府系ファンド、米国債を大幅削減方針 資産構成を変更\"\n\n    Let's ensure the facts are strictly from the text.\n\n    Object 1 (US):\n    - entity: ノルウェー政府系ファンド\n    - event: 米国債保有削減\n    - subtopics: [\"投資基準の見直し\", \"資産構成の変更\"]\n    - facts: [{\"type\": \"保有額の変化\", \"value\": \"12兆円減少へ\"}, {\"type\": \"方針\", \"value\": \"米国債を大幅削減方針\"}]\n\n    Object 2 (Japan):\n    - entity: ノルウェー政府系ファンド\n    - event: 日本国債保有引き上げ\n    - subtopics: [\"保有割合の引き上げ\"]\n    - facts: [{\"type\": \"方針\", \"value\": \"日本国債の保有割合引き上げ方針\"}]\n\n    *Final check of the prompt requirements:*\n    \"If a user requests multiple JSON, always return a single parseable JSON array.\"\n    Since there are two events, an array is the correct way to handle rule 8.\n\n    *One detail:* The title says \"ノルウェーSWF\". The description says \"ノルウェー政府系基金\" and \"ノルウェー政府系ファンド\". I will use \"ノルウェー政府系ファンド\" as the primary entity name as it appears most frequently and is a standard term.\n\n    *Final JSON structure check:*\n    [\n      {\n        \"subject\": {\n          \"entity\": \"ノルウェー政府系ファンド\",\n          \"event\": \"米国債保有削減\"\n        },\n        \"subtopics\": [\n          \"投資基準の見直し\",\n          \"資産構成の変更\"\n        ],\n        \"facts\": [\n          {\n            \"type\": \"保有額の変化\",\n            \"value\": \"12兆円減少へ\"\n          },\n          {\n            \"type\": \"方針\",\n            \"value\": \"米国債を大幅削減方針\"\n          }\n        ]\n      },\n      {\n        \"subject\": {\n          \"entity\": \"ノルウェー政府系ファンド\",\n          \"event\": \"日本国債保有引き上げ\"\n        },\n        \"subtopics\": [\n          \"保有割合の引き上げ\"\n        ],\n        \"facts\": [\n          {\n            \"type\": \"方針\",\n            \"value\": \"日本国債の保有割合引き上げ方針\"\n          }\n        ]\n      }\n    ]\n\n    Wait, I should check if I can combine them into one object if the user didn't explicitly ask for multiple. But rule 8 says \"Treat different events... as separate events\". If I put them in one object, I'd have to merge facts, which might violate the \"subject\" definition (entity + event). An array of objects is the most logical way to satisfy rule 8 and the \"multiple JSON\" instruction.\n\n    Let's refine the facts to be even more precise.\n    US:\n    - \"米国債保有12兆円減少へ\"\n    - \"投資基準を見直し\"\n    - \"米国債を大幅削減方針\"\n    - \"資産構成を変更\"\n\n    Japan:\n    - \"日本国債の保有引き上げ\"\n    - \"日本国債の保有割合引き上げ方針\"\n\n    Final Polish:\n    [\n      {\n        \"subject\": {\n          \"entity\": \"ノルウェー政府系ファンド\",\n          \"event\": \"米国債保有削減\"\n        },\n        \"subtopics\": [\n          \"投資基準の見直し\",\n          \"資産構成の変更\"\n        ],\n        \"facts\": [\n          {\n            \"type\": \"保有額の変化\",\n            \"value\": \"12兆円減少へ\"\n          },\n          {\n            \"type\": \"方針\",\n            \"value\": \"米国債を大幅削減方針\"\n          }\n        ]\n      },\n      {\n        \"subject\": {\n          \"entity\": \"ノルウェー政府系ファンド\",\n          \"event\": \"日本国債保有引き上げ\"\n        },\n        \"subtopics\": [\n          \"保有割合の引き上げ\"\n        ],\n        \"facts\": [\n          {\n            \"type\": \"方針\",\n            \"value\": \"日本国債の保有割合引き上げ方針\"\n          }\n        ]\n      }\n    ]",
+        "parse_error": "Unexpected token '*', \"*   Role: \"... is not valid JSON"
+      },
+      "gemma_31b": {
+        "success": false,
+        "elapsed_ms": 979,
+        "json_valid": false,
+        "result": null,
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0,
+        "error": {
+          "error": {
+            "code": 500,
+            "message": "Internal error encountered.",
+            "status": "INTERNAL"
+          }
+        }
+      }
+    }
+  ]
+}

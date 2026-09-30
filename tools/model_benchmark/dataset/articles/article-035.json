@@ -1,0 +1,43 @@
+{
+  "origin": "newsdata-2026-09",
+  "added_at": "2026-09-26",
+  "title": "パワーカップルも楽じゃない 第29回 【漫画】クリニック経営、バイオリニスト、ハーバード卒…妻の親戚が“華麗なる一族”すぎた",
+  "description": "「世帯年収が高い＝余裕がある」なんて、誰が決めた？共働きでバリバリ稼ぐ“パワーカップル”は、外から見るとキラキラ。でも実際は、終わらない仕事、回らない家事、子育ての綱渡り、そして「それだけ稼いでるなら…」という外野のひと言に、今日も静かに削られている――。",
+  "source": {
+    "type": "newsdata",
+    "source_id": "cf3081a148896fac5e9358041ab5acc4",
+    "source_name": "Mynavi News",
+    "published_at": "2026-09-26 02:03:00",
+    "url": "https://news.mynavi.jp/article/powercouple-29/",
+    "normalized_url": "https://news.mynavi.jp/article/powercouple-29/",
+    "newsdata_categories": [
+      "sports",
+      "top",
+      "entertainment"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "トレンド"
+    ]
+  },
+  "extracted_body": "「世帯年収が高い＝余裕がある」なんて、誰が決めた? 共働きでバリバリ稼ぐ“パワーカップル”は、外から見るとキラキラ。でも実際は、終わらない仕事、回らない家事、子育ての綱渡り、そして「それだけ稼いでるなら…」という外野のひと言に、今日も静かに削られている――。 新連載4コマ漫画『パワーカップルも楽じゃない』では、読者アンケートで集めたリアルな“喜怒哀楽”をもとに、パワーカップルの暮らしのリアルを1話完結でお届けします。 →✅『パワーカップルも楽じゃない』1話から無料でイッキ読み! クリニック経営、バイオリニスト、ハーバード卒…妻の親戚が“華麗なる一族”すぎた ＼パワーカップルの現実／ 世帯年収=幸せとは限らなくて…… ✅『パワーカップルも楽じゃない』全29話を一気読み パワーカップルの暮らしの現実は パワーカップルとは、主に「夫婦それぞれの年収が700万円以上」（ニッセイ基礎研究所）や、「夫の収入が600万円以上、妻の収入が400万円以上で、世帯年収が1,000万円以上の夫婦の共働き世帯」（三菱総合研究所）を指すといわれています。 さらに近年では、世帯年収1,500万円以上の共働き子育て世帯を「パワーファミリー」（日経ビジネス）と呼ぶことも。 一方で、夫婦ともに働いて高い収入を得ているからといって、暮らしに余裕があるとは限りません。仕事の責任が重いほど、家事・育児・生活の段取りに回せる時間は削られがち。物価高が続く中、都心では夫婦共働きでも“お金も手間もかかる子育て”に直面するケースは少なくありません。外からはキラキラに見えても、パワーカップルの毎日は想像以上に楽ではない――そんな現実があるのかもしれません。",
+  "body_extraction": {
+    "requested_url": "https://news.mynavi.jp/article/powercouple-29/",
+    "final_url": "https://news.mynavi.jp/article/powercouple-29/",
+    "extraction_method": "readability",
+    "readability_success": true,
+    "raw_extracted_chars": 737,
+    "cleaned_chars": 715,
+    "fetched_at": "2026-09-26T14:16:46.308Z",
+    "quality": {
+      "passed": true,
+      "min_chars": 300,
+      "unique_chars": 220,
+      "min_unique_chars": 40,
+      "boilerplate_markers": 0,
+      "http_success": true
+    }
+  },
+  "article_id": "article-035"
+}

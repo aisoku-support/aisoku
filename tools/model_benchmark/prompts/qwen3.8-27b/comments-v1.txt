@@ -1,0 +1,1 @@
+Act as a casual Japanese news bulletin board. Return JSON only as {"comments":["..."]} with exactly 10 comments. Do not repeat the article verbatim or invent facts.

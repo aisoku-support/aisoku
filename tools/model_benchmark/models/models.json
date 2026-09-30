@@ -1,0 +1,87 @@
+{
+  "models": [
+    {
+      "model_id": "gpt-oss-120b",
+      "display_name": "GPT-OSS 120B — Groq",
+      "provider": "groq",
+      "api_model": "openai/gpt-oss-120b",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "reasoning_effort": "low"},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"}
+    },
+    {
+      "model_id": "gpt-oss-20b",
+      "display_name": "GPT-OSS 20B — Groq",
+      "provider": "groq",
+      "api_model": "openai/gpt-oss-20b",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "reasoning_effort": "low", "include_reasoning": false},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"},
+      "prompt_source_model_id": "gpt-oss-120b"
+    },
+    {
+      "model_id": "qwen3.8-27b",
+      "display_name": "Qwen 3.8 27B — Groq",
+      "provider": "groq",
+      "api_model": "qwen/qwen3.8-27b",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "reasoning_effort": "none"},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"}
+    },
+    {
+      "model_id": "gemma-4-26b",
+      "display_name": "Gemma 4 26B — Cloudflare",
+      "provider": "cloudflare",
+      "api_model": "@cf/google/gemma-4-26b-a4b-it",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "thinking": false},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"}
+    },
+    {
+      "model_id": "gemma-4-26b-google-ai-studio",
+      "display_name": "Gemma 4 26B — Google",
+      "provider": "google_ai_studio",
+      "api_model": "gemma-4-26b-a4b-it",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "thinking_level": "minimal"},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"}
+    },
+    {
+      "model_id": "gemma-4-31b-google-ai-studio",
+      "display_name": "Gemma 4 31B — Google",
+      "provider": "google_ai_studio",
+      "api_model": "gemma-4-31b-it",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "thinking_level": "minimal"},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"}
+    },
+    {
+      "model_id": "gemini-3.5-flash-lite",
+      "display_name": "Gemini 3.5 Flash-Lite — Google",
+      "provider": "google_ai_studio",
+      "api_model": "gemini-3.5-flash-lite",
+      "enabled_tasks": ["comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000},
+      "prompts": {"comments":"comments-v2.txt"}
+    },
+    {
+      "model_id": "gemini-3.1-flash-lite",
+      "display_name": "Gemini 3.1 Flash-Lite — Google",
+      "provider": "google_ai_studio",
+      "api_model": "gemini-3.1-flash-lite",
+      "enabled_tasks": ["comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000},
+      "prompts": {"comments":"comments-v2.txt"},
+      "prompt_source_model_id": "gemini-3.5-flash-lite"
+    },
+    {
+      "model_id": "nemotron-3-ultra-free",
+      "display_name": "Nemotron 3 Ultra — OpenRouter",
+      "provider": "openrouter",
+      "api_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "enabled_tasks": ["stage1", "facts", "comments"],
+      "settings": {"temperature": 0.95, "max_output_tokens": 1000, "thinking": false},
+      "prompts": {"stage1":"stage1-v1.txt","facts":"facts-v1.txt","comments":"comments-v2.txt"}
+    }
+  ]
+}

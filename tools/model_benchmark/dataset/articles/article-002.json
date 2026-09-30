@@ -1,0 +1,23 @@
+{
+  "article_id": "article-002",
+  "origin": "initial-23",
+  "added_at": "2026-09-20",
+  "title": "積水ハウス株価、午後買い続かず 27年1月期純利益3%減に上方修正",
+  "description": "(12時45分、プライム、コード1928)積ハウスが後場上昇に転じ、前日比7円(0.21%)高の3328円を付けた。10日正午、2027年1月期(今期)の連結純利益が前期比3%減の2240億円になるとの見通しを発表した。2〜7月期の利益が伸びたこと",
+  "source": {
+    "type": "newsdata",
+    "source_id": "3738dd066ba14d440e27d1ea8abbf675",
+    "source_name": "Nikkei Shimbun",
+    "published_at": "2026-09-10T04:16:35.000Z",
+    "url": "https://www.nikkei.com/article/DGXZQOFL102YB0Q6A910C2000000/",
+    "normalized_url": "https://www.nikkei.com/article/DGXZQOFL102YB0Q6A910C2000000/",
+    "newsdata_categories": [
+      "top"
+    ]
+  },
+  "legacy": {
+    "app_categories": [
+      "トレンド"
+    ]
+  }
+}
