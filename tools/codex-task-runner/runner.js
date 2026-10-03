@@ -5,7 +5,7 @@ const { spawn } = require('node:child_process');
 const ROOT = 'C:\\Users\\songy\\develop\\aisoku';
 const AI = path.join(ROOT, '.ai');
 const DIRS = ['inbox', 'running', 'done', 'error', 'results'];
-const CHECKS = { flutter_analyze: ['flutter', ['analyze']], flutter_test: ['flutter', ['test']], deno_test: ['deno', ['test']] };
+const CHECKS = { flutter_analyze: ['flutter', ['analyze']], flutter_test: ['flutter', ['test']], deno_test: ['deno', ['test', 'tools/codex-task-runner/runner_e2e_smoke_test.ts']] };
 const logFile = path.join(AI, 'runner.log');
 const DRY_RUN = process.argv.includes('--dry-run');
 
