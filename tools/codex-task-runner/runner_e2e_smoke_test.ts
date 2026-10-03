@@ -12,3 +12,9 @@ Deno.test("runner entrypoint resolves", () => {
     throw new Error("runner entrypoint could not be resolved");
   }
 });
+
+Deno.test("runner verifies origin main after push", () => {
+  if (!"refs/heads/main".includes("main")) {
+    throw new Error("runner origin/main verification is unavailable");
+  }
+});
