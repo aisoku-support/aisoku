@@ -1,0 +1,13 @@
+# Task Runner runtime state is local-only.
+*
+!.gitignore
+!inbox/
+!running/
+!done/
+!error/
+!results/
+!inbox/.gitkeep
+!running/.gitkeep
+!done/.gitkeep
+!error/.gitkeep
+!results/.gitkeep
