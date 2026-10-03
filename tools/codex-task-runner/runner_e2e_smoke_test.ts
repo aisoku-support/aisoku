@@ -5,6 +5,9 @@ Deno.test("runner smoke test", () => {
 });
 
 Deno.test("runner entrypoint resolves", () => {
+  if (typeof import.meta.resolve !== "function") {
+    throw new Error("runner entrypoint resolver is unavailable");
+  }
   if (!import.meta.resolve("./runner.js").endsWith("/tools/codex-task-runner/runner.js")) {
     throw new Error("runner entrypoint could not be resolved");
   }
