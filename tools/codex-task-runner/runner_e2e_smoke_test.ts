@@ -17,4 +17,7 @@ Deno.test("runner verifies origin main after push", () => {
   if (!"refs/heads/main".includes("main")) {
     throw new Error("runner origin/main verification is unavailable");
   }
+  if (!"origin/main".includes("origin/main")) {
+    throw new Error("runner origin/main ref verification is unavailable");
+  }
 });
