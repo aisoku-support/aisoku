@@ -43,7 +43,12 @@ function existsInStates(id) {
   }));
 }
 function run(command, args, cwd = ROOT) {
-  return new Promise(resolve => { const p = spawn(command, args, { cwd, shell: false }); let output = ''; p.stdout.on('data', d => output += d); p.stderr.on('data', d => output += d); p.on('close', code => resolve({ code: code ?? 1, output })); p.on('error', e => resolve({ code: 1, output: String(e) })); });
+  const windowsCli = process.platform === 'win32' && (command === 'flutter' || command === 'deno');
+  const executable = windowsCli && command === 'flutter' ? 'flutter.bat' : `${command}.exe`;
+  const resolvedExecutable = windowsCli ? (process.env.Path || '').split(';').map(dir => path.join(dir, executable)).find(file => fs.existsSync(file)) : null;
+  const actualCommand = windowsCli ? (process.env.ComSpec || 'cmd.exe') : command;
+  const actualArgs = windowsCli ? ['/d', '/s', '/c', [`"${resolvedExecutable || executable}"`, ...args].join(' ')] : args;
+  return new Promise(resolve => { const p = spawn(actualCommand, actualArgs, { cwd, shell: false }); let output = ''; p.stdout.on('data', d => output += d); p.stderr.on('data', d => output += d); p.on('close', code => resolve({ code: code ?? 1, output })); p.on('error', e => resolve({ code: 1, output: String(e) })); });
 }
 async function waitForStableFile(file) {
   let previous = -1;
