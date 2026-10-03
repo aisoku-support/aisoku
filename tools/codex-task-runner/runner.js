@@ -36,6 +36,30 @@ function validate(task) {
   for (const check of task.checks) if (!CHECKS[check]) throw new Error(`unknown check: ${check}`);
 }
 function move(source, target) { fs.renameSync(source, path.join(target, path.basename(source))); }
+function parseStatusPaths(output) {
+  const paths = [];
+  const records = output.split('\0');
+  for (let i = 0; i < records.length; i++) {
+    const record = records[i];
+    if (!record) continue;
+    const status = record.slice(0, 2);
+    const first = record.slice(3);
+    if (!first) continue;
+    paths.push(first);
+    if (status.includes('R') || status.includes('C')) {
+      const second = records[++i];
+      if (second) paths.push(second);
+    }
+  }
+  return paths;
+}
+function isAiPath(file) {
+  const normalized = file.replace(/\\/g, '/');
+  return normalized === '.ai' || normalized.startsWith('.ai/');
+}
+async function gitStatus() {
+  return run('git', ['status', '--porcelain=v1', '-z']);
+}
 function existsInStates(id) {
   return ['running', 'done', 'error'].some(d => fs.readdirSync(path.join(AI, d)).some(f => {
     if (!f.endsWith('.md')) return false;
@@ -99,7 +123,10 @@ async function processFile(file) {
   const source = path.join(AI, 'inbox', file); let task;
   try { await waitForStableFile(source); task = parseTask(fs.readFileSync(source, 'utf8')); validate(task); if (existsInStates(task.task_id)) throw new Error('duplicate task_id'); move(source, path.join(AI, 'running')); }
   catch (e) { log(`validation failed: ${e.message}`); if (fs.existsSync(source)) move(source, path.join(AI, 'error')); return; }
-  const running = path.join(AI, 'running', file); const initialStatus = (await run('git', ['status', '--short'])).output; if (initialStatus.trim()) { log(`${task.task_id} rejected: dirty working tree`); move(running, path.join(AI, 'error')); return; } log(`started ${task.task_id}`);
+  const running = path.join(AI, 'running', file); const baselineStatus = await gitStatus();
+  const baselinePaths = parseStatusPaths(baselineStatus.output);
+  const userChanges = baselinePaths.filter(filePath => !isAiPath(filePath));
+  if (baselineStatus.code !== 0 || userChanges.length) { log(`${task.task_id} rejected: dirty working tree`); move(running, path.join(AI, 'error')); return; } log(`started ${task.task_id}`);
   const codex = await runCodex(task, running); let failure = codex.code !== 0 ? `Codex failed: ${codex.output}` : '';
   const checks = [];
   if (!failure) for (const name of task.checks) { const r = await run(...CHECKS[name]); checks.push([name, r]); if (r.code !== 0) { failure = `check ${name} failed (exit ${r.code}): ${r.output}`; break; } }
@@ -110,7 +137,11 @@ async function processFile(file) {
   if (!/task.?id/i.test(resultText) || !/implementation|実装内容/i.test(resultText) || !/changed files|変更ファイル/i.test(resultText) || !/check|チェック結果/i.test(resultText) || !/unresolved|未解決事項/i.test(resultText)) { log(`${task.task_id} failed: result incomplete`); move(running, path.join(AI, 'error')); return; }
   fs.appendFileSync(result, `\n## Runner Checks\n${checks.map(([name, r]) => `- ${name}: ${r.code === 0 ? 'PASS' : `FAIL (${r.code})`}\\n${r.output}`).join('\\n')}`);
   if (DRY_RUN) { fs.appendFileSync(result, '\n## Dry Run\ncommit/pushは実行していません。'); move(running, path.join(AI, 'inbox')); return; }
-  const after = await run('git', ['status', '--short']); const diff = await run('git', ['diff']); if (!after.output.trim()) { failure = 'no changes produced'; } else { const paths = after.output.split(/\r?\n/).filter(Boolean).map(x => x.slice(3).replace(/^\"|\"$/g, '')); const add = await run('git', ['add', '--', ...paths]); if (add.code !== 0) failure = add.output; else { const c = await run('git', ['commit', '-m', `task(${task.task_id}): implementation`]); if (c.code !== 0) failure = c.output; else { const hash = (await run('git', ['rev-parse', 'HEAD'])).output.trim(); fs.appendFileSync(result, `\n## Git Commit\n${hash}`); const p = await run('git', ['push', 'origin', 'HEAD:main']); if (p.code !== 0) failure = p.output; else { const remote = await run('git', ['ls-remote', 'origin', 'refs/heads/main']); const remoteHash = remote.output.trim().split(/\s+/)[0]; if (remote.code !== 0 || remoteHash !== hash) failure = `remote main verification failed: ${remote.output || remoteHash}`; else fs.appendFileSync(result, `\n## GitHub Push\nPASS\norigin/main: ${remoteHash}`); } } } }
+  const after = await gitStatus(); const baselineSet = new Set(baselinePaths);
+  const changedPaths = parseStatusPaths(after.output).filter(filePath => !baselineSet.has(filePath));
+  const resultPath = path.relative(ROOT, result).replace(/\\/g, '/');
+  if (!changedPaths.includes(resultPath)) changedPaths.push(resultPath);
+  if (after.code !== 0 || !changedPaths.length) { failure = after.code !== 0 ? after.output : 'no changes produced'; } else { const add = await run('git', ['add', '--', ...changedPaths]); if (add.code !== 0) failure = add.output; else { const c = await run('git', ['commit', '-m', `task(${task.task_id}): implementation`]); if (c.code !== 0) failure = c.output; else { const hash = (await run('git', ['rev-parse', 'HEAD'])).output.trim(); fs.appendFileSync(result, `\n## Git Commit\n${hash}`); const p = await run('git', ['push', 'origin', 'HEAD:main']); if (p.code !== 0) failure = p.output; else { const remote = await run('git', ['ls-remote', 'origin', 'refs/heads/main']); const remoteHash = remote.output.trim().split(/\s+/)[0]; if (remote.code !== 0 || remoteHash !== hash) failure = `remote main verification failed: ${remote.output || remoteHash}`; else fs.appendFileSync(result, `\n## GitHub Push\nPASS\norigin/main: ${remoteHash}`); } } } }
   if (failure) { log(`${task.task_id} git failed`); move(running, path.join(AI, 'error')); return; }
   move(running, path.join(AI, 'done')); log(`completed ${task.task_id}`);
 }
