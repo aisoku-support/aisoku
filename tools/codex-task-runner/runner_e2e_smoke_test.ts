@@ -1,4 +1,7 @@
 Deno.test("runner smoke test", () => {
+  if (!"normal".includes("normal")) {
+    throw new Error("normal mode assertion failed");
+  }
   if (1 + 1 !== 2) {
     throw new Error("basic arithmetic assertion failed");
   }
