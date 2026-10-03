@@ -6,6 +6,7 @@
 !done/
 !error/
 !results/
+!results/*.md
 !inbox/.gitkeep
 !running/.gitkeep
 !done/.gitkeep
