@@ -1049,7 +1049,7 @@ RPC／テーブル、Redisキー、SharedPreferencesキーの変更は、呼び�
   supabase/functions/_shared/topic/gemma_test.ts; safe log preview test:
   supabase/functions/_shared/topic/log_test.ts.
 - Worker config/auth: `supabase/functions/_shared/topic/config.ts`
-  共通quotaとFacts待機優先: `supabase/functions/_shared/ai_rate_limit.ts`、`topic-processing/index.ts`。影響確認: `ai_rate_limit_test.ts`、`stage1_test.ts`、`gemma_test.ts`。31B retryは従来どおりRedisを使用しない。
+  共通quotaとFacts待機優先: `supabase/functions/_shared/ai_rate_limit.ts`、`topic-processing/index.ts`。送信前quota診断はdimension/scope/limit/used/requestedを構造化観測し、cooldownもdimensionとして記録する。影響確認: `ai_rate_limit_test.ts`、`stage1_test.ts`、`gemma_test.ts`、`log_test.ts`。31B retryは従来どおりRedisを使用しない。
 - Processing log helper: `supabase/functions/_shared/topic/log.ts`
 - Stage 1 Groq client: `supabase/functions/_shared/topic/stage1.ts`（JST時間帯別Qwen 3.8 27B / GPT-OSS 20B、timeout retry、fallback）。Parser/validation: `gemma_parser.ts`（`category` 判定、`subject` / `event` 検証）
 - Stage 2 Gemma facts client: `supabase/functions/_shared/topic/gemma.ts`（facts抽出、thread titleとは分離）

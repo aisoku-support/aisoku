@@ -529,7 +529,9 @@ export async function startSharedInitial(
   });
   const task = runSharedRouter({
     topicId,
-    ...(singleModel ? { models: [singleModel] } : {}),
+    // Scheduled shared-initial generation must not enter the normal provider
+    // route. A rollout-selected single model remains explicitly supported.
+    models: [singleModel ?? "google-gemma"],
     now: Date.now,
     pause: (ms) => new Promise((r) => setTimeout(r, ms)),
     // A non-mutating observer must never claim/recover another owner's job.

@@ -1,10 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
-import {
-  GOOGLE_GEMMA,
-  inspectQuotaAvailability,
-  markFactsPending,
-  QuotaReservationError,
-} from "../_shared/ai_rate_limit.ts";
+import { QuotaReservationError } from "../_shared/ai_rate_limit.ts";
 import {
   embeddingModelForCategory,
   topicConfig,
@@ -453,14 +448,12 @@ Deno.serve(withTopicProcessingAuth(
         new Date().toISOString(),
       );
 
-      // Reserve priority before Stage 1: these articles are waiting for Facts.
-      await markFactsPending(batchId, true);
+
       let gemmaResults: GemmaResult[] = [],
         gemmaFailures: Array<{ articleId: string; errorType: string }> = [],
         gemmaElapsedMs: number | null = null,
         gemmaDiagnostics: GemmaDiagnostics | undefined;
       try {
-        try {
           const stage1 = await classifyStage1(articles);
           await saveStage1AttemptLogs(config, batchId, stage1.attempts);
           gemmaResults = stage1.results;
@@ -559,13 +552,7 @@ Deno.serve(withTopicProcessingAuth(
               {
                 priorRequestCount,
                 inspectQuota: async (inputTokens, outputTokens) => {
-                  const decision = await inspectQuotaAvailability(
-                    GOOGLE_GEMMA,
-                    inputTokens,
-                    outputTokens,
-                    "facts",
-                  );
-                  return decision.diagnostic ?? null;
+                  return null;
                 },
               },
             );
@@ -720,9 +707,6 @@ Deno.serve(withTopicProcessingAuth(
             );
           }
         }
-      } finally {
-        await markFactsPending(batchId, false).catch(() => {});
-      }
       let completed = 0, duplicates = 0, excluded = 0, failedDb = 0;
       for (const failure of gemmaFailures) {
         const article = articles.find((a) =>

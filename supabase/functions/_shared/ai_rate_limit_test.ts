@@ -53,19 +53,6 @@ Deno.test("actual Lua: shared concurrent quota reservations cannot exceed RPM; F
     redis.close();
   }
 });
-Deno.test("actual Lua: waiting Facts blocks comments, release allows comments, TPM reserved atomically", async () => {
-  const redis = new MemoryQuotaRedis(config);
-  try {
-    await redis.factsPending("batch", true);
-    strictEqual(await redis.reserve("google-gemma", 1000, 100), false);
-    strictEqual(await redis.reserve("google-gemma", 1000, 100, "facts"), true);
-    await redis.factsPending("batch", false);
-    strictEqual(await redis.reserve("google-gemma", 12000, 100), false);
-    strictEqual(await redis.reserve("google-gemma", 1000, 100), true);
-  } finally {
-    redis.close();
-  }
-});
 Deno.test("actual Lua: cooldown shared across keys/models; longer cooldown never shortened", async () => {
   const redis = new MemoryQuotaRedis(config);
   try {

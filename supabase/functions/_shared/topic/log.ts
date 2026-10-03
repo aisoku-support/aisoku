@@ -54,10 +54,14 @@ export function safeTransportErrorType(error: unknown): string | null {
 
 function safeQuotaDetails(value?: QuotaDiagnostic | null) {
   if (!value) return null;
+  const dimension = value.dimension ??
+    (value.reason === "cooldown" ? "cooldown" : null);
   return {
     reason: value.reason,
     scope: value.scope,
-    axis: value.dimension ?? null,
+    dimension,
+    // Keep the existing dashboard field while exposing the canonical name.
+    axis: dimension,
     window: value.window ?? null,
     limit: value.limit ?? null,
     used: value.used ?? null,

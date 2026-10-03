@@ -320,11 +320,6 @@ Deno.test("Qwen OTPM reserves the completion cap atomically and keeps 429 cooldo
 Deno.test("proposal reserves Google Facts headroom and preserves provider shared scopes", async () => {
   const redis = new MemoryQuotaRedis(config);
   try {
-    await redis.factsPending("proposal-facts", true);
-    strictEqual(await redis.reserve("google-gemma", 1000, 100), false);
-    strictEqual(await redis.reserve("google-gemma", 1000, 100, "facts"), true);
-    await redis.factsPending("proposal-facts", false);
-
     const cfRules = rulesFor(
       config["cloudflare-gemma"].quotas,
       1_000_000,

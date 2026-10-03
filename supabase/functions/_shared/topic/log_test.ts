@@ -120,6 +120,10 @@ Deno.test("Stage 1 quota details and Stage 2 failure details are allowlisted and
   strictEqual(stage1.operation, "stage1_attempt");
   strictEqual(stage1Details.provider, "groq");
   strictEqual(stage1Details.apiSendState, "blocked_before_send");
+  strictEqual(
+    (stage1Details.quota as Record<string, unknown>).dimension,
+    "rpm",
+  );
   strictEqual((stage1Details.quota as Record<string, unknown>).axis, "rpm");
   strictEqual(
     (stage1Details.quota as Record<string, unknown>).window,
@@ -139,6 +143,45 @@ Deno.test("Stage 1 quota details and Stage 2 failure details are allowlisted and
     false,
   );
   strictEqual(JSON.stringify(payloads).includes("test-key"), false);
+});
+
+Deno.test("cooldown quota observation exposes cooldown as its dimension", async () => {
+  const originalFetch = globalThis.fetch;
+  const payloads: Array<Record<string, unknown>[]> = [];
+  globalThis.fetch = async (_input, init) => {
+    payloads.push(JSON.parse(String(init?.body)));
+    return new Response(null, { status: 201 });
+  };
+  try {
+    await saveStage1AttemptLogs(
+      { url: "https://example.invalid", serviceRoleKey: "test-key" },
+      "00000000-0000-0000-0000-000000000003",
+      [{
+        attemptNo: 1,
+        model: "openai/gpt-oss-20b",
+        role: "primary",
+        outcome: "failure",
+        timeoutRetry: false,
+        fallbackReason: null,
+        errorType: "quota_limit",
+        httpStatus: null,
+        durationMs: 0,
+        apiSendState: "blocked_before_send",
+        quotaDiagnostic: {
+          reason: "cooldown",
+          scope: "groq-gpt-oss-20b",
+          nextAvailableAt: 1790000000000,
+        },
+      }],
+    );
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+  const quota = (payloads[0][0].diagnostic_details as Record<string, unknown>)
+    .quota as Record<string, unknown>;
+  strictEqual(quota.dimension, "cooldown");
+  strictEqual(quota.axis, "cooldown");
+  strictEqual(quota.scope, "groq-gpt-oss-20b");
 });
 
 Deno.test("Stage 2 attempt logs retain recovered errors, retry result, and deferred schedule safely", async () => {

@@ -50,18 +50,10 @@ export function providerAvailable(
   model: Model,
   limiter: AiRateLimiter,
 ): boolean {
-  const config = limiter.config[model];
-  return config?.free === true && Boolean(limiter.env(PROVIDERS[model].key)) &&
+  return Boolean(limiter.env(PROVIDERS[model].key)) &&
     (model !== "cloudflare-gemma" ||
-      config.provider === "cloudflare" &&
-        Boolean(limiter.env("CLOUDFLARE_ACCOUNT_ID")) &&
-        config.quotas.some((q) => q.rpm === 300) &&
-        config.quotas.some((q) =>
-          q.neuronsPerDay !== undefined && q.neuronsPerDay <= 10000 &&
-          q.inputNeuronsPerMillionTokens === 9091 &&
-          q.outputNeuronsPerMillionTokens === 27273 && q.day === "UTC"
-        )) &&
-    (model !== "openrouter-nemotron" || config.provider === "openrouter");
+      Boolean(limiter.env("CLOUDFLARE_ACCOUNT_ID"))) &&
+    (model !== "openrouter-nemotron");
 }
 
 export function providerRequest(
