@@ -53,3 +53,15 @@ Deno.test("runner pushes HEAD to origin main and verifies the remote hash", () =
     throw new Error("runner does not compare the remote main hash with HEAD");
   }
 });
+
+Deno.test("runner stages files changed by the task before committing", () => {
+  if (!runnerSource.includes("const after = await gitStatus()")) {
+    throw new Error("runner does not inspect the working tree after task changes");
+  }
+  if (!runnerSource.includes("const changedPaths = parseStatusPaths(after.output).filter(filePath => !baselineSet.has(filePath))")) {
+    throw new Error("runner does not collect files changed by the task");
+  }
+  if (!runnerSource.includes("run('git', ['add', '--', ...changedPaths])")) {
+    throw new Error("runner does not stage files changed by the task");
+  }
+});
