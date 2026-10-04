@@ -7,10 +7,53 @@ const AI = path.join(ROOT, '.ai');
 const DIRS = ['inbox', 'running', 'done', 'error', 'results'];
 const CHECKS = { flutter_analyze: ['flutter', ['analyze']], flutter_test: ['flutter', ['test']], deno_test: ['deno', ['test', 'tools/codex-task-runner/runner_e2e_smoke_test.ts']] };
 const logFile = path.join(AI, 'runner.log');
+const lockFile = path.join(AI, 'runner.lock');
 const DRY_RUN = process.argv.includes('--dry-run');
+let ownedLock = null;
 
 function log(message) { fs.appendFileSync(logFile, `${new Date().toISOString()} ${message}\n`); }
 function ensureDirs() { for (const dir of DIRS) fs.mkdirSync(path.join(AI, dir), { recursive: true }); }
+function readLock() {
+  try { return JSON.parse(fs.readFileSync(lockFile, 'utf8')); } catch { return null; }
+}
+function processExists(pid) {
+  if (!Number.isInteger(pid) || pid <= 0) return false;
+  try { process.kill(pid, 0); return true; } catch (error) { return error.code === 'EPERM'; }
+}
+function releaseLock() {
+  if (!ownedLock) return;
+  try {
+    const current = readLock();
+    if (current && current.pid === ownedLock.pid && current.token === ownedLock.token) fs.unlinkSync(lockFile);
+  } catch {}
+  ownedLock = null;
+}
+function acquireLock() {
+  const lock = { pid: process.pid, token: `${process.pid}-${Date.now()}-${Math.random()}` };
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const fd = fs.openSync(lockFile, 'wx');
+      try { fs.writeFileSync(fd, JSON.stringify(lock)); } finally { fs.closeSync(fd); }
+      ownedLock = lock;
+      return true;
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+      const existing = readLock();
+      if (!existing || processExists(existing.pid)) return false;
+      // Remove only the exact stale lock that was inspected; retry creation is atomic.
+      try {
+        const current = readLock();
+        if (!current || current.pid !== existing.pid || current.token !== existing.token) return false;
+        fs.unlinkSync(lockFile);
+      } catch (removeError) { if (removeError.code !== 'ENOENT') return false; }
+    }
+  }
+  return false;
+}
+function handleSignal(signal) {
+  releaseLock();
+  process.exit(signal === 'SIGINT' ? 130 : 143);
+}
 function parseTask(text) {
   // Windows/エディタが付加するUTF-8 BOMはfront matterの一部ではないため除去する。
   text = text.replace(/^\uFEFF/, '');
@@ -27,6 +70,20 @@ function parseTask(text) {
   }
   if (!fields.checks) fields.checks = [];
   return { ...fields, body: text.slice(match[0].length) };
+}
+function normalizeResultText(text) {
+  // Result validation must not fail solely because headings contain replacement/mojibake characters.
+  return text.normalize('NFKC').toLowerCase().replace(/[\uFFFD\u0000-\u001F]/g, ' ').replace(/[\s_`*#：:（）()\[\]{}<>「」『』]/g, '');
+}
+function validateResult(text, taskId) {
+  const normalized = normalizeResultText(text);
+  const hasTaskId = /task.?id|taskid|taskresult|task結果/.test(normalized);
+  const idMatches = hasTaskId && normalized.includes(taskId.toLowerCase());
+  const hasImplementation = /implementation|implemented|実装|実施|対応内容|作業内容/.test(normalized);
+  const hasChangedFiles = /changedfiles|modifiedfiles|fileschanged|変更ファイル|変更箇所|更新ファイル/.test(normalized);
+  const hasChecks = /checkresults?|testresults?|tests?|検証結果|確認結果|チェック結果|テスト結果/.test(normalized);
+  const hasUnresolved = /unresolved|outstanding|remainingissues|未解決|残課題|保留事項/.test(normalized);
+  return hasTaskId && idMatches && hasImplementation && hasChangedFiles && hasChecks && hasUnresolved;
 }
 function validate(task) {
   if (!/^[A-Za-z0-9._-]+$/.test(task.task_id || '')) throw new Error('invalid task_id');
@@ -134,7 +191,7 @@ async function processFile(file) {
   const result = path.join(AI, 'results', `${task.task_id}-result.md`);
   if (!fs.existsSync(result)) { log(`${task.task_id} failed: result missing`); move(running, path.join(AI, 'error')); return; }
   const resultText = fs.readFileSync(result, 'utf8');
-  if (!/task.?id/i.test(resultText) || !/implementation|実装内容/i.test(resultText) || !/changed files|変更ファイル/i.test(resultText) || !/check|チェック結果/i.test(resultText) || !/unresolved|未解決事項/i.test(resultText)) { log(`${task.task_id} failed: result incomplete`); move(running, path.join(AI, 'error')); return; }
+  if (!validateResult(resultText, task.task_id)) { log(`${task.task_id} failed: result incomplete`); move(running, path.join(AI, 'error')); return; }
   fs.appendFileSync(result, `\n## Runner Checks\n${checks.map(([name, r]) => `- ${name}: ${r.code === 0 ? 'PASS' : `FAIL (${r.code})`}\\n${r.output}`).join('\\n')}`);
   if (DRY_RUN) { fs.appendFileSync(result, '\n## Dry Run\ncommit/pushは実行していません。'); move(running, path.join(AI, 'inbox')); return; }
   const after = await gitStatus(); const baselineSet = new Set(baselinePaths);
@@ -145,5 +202,6 @@ async function processFile(file) {
   if (failure) { log(`${task.task_id} git failed`); move(running, path.join(AI, 'error')); return; }
   move(running, path.join(AI, 'done')); log(`completed ${task.task_id}`);
 }
-async function main() { ensureDirs(); let busy = false; const queue = async () => { if (busy) return; const files = fs.readdirSync(path.join(AI, 'inbox')).filter(f => f.toLowerCase().endsWith('.md')); if (!files.length) return; busy = true; try { await new Promise(r => setTimeout(r, 1000)); await processFile(files[0]); } finally { busy = false; } }; fs.watch(path.join(AI, 'inbox'), queue); log('watcher started'); await queue(); }
-main().catch(e => { log(`fatal: ${e.message}`); process.exitCode = 1; });
+async function main() { ensureDirs(); if (!acquireLock()) { log('another runner is active; watcher not started'); return; } process.once('SIGINT', () => handleSignal('SIGINT')); process.once('SIGTERM', () => handleSignal('SIGTERM')); let busy = false; const queue = async () => { if (busy) return; const files = fs.readdirSync(path.join(AI, 'inbox')).filter(f => f.toLowerCase().endsWith('.md')); if (!files.length) return; busy = true; try { await new Promise(r => setTimeout(r, 1000)); await processFile(files[0]); } finally { busy = false; } }; const watcher = fs.watch(path.join(AI, 'inbox'), queue); log('watcher started'); await queue(); process.once('beforeExit', () => { watcher.close(); releaseLock(); }); }
+if (require.main === module) main().catch(e => { log(`fatal: ${e.message}`); releaseLock(); process.exitCode = 1; });
+module.exports = { validateResult };

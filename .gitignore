@@ -51,3 +51,4 @@ app.*.map.json
 .env.server
 tools/model_benchmark/.env
 .supabase-cli-token.tmp
+/.ai/runner.lock

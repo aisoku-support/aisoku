@@ -1,9 +1,29 @@
-Deno.test("runner smoke test", () => {
-  if (!"normal".includes("normal")) {
-    throw new Error("normal mode assertion failed");
-  }
-  if (1 + 1 !== 2) {
-    throw new Error("basic arithmetic assertion failed");
+const runnerSource = await Deno.readTextFile(new URL("./runner.js", import.meta.url));
+const validatorSource = runnerSource.match(/function normalizeResultText\([\s\S]*?\n}\nfunction validateResult\([\s\S]*?\n}/)?.[0];
+if (!validatorSource) throw new Error("result validator was not found");
+const validateResult = new Function(`${validatorSource}; return validateResult;`)();
+
+const taskId = "20261004-021";
+
+Deno.test("standard result format passes", () => {
+  const result = `Task ID: ${taskId}\n\n## Implementation\nImplemented locking.\n\n## Changed Files\n- runner.js\n\n## Test Results\n- PASS\n\n## Unresolved Issues\n- None`;
+  if (!validateResult(result, taskId)) throw new Error("standard result was rejected");
+});
+
+Deno.test("Task 021 result format passes", () => {
+  const result = `# Task Result: ${taskId}\n\n## 実装内容\nlockを実装しました。\n\n## 変更ファイル\n- runner.js\n\n## ロックファイルの場所\n.ai/runner.lock\n\n## 多重起動防止の仕組み\nPIDとtokenを記録します。\n\n## stale lockの扱い\nPID確認後に回収します。\n\n## テスト結果\n- deno test: PASS\n\n## 未解決事項\n- 個別動作試験は未実施`;
+  if (!validateResult(result, taskId)) throw new Error("Task 021 result was rejected");
+});
+
+Deno.test("mismatched task id fails", () => {
+  const result = `Task ID: 20261004-999\n実装内容\n変更ファイル\nテスト結果\n未解決事項`;
+  if (validateResult(result, taskId)) throw new Error("mismatched task id was accepted");
+});
+
+Deno.test("missing required information fails", () => {
+  const base = `Task ID: ${taskId}\n実装内容\n変更ファイル\nテスト結果\n未解決事項`;
+  for (const result of [base.replace("実装内容", ""), base.replace("変更ファイル", ""), base.replace("テスト結果", ""), base.replace("未解決事項", "")]) {
+    if (validateResult(result, taskId)) throw new Error("result with missing required information was accepted");
   }
 });
 
@@ -13,6 +33,12 @@ Deno.test("runner entrypoint resolves", () => {
   }
   if (!import.meta.resolve("./runner.js").endsWith("/tools/codex-task-runner/runner.js")) {
     throw new Error("runner entrypoint could not be resolved");
+  }
+});
+
+Deno.test("runner retains single-instance lock implementation", async () => {
+  for (const marker of ["runner.lock", "openSync(lockFile, 'wx')", "process.kill(pid, 0)", "current.token === ownedLock.token", "SIGINT", "SIGTERM", "beforeExit"]) {
+    if (!runnerSource.includes(marker)) throw new Error(`single-instance lock marker missing: ${marker}`);
   }
 });
 
