@@ -1,5 +1,5 @@
 const runnerSource = await Deno.readTextFile(new URL("./runner.js", import.meta.url));
-const validatorSource = runnerSource.match(/function normalizeResultText\([\s\S]*?\n}\nfunction validateResult\([\s\S]*?\n}/)?.[0];
+const validatorSource = runnerSource.match(/function normalizeResultText\([\s\S]*?\r?\n}\r?\nfunction validateResult\([\s\S]*?\r?\n}/)?.[0];
 if (!validatorSource) throw new Error("result validator was not found");
 const validateResult = new Function(`${validatorSource}; return validateResult;`)();
 
@@ -42,11 +42,14 @@ Deno.test("runner retains single-instance lock implementation", async () => {
   }
 });
 
-Deno.test("runner verifies origin main after push", () => {
-  if (!"refs/heads/main".includes("main")) {
-    throw new Error("runner origin/main verification is unavailable");
+Deno.test("runner pushes HEAD to origin main and verifies the remote hash", () => {
+  if (!runnerSource.includes("run('git', ['push', 'origin', 'HEAD:main'])")) {
+    throw new Error("runner push to origin main is unavailable");
   }
-  if (!"origin/main".includes("origin/main")) {
-    throw new Error("runner origin/main ref verification is unavailable");
+  if (!runnerSource.includes("run('git', ['ls-remote', 'origin', 'refs/heads/main'])")) {
+    throw new Error("runner remote main hash verification is unavailable");
+  }
+  if (!runnerSource.includes("remoteHash !== hash")) {
+    throw new Error("runner does not compare the remote main hash with HEAD");
   }
 });
