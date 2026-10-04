@@ -54,6 +54,25 @@ Deno.test("runner pushes HEAD to origin main and verifies the remote hash", () =
   }
 });
 
+Deno.test("runner does not modify the result after committing", () => {
+  const commitFlow = runnerSource.slice(runnerSource.indexOf("const c = await run('git', ['commit'"));
+  if (commitFlow.includes("appendFileSync(result")) {
+    throw new Error("runner modifies the result after commit");
+  }
+  if (!commitFlow.includes("log(`${task.task_id} committed ${hash}`)")) {
+    throw new Error("runner does not log the commit hash");
+  }
+  if (!commitFlow.includes("log(`${task.task_id} push verified origin/main ${remoteHash}`)")) {
+    throw new Error("runner does not log the verified remote hash");
+  }
+});
+
+Deno.test("runner reports final working tree state", () => {
+  if (!runnerSource.includes("working tree ${finalStatus.code === 0 && !finalStatus.output ? 'clean'")) {
+    throw new Error("runner does not report the final working tree state");
+  }
+});
+
 Deno.test("runner stages files changed by the task before committing", () => {
   if (!runnerSource.includes("const after = await gitStatus()")) {
     throw new Error("runner does not inspect the working tree after task changes");
