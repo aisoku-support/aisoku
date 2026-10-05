@@ -114,6 +114,50 @@ function isAiPath(file) {
   const normalized = file.replace(/\\/g, '/');
   return normalized === '.ai' || normalized.startsWith('.ai/');
 }
+function safeFailureReason(failure) {
+  if (failure.startsWith('Codex failed')) return 'Codex failed (details omitted for safety).';
+  if (failure.startsWith('check ')) return `${failure.split(' ')[1]} check failed (details omitted for safety).`;
+  if (failure === 'result incomplete') return 'Result validation failed: incomplete result retained for audit.';
+  if (failure === 'result missing') return 'Result file was not generated.';
+  return 'Runner processing failed (details omitted for safety).';
+}
+async function saveFailureResult(task, running, result, failure, baselinePaths) {
+  if (!fs.existsSync(result) || DRY_RUN) { move(running, path.join(AI, 'error')); return; }
+  fs.appendFileSync(result, `\n\n## Runner Failure\n- ${safeFailureReason(failure)}\n`);
+  const resultPath = path.relative(ROOT, result).replace(/\\/g, '/');
+  const status = await gitStatus();
+  const baselineSet = new Set(baselinePaths);
+  const aiChanges = status.code === 0
+    ? parseStatusPaths(status.output).filter(filePath => !baselineSet.has(filePath) && isAiPath(filePath))
+    : [];
+  let saveFailure = status.code !== 0;
+  if (!saveFailure) {
+    const add = await run('git', ['add', '--', ...new Set([...aiChanges, resultPath])]);
+    if (add.code !== 0) saveFailure = true;
+    else {
+      const commit = await run('git', ['commit', '-m', `task(${task.task_id}): record failure result`]);
+      if (commit.code !== 0) saveFailure = true;
+      else {
+        const hashResult = await run('git', ['rev-parse', 'HEAD']);
+        const hash = hashResult.output.trim();
+        if (hashResult.code !== 0 || !hash) saveFailure = true;
+        else {
+          log(`${task.task_id} failure result committed ${hash}`);
+          const push = await run('git', ['push', 'origin', 'HEAD:main']);
+          if (push.code !== 0) saveFailure = true;
+          else {
+            const remote = await run('git', ['ls-remote', 'origin', 'refs/heads/main']);
+            const remoteHash = remote.output.trim().split(/\s+/)[0];
+            if (remote.code !== 0 || remoteHash !== hash) saveFailure = true;
+            else log(`${task.task_id} failure result push verified origin/main ${remoteHash}`);
+          }
+        }
+      }
+    }
+  }
+  if (saveFailure) log(`${task.task_id} failure result git save failed`);
+  move(running, path.join(AI, 'error'));
+}
 async function gitStatus() {
   return run('git', ['status', '--porcelain=v1', '-z']);
 }
@@ -184,14 +228,14 @@ async function processFile(file) {
   const baselinePaths = parseStatusPaths(baselineStatus.output);
   const userChanges = baselinePaths.filter(filePath => !isAiPath(filePath));
   if (baselineStatus.code !== 0 || userChanges.length) { log(`${task.task_id} rejected: dirty working tree`); move(running, path.join(AI, 'error')); return; } log(`started ${task.task_id}`);
-  const codex = await runCodex(task, running); let failure = codex.code !== 0 ? `Codex failed: ${codex.output}` : '';
-  const checks = [];
-  if (!failure) for (const name of task.checks) { const r = await run(...CHECKS[name]); checks.push([name, r]); if (r.code !== 0) { failure = `check ${name} failed (exit ${r.code}): ${r.output}`; break; } }
-  if (failure) { log(`${task.task_id} failed: ${failure.replace(/\s+/g, ' ').slice(0, 500)}`); move(running, path.join(AI, 'error')); return; }
   const result = path.join(AI, 'results', `${task.task_id}-result.md`);
-  if (!fs.existsSync(result)) { log(`${task.task_id} failed: result missing`); move(running, path.join(AI, 'error')); return; }
+  const codex = await runCodex(task, running); let failure = codex.code !== 0 ? 'Codex failed' : '';
+  const checks = [];
+  if (!failure) for (const name of task.checks) { const r = await run(...CHECKS[name]); checks.push([name, r]); if (r.code !== 0) { failure = `check ${name} failed`; break; } }
+  if (failure) { log(`${task.task_id} failed: ${safeFailureReason(failure)}`); await saveFailureResult(task, running, result, failure, baselinePaths); return; }
+  if (!fs.existsSync(result)) { log(`${task.task_id} failed: result missing`); await saveFailureResult(task, running, result, 'result missing', baselinePaths); return; }
   const resultText = fs.readFileSync(result, 'utf8');
-  if (!validateResult(resultText, task.task_id)) { log(`${task.task_id} failed: result incomplete`); move(running, path.join(AI, 'error')); return; }
+  if (!validateResult(resultText, task.task_id)) { log(`${task.task_id} failed: result incomplete`); await saveFailureResult(task, running, result, 'result incomplete', baselinePaths); return; }
   fs.appendFileSync(result, `\n## Runner Checks\n${checks.map(([name, r]) => `- ${name}: ${r.code === 0 ? 'PASS' : `FAIL (${r.code})`}\\n${r.output}`).join('\\n')}`);
   if (DRY_RUN) { fs.appendFileSync(result, '\n## Dry Run\ncommit/pushは実行していません。'); move(running, path.join(AI, 'inbox')); return; }
   const after = await gitStatus(); const baselineSet = new Set(baselinePaths);

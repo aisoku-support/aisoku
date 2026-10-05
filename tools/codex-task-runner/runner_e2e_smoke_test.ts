@@ -84,3 +84,43 @@ Deno.test("runner stages files changed by the task before committing", () => {
     throw new Error("runner does not stage files changed by the task");
   }
 });
+
+Deno.test("incomplete results are retained and failed tasks move to error", () => {
+  if (!runnerSource.includes("Result validation failed: incomplete result retained for audit.")) {
+    throw new Error("incomplete result audit reason is missing");
+  }
+  if (!runnerSource.includes("await saveFailureResult(task, running, result, 'result incomplete', baselinePaths)")) {
+    throw new Error("incomplete result is not saved through failure flow");
+  }
+  const failureFlow = runnerSource.slice(runnerSource.indexOf("async function saveFailureResult"), runnerSource.indexOf("async function gitStatus"));
+  if (!failureFlow.includes("move(running, path.join(AI, 'error'))")) throw new Error("failed task does not move to error");
+  if (failureFlow.includes("path.join(AI, 'done')")) throw new Error("failed task can be moved to done");
+});
+
+Deno.test("failure commit stages only changed AI files and verifies pushed remote hash", () => {
+  const failureFlow = runnerSource.slice(runnerSource.indexOf("async function saveFailureResult"), runnerSource.indexOf("async function gitStatus"));
+  if (!failureFlow.includes("!baselineSet.has(filePath) && isAiPath(filePath)")) {
+    throw new Error("failure flow may stage task source changes");
+  }
+  if (!failureFlow.includes("run('git', ['push', 'origin', 'HEAD:main'])")) throw new Error("failure result push is missing");
+  if (!failureFlow.includes("run('git', ['ls-remote', 'origin', 'refs/heads/main'])")) throw new Error("failure remote hash check is missing");
+  if (!failureFlow.includes("remoteHash !== hash")) throw new Error("failure flow does not verify remote hash");
+});
+
+Deno.test("successful completion flow still validates, commits, verifies, then moves to done", () => {
+  const successFlow = runnerSource.slice(runnerSource.indexOf("async function processFile"));
+  const markers = [
+    "if (!validateResult(resultText, task.task_id))",
+    "## Runner Checks",
+    "run('git', ['commit', '-m', `task(${task.task_id}): implementation`])",
+    "run('git', ['push', 'origin', 'HEAD:main'])",
+    "run('git', ['ls-remote', 'origin', 'refs/heads/main'])",
+    "move(running, path.join(AI, 'done'))",
+  ];
+  let previous = -1;
+  for (const marker of markers) {
+    const index = successFlow.indexOf(marker);
+    if (index < 0 || index <= previous) throw new Error(`success flow marker missing or reordered: ${marker}`);
+    previous = index;
+  }
+});
