@@ -1,0 +1,20 @@
+{
+  "status": "BLOCKED_MISSING_CLOUDFLARE_CREDENTIALS_AND_GROUND_TRUTH",
+  "dataset": "tools/model_benchmark/dataset/articles/*.json",
+  "article_count": 53,
+  "ground_truth_count": 0,
+  "live_evaluation_count": 0,
+  "repeat_requested": 2,
+  "repeat_completed": 0,
+  "model": "@cf/cloudflare/clef-flash",
+  "api_mode": "dry_run_only",
+  "legacy_app_categories_used": false,
+  "metrics": null,
+  "latency_ms": null,
+  "token_usage": null,
+  "cost": null,
+  "blockers": ["CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are not present in the process environment", "No independently reviewable ground truth could be created because checked-in article text is mojibake"],
+  "comparison": {"status":"not_comparable","reason":"No existing model benchmark result files were present under tools/model_benchmark/results before this evaluation; the Clef run was also blocked."},
+  "final_decision": "BLOCKED",
+  "results": []
+}

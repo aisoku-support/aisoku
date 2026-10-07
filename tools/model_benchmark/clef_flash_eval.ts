@@ -1,140 +1,100 @@
-// Reproducible, standalone Workers AI classification evaluation.
-// Live requests are opt-in; credentials are read only from the process environment.
+// Reproducible, standalone Workers AI Clef decision-model evaluation.
 export const CATEGORIES = ["トレンド", "エンタメ", "サブカル", "マネー", "IT・ガジェット", "除外"] as const;
 export type Category = typeof CATEGORIES[number];
 
-export interface EvalArticle {
-  article_id: string;
-  title: string;
-  description: string;
-  input_sha256: string;
-}
-
+export interface EvalArticle { article_id: string; title: string; description: string; input_sha256: string }
+export interface GroundTruth { article_id: string; category: Category; rationale: string; labeling_method: string; reviewer: string; input_sha256: string }
 export interface RunResult {
-  article_id: string;
-  category: Category | null;
-  latency_ms: number | null;
-  input_tokens: number | null;
-  output_tokens: number | null;
-  error: string | null;
+  article_id: string; repeat: number; category: Category | null; probabilities: Partial<Record<Category, number>> | null;
+  confidence: number | null; latency_ms: number | null; input_tokens: number | null; output_tokens: number | null; error: string | null;
 }
 
-export function parseCategory(value: unknown): Category | null {
-  if (typeof value !== "string") return null;
-  const cleaned = value.trim().replace(/^```(?:json)?\s*|\s*```$/g, "");
+const QUESTION = "news_category";
+const isRecord = (v: unknown): v is Record<string, any> => !!v && typeof v === "object" && !Array.isArray(v);
+const finite = (v: unknown): number | null => typeof v === "number" && Number.isFinite(v) ? v : null;
+
+export function parseDecision(body: unknown) {
+  if (!isRecord(body) || !isRecord(body.answers) || !isRecord(body.answers[QUESTION])) return null;
+  const choice = body.answers[QUESTION].choice;
+  if (!isRecord(choice) || typeof choice.choice !== "string" || !CATEGORIES.includes(choice.choice as Category)) return null;
+  const probs: Partial<Record<Category, number>> = {};
+  const raw = choice.probabilities ?? choice.probability_by_option ?? choice.options;
+  if (isRecord(raw)) for (const category of CATEGORIES) { const p = finite(raw[category]); if (p !== null) probs[category] = p; }
+  return { category: choice.choice as Category, probabilities: Object.keys(probs).length ? probs : null, confidence: finite(choice.confidence) };
+}
+
+function average(xs: number[]) { return xs.length ? xs.reduce((a,b)=>a+b,0)/xs.length : null; }
+function percentile(xs: number[], p: number) { const s=[...xs].sort((a,b)=>a-b); return s.length ? s[Math.max(0,Math.ceil(p*s.length)-1)] : null; }
+function f1(p: number, r: number) { return p+r===0 ? 0 : 2*p*r/(p+r); }
+
+export function evaluate(results: RunResult[], truth: GroundTruth[]) {
+  const labels = new Map(truth.map(x=>[x.article_id,x.category]));
+  const scored = results.filter(r=>labels.has(r.article_id));
+  const matrix = Object.fromEntries(CATEGORIES.map(t=>[t,Object.fromEntries(CATEGORIES.map(p=>[p,0]))])) as Record<Category,Record<Category,number>>;
+  for (const r of scored) if (r.category) matrix[labels.get(r.article_id)!][r.category]++;
+  const perCategory = Object.fromEntries(CATEGORIES.map(c=>{
+    const tp=matrix[c][c], fp=CATEGORIES.reduce((n,t)=>n+matrix[t][c],0)-tp, fn=CATEGORIES.reduce((n,p)=>n+matrix[c][p],0)-tp;
+    const precision=tp+fp?tp/(tp+fp):0, recall=tp+fn?tp/(tp+fn):0;
+    return [c,{precision,recall,f1:f1(precision,recall),support:tp+fn}];
+  })) as Record<Category,{precision:number;recall:number;f1:number;support:number}>;
+  const n=scored.length, ok=scored.filter(r=>r.category!==null).length;
+  const tp=matrix["除外"]["除外"], fp=CATEGORIES.reduce((x,t)=>x+matrix[t]["除外"],0)-tp, fn=CATEGORIES.reduce((x,p)=>x+matrix["除外"][p],0)-tp;
+  const p=tp+fp?tp/(tp+fp):0, r=tp+fn?tp/(tp+fn):0;
+  const macroPrecision=average(CATEGORIES.map(c=>perCategory[c].precision))!, macroRecall=average(CATEGORIES.map(c=>perCategory[c].recall))!;
+  const totalSupport=CATEGORIES.reduce((a,c)=>a+perCategory[c].support,0);
+  const weightedF1=totalSupport?CATEGORIES.reduce((a,c)=>a+perCategory[c].f1*perCategory[c].support,0)/totalSupport:0;
+  const byArticle = new Map<string,RunResult[]>(); for(const x of results){const xs=byArticle.get(x.article_id)??[];xs.push(x);byArticle.set(x.article_id,xs);}
+  const variability=[...byArticle].filter(([,xs])=>xs.length>1 && new Set(xs.map(x=>x.category)).size>1).map(([article_id,xs])=>({article_id,predictions:xs.map(x=>x.category)}));
+  const agreements=[...byArticle.values()].filter(xs=>xs.length>1 && xs.every(x=>x.category!==null)).map(xs=>new Set(xs.map(x=>x.category)).size===1?1:0);
+  const stability=Object.fromEntries(CATEGORIES.map(c=>{const xs=[...byArticle.values()].filter(rs=>rs.some(x=>x.category===c));return[c,{articles_with_category_prediction:xs.length,stable:xs.filter(rs=>rs.every(x=>x.category===c)).length,rate:xs.length?xs.filter(rs=>rs.every(x=>x.category===c)).length/xs.length:null}]}));
+  const latency=results.map(x=>x.latency_ms).filter((x):x is number=>x!==null);
+  return {attempted:results.length,scored:n,successful:ok,failed:results.length-ok,successful_rate:n?ok/n:null,failure_rate:n?1-ok/n:null,
+    accuracy:n?scored.filter(x=>x.category===labels.get(x.article_id)).length/n:null,macro_precision:macroPrecision,macro_recall:macroRecall,
+    macro_f1:average(CATEGORIES.map(c=>perCategory[c].f1)),weighted_f1:weightedF1,per_category:perCategory,
+    exclusion:{precision:p,recall:r,f1:f1(p,r),confusion_matrix:{true_positive:tp,false_positive:fp,true_negative:CATEGORIES.filter(c=>c!=="除外").reduce((a,c)=>a+CATEGORIES.filter(d=>d!=="除外").reduce((b,d)=>b+matrix[c][d],0),0),false_negative:fn}},
+    confusion_matrix:matrix,repeat_agreement:average(agreements),repeat_articles:variability,repeat_stability:stability,
+    latency_ms:{p50:percentile(latency,.5),p95:percentile(latency,.95),average:average(latency),min:latency.length?Math.min(...latency):null,max:latency.length?Math.max(...latency):null},
+    input_tokens:results.every(x=>x.input_tokens!==null)?results.reduce((a,x)=>a+(x.input_tokens??0),0):null,
+    output_tokens:results.every(x=>x.output_tokens!==null)?results.reduce((a,x)=>a+(x.output_tokens??0),0):null};
+}
+
+export async function callWorkersAI(args:{accountId:string;token:string;article:EvalArticle;repeat:number;fetcher?:typeof fetch}):Promise<RunResult>{
+  const started=performance.now(); const base={article_id:args.article.article_id,repeat:args.repeat};
   try {
-    const parsed: unknown = JSON.parse(cleaned);
-    if (parsed && typeof parsed === "object" && !Array.isArray(parsed) && "category" in parsed) {
-      const category = (parsed as { category: unknown }).category;
-      return CATEGORIES.includes(category as Category) ? category as Category : null;
-    }
-  } catch { /* accept a plain category below */ }
-  return CATEGORIES.includes(cleaned as Category) ? cleaned as Category : null;
+    const response=await (args.fetcher??fetch)(`https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(args.accountId)}/ai/run/@cf/cloudflare/clef-flash`,{
+      method:"POST",headers:{Authorization:`Bearer ${args.token}`,"Content-Type":"application/json"},
+      body:JSON.stringify({model:"clef-flash",state:{title:args.article.title,description:args.article.description},questions:{[QUESTION]:{
+        type:"choice",instructions:"ニュース記事を以下の基準で最も適切なカテゴリに分類する。タイトルとdescriptionを評価し、記事の主題に基づいて選ぶ。",
+        criteria:{"トレンド":"政治、社会、事件、事故、災害、国際、生活など一般ニュース","エンタメ":"芸能、映画、音楽、テレビ、スポーツ","サブカル":"漫画、アニメ、ゲーム、VTuber、ネット文化、オタク文化","マネー":"株式、市場、金融、投資、企業業績、企業経済、経済","IT・ガジェット":"IT技術、AI、ソフトウェア、Webサービス、スマートフォン、PC、家電、デジタル製品","除外":"広告、宣伝、販促、求人、イベント告知、本文なし、掲示板反応集・雑談などニュース価値が低いもの"}}}})});
+    const latency_ms=Math.round(performance.now()-started);
+    let body:unknown; try{body=await response.json();}catch{return {...base,category:null,probabilities:null,confidence:null,latency_ms,input_tokens:null,output_tokens:null,error:response.ok?"invalid_json":"invalid_error_json"};}
+    if(!response.ok)return {...base,category:null,probabilities:null,confidence:null,latency_ms,input_tokens:null,output_tokens:null,error:`http_${response.status}`};
+    if(isRecord(body)&&body.success===false)return {...base,category:null,probabilities:null,confidence:null,latency_ms,input_tokens:null,output_tokens:null,error:"api_error"};
+    const parsed=parseDecision(body); const usage=isRecord(body)?body.usage:null;
+    return {...base,...(parsed??{category:null,probabilities:null,confidence:null}),latency_ms,input_tokens:finite(usage?.input_tokens),output_tokens:finite(usage?.output_tokens),error:parsed?null:"invalid_response"};
+  } catch {return {...base,category:null,probabilities:null,confidence:null,latency_ms:Math.round(performance.now()-started),input_tokens:null,output_tokens:null,error:"network_error"};}
 }
 
-export function summarize(results: RunResult[]) {
-  const successful = results.filter((r): r is RunResult & { category: Category; latency_ms: number } => r.category !== null && r.latency_ms !== null);
-  const sortedLatency = successful.map(r => r.latency_ms).sort((a, b) => a - b);
-  const percentile = (p: number) => sortedLatency.length ? sortedLatency[Math.max(0, Math.ceil(p * sortedLatency.length) - 1)] : null;
-  const excluded = successful.filter(r => r.category === "除外").length;
-  return {
-    attempted: results.length,
-    successful: successful.length,
-    failed: results.length - successful.length,
-    category_counts: Object.fromEntries(CATEGORIES.map(c => [c, successful.filter(r => r.category === c).length])),
-    excluded_count: excluded,
-    exclusion_precision: null,
-    exclusion_recall: null,
-    latency_p50_ms: percentile(0.50),
-    latency_p95_ms: percentile(0.95),
-    input_tokens: results.every(r => r.input_tokens !== null) ? results.reduce((n, r) => n + (r.input_tokens ?? 0), 0) : null,
-    output_tokens: results.every(r => r.output_tokens !== null) ? results.reduce((n, r) => n + (r.output_tokens ?? 0), 0) : null,
-    repeat_agreement: null,
-  };
+async function loadArticles(dir:URL):Promise<EvalArticle[]>{
+  const articles:EvalArticle[]=[];
+  for await(const e of Deno.readDir(dir)){if(!e.isFile||!/^article-\d+\.json$/.test(e.name))continue;const d=JSON.parse(await Deno.readTextFile(new URL(e.name,dir)));
+    if(typeof d.article_id!=="string"||typeof d.title!=="string")continue;const description=typeof d.description==="string"?d.description:"";
+    const bytes=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(`${d.title}\n${description}`));const input_sha256=[...new Uint8Array(bytes)].map(b=>b.toString(16).padStart(2,"0")).join("");
+    articles.push({article_id:d.article_id,title:d.title,description,input_sha256});}
+  return articles.sort((a,b)=>a.article_id.localeCompare(b.article_id));
 }
-
-const SYSTEM_PROMPT = `あなたはAI速のニュース記事分類器です。入力は記事タイトルと短い説明です。記事の主題を次の6種類のいずれか1つに分類してください。トレンド、エンタメ、サブカル、マネー、IT・ガジェット、除外。政治・社会・事件・災害・国際など広く社会的に重要な話題はトレンド、芸能・スポーツはエンタメ、漫画・アニメ・ゲーム・ネット文化はサブカル、金融・企業経済・投資はマネー、技術・製品・デジタルサービスはIT・ガジェット。AI速のニュースとして扱う価値が薄い広告、宣伝、販促、求人、イベント告知、掲示板雑談・反応集、本文のない記事は除外。内容に基づき最も適切なものを選ぶ。JSONのみで {"category":"..."} と返す。`;
-
-export async function callWorkersAI(args: { accountId: string; token: string; model: string; article: EvalArticle; repeat: number }): Promise<RunResult> {
-  const input = `タイトル: ${args.article.title}\n説明: ${args.article.description}`;
-  const started = performance.now();
-  try {
-    const response = await fetch(`https://api.cloudflare.com/client/v4/accounts/${encodeURIComponent(args.accountId)}/ai/run/${encodeURIComponent(args.model)}`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${args.token}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: [{ role: "system", content: SYSTEM_PROMPT }, { role: "user", content: input }], max_tokens: 80, temperature: 0 }),
-    });
-    const elapsed = Math.round(performance.now() - started);
-    if (!response.ok) return { article_id: args.article.article_id, category: null, latency_ms: elapsed, input_tokens: null, output_tokens: null, error: `http_${response.status}` };
-    const body: any = await response.json();
-    const content = body?.result?.response ?? body?.result?.choices?.[0]?.message?.content;
-    return {
-      article_id: args.article.article_id,
-      category: parseCategory(content),
-      latency_ms: elapsed,
-      input_tokens: Number.isFinite(body?.result?.usage?.prompt_tokens) ? body.result.usage.prompt_tokens : null,
-      output_tokens: Number.isFinite(body?.result?.usage?.completion_tokens) ? body.result.usage.completion_tokens : null,
-      error: content == null ? "missing_response" : parseCategory(content) === null ? "invalid_category" : null,
-    };
-  } catch {
-    return { article_id: args.article.article_id, category: null, latency_ms: Math.round(performance.now() - started), input_tokens: null, output_tokens: null, error: "network_error" };
-  }
-}
-
-if (import.meta.main) {
-  const args = [...Deno.args];
-  const live = args.includes("--live");
-  const arg = (name: string, fallback?: string) => {
-    const i = args.indexOf(name);
-    return i >= 0 ? args[i + 1] : fallback;
-  };
-  const root = new URL("./", import.meta.url);
-  const articlesDir = new URL("./dataset/articles/", root);
-  const articles: EvalArticle[] = [];
-  for await (const entry of Deno.readDir(articlesDir)) {
-    if (!entry.isFile || !/^article-\d+\.json$/.test(entry.name)) continue;
-    const raw = await Deno.readTextFile(new URL(entry.name, articlesDir));
-    const data = JSON.parse(raw);
-    if (typeof data.title !== "string" || !data.title.trim()) continue;
-    const description = typeof data.description === "string" ? data.description : "";
-    const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${data.title}\n${description}`));
-    const input_sha256 = [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, "0")).join("");
-    articles.push({ article_id: data.article_id, title: data.title, description, input_sha256 });
-  }
-  articles.sort((a, b) => a.article_id.localeCompare(b.article_id));
-  const selected = articles.slice(0, Number(arg("--limit", "20")));
-  const report: Record<string, unknown> = {
-    dataset: "tools/model_benchmark/dataset/articles/*.json",
-    total_available: articles.length,
-    selected_count: selected.length,
-    selected_inputs: selected.map(({ article_id, input_sha256 }) => ({ article_id, input_sha256 })),
-    label_status: "no verified current ground-truth labels; legacy.app_categories excluded from scoring",
-    model: arg("--model") ?? null,
-    live,
-    results: [],
-  };
-  if (!live) {
-    console.log(JSON.stringify({ ...report, status: "dry_run", reason: "pass --live to call Workers AI" }, null, 2));
-    Deno.exit(0);
-  }
-  const accountId = Deno.env.get("CLOUDFLARE_ACCOUNT_ID");
-  const token = Deno.env.get("CLOUDFLARE_API_TOKEN");
-  const model = arg("--model");
-  if (!accountId || !token || !model) {
-    console.log(JSON.stringify({ ...report, status: "not_measured", reason: "live evaluation requires CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN, and explicit --model" }, null, 2));
-    Deno.exit(0);
-  }
-  const repetitions = Math.max(1, Math.min(3, Number(arg("--repeat", "2"))));
-  const results: RunResult[] = [];
-  for (let run = 0; run < repetitions; run++) {
-    for (const article of selected) {
-      results.push(await callWorkersAI({ accountId, token, model, article, repeat: run }));
-    }
-  }
-  const agreement = selected.map(a => results.filter(r => r.article_id === a.article_id).map(r => r.category)).filter(xs => xs.length > 1 && xs.every(x => x !== null)).map(xs => xs.every(x => x === xs[0]) ? 1 : 0);
-  report.results = results;
-  report.summary = { ...summarize(results), repeat_agreement: agreement.length ? agreement.reduce<number>((a, b) => a + b, 0) / agreement.length : null };
-  report.estimated_cost_usd = null;
-  report.cost_note = "Workers AI billing/Neurons are not returned by the inference response; cost not measured.";
-  console.log(JSON.stringify(report, null, 2));
+if(import.meta.main){
+  const arg=(name:string,fallback?:string)=>{const i=Deno.args.indexOf(name);return i>=0?Deno.args[i+1]:fallback;};
+  const dir=new URL("./dataset/articles/",import.meta.url), articles=await loadArticles(dir), live=Deno.args.includes("--live");
+  const root=new URL("./",import.meta.url), gtUrl=new URL("./dataset/ground_truth/clef_news_categories.json",root),outUrl=new URL("./results/clef_flash/evaluation.json",root);
+  const gtExists=await Deno.stat(gtUrl).then(()=>true).catch(()=>false); const gt=gtExists?JSON.parse(await Deno.readTextFile(gtUrl)) as GroundTruth[]:[];
+  const repeat=Math.max(1,Math.min(3,Number(arg("--repeat","2"))||2));
+  const report:any={dataset:"tools/model_benchmark/dataset/articles/*.json",article_count:articles.length,model:"@cf/cloudflare/clef-flash",repeat_requested:repeat,
+    ground_truth_count:gt.length,legacy_app_categories_used:false,api_mode:live?"live":"dry_run",results:[]};
+  if(!live){report.status="dry_run";report.selected_count=articles.length;report.selected_inputs=articles.map(({article_id,input_sha256})=>({article_id,input_sha256}));console.log(JSON.stringify(report,null,2));Deno.exit(0);}
+  const accountId=Deno.env.get("CLOUDFLARE_ACCOUNT_ID"),token=Deno.env.get("CLOUDFLARE_API_TOKEN");
+  if(!accountId||!token){report.status="BLOCKED_MISSING_CLOUDFLARE_CREDENTIALS";report.results=[];console.log(JSON.stringify(report,null,2));Deno.exit(0);}
+  const results:RunResult[]=[];for(let r=1;r<=repeat;r++)for(const article of articles)results.push(await callWorkersAI({accountId,token,article,repeat:r}));
+  report.status=gt.length===articles.length?"completed":"BLOCKED_MISSING_GROUND_TRUTH";report.results=results;report.summary=evaluate(results,gt);
+  await Deno.mkdir(new URL("./results/clef_flash/",root),{recursive:true});await Deno.writeTextFile(outUrl,JSON.stringify(report,null,2));console.log(JSON.stringify({...report,results:undefined},null,2));
 }

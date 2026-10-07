@@ -1,0 +1,24 @@
+{
+  "status": "BLOCKED_UNAVAILABLE_INDEPENDENT_LABELS",
+  "article_count": 53,
+  "labeled_count": 0,
+  "legacy_app_categories_used": false,
+  "reason": "Dataset article title and description text is mojibake in the checked-in JSON, so a reviewer cannot reliably audit article meaning and write defensible per-article rationales. No labels were fabricated.",
+  "required_schema": {
+    "article_id": "string",
+    "category": ["トレンド", "エンタメ", "サブカル", "マネー", "IT・ガジェット", "除外"],
+    "rationale": "short human-auditable rationale based on title and full description",
+    "labeling_method": "independent_rubric_review",
+    "reviewer": "human reviewer identifier",
+    "input_sha256": "SHA-256 of title + newline + description"
+  },
+  "rubric": {
+    "トレンド": "政治、社会、事件、事故、災害、国際、生活などの一般ニュース",
+    "エンタメ": "芸能、映画、音楽、テレビ、スポーツ",
+    "サブカル": "漫画、アニメ、ゲーム、VTuber、ネット文化、オタク文化",
+    "マネー": "株式、市場、金融、投資、企業業績、企業経済、経済ニュース",
+    "IT・ガジェット": "IT技術、AI、ソフトウェア、Webサービス、スマートフォン、PC、家電、デジタル製品",
+    "除外": "広告、宣伝、販促、求人、単なるイベント告知、本文なし、掲示板反応集・雑談などニュース価値が低いもの"
+  },
+  "articles": []
+}
