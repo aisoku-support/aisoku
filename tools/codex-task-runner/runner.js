@@ -9,7 +9,33 @@ const CHECKS = { flutter_analyze: ['flutter', ['analyze']], flutter_test: ['flut
 const logFile = path.join(AI, 'runner.log');
 const lockFile = path.join(AI, 'runner.lock');
 const DRY_RUN = process.argv.includes('--dry-run');
+const CREDENTIAL_KEYS = ['CLOUDFLARE_ACCOUNT_ID', 'CLOUDFLARE_API_TOKEN'];
 let ownedLock = null;
+
+function parseDotenv(text) {
+  const values = {};
+  for (const line of text.split(/\r?\n/)) {
+    const match = line.match(/^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
+    if (!match || match[1].startsWith('#')) continue;
+    let value = match[2];
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) value = value.slice(1, -1);
+    else value = value.replace(/\s+#.*$/, '').trim();
+    values[match[1]] = value;
+  }
+  return values;
+}
+function loadServerEnvironment(env = process.env, file = path.join(ROOT, '.env.server')) {
+  if (!fs.existsSync(file)) return;
+  let source;
+  try { source = fs.readFileSync(file, 'utf8'); } catch { throw new Error('Unable to load .env.server'); }
+  const values = parseDotenv(source);
+  for (const key of CREDENTIAL_KEYS) if (!env[key] && values[key]) env[key] = values[key];
+}
+function redactCredentials(text, env = process.env) {
+  let safe = String(text);
+  for (const key of CREDENTIAL_KEYS) if (env[key]) safe = safe.split(env[key]).join(`[REDACTED:${key}]`);
+  return safe;
+}
 
 function log(message) { fs.appendFileSync(logFile, `${new Date().toISOString()} ${message}\n`); }
 function ensureDirs() { for (const dir of DIRS) fs.mkdirSync(path.join(AI, dir), { recursive: true }); }
@@ -174,7 +200,7 @@ function run(command, args, cwd = ROOT) {
   const isBatch = windowsCli && executable.endsWith('.bat');
   const actualCommand = isBatch ? (process.env.ComSpec || 'cmd.exe') : (resolvedExecutable || command);
   const actualArgs = isBatch ? ['/d', '/s', '/c', `call "${resolvedExecutable || executable}" ${args.join(' ')}`] : args;
-  return new Promise(resolve => { const p = spawn(actualCommand, actualArgs, { cwd, shell: false }); let output = ''; p.stdout.on('data', d => output += d); p.stderr.on('data', d => output += d); p.on('close', code => resolve({ code: code ?? 1, output })); p.on('error', e => resolve({ code: 1, output: String(e) })); });
+  return new Promise(resolve => { const p = spawn(actualCommand, actualArgs, { cwd, shell: false }); let output = ''; p.stdout.on('data', d => output += d); p.stderr.on('data', d => output += d); p.on('close', code => resolve({ code: code ?? 1, output: redactCredentials(output) })); p.on('error', () => resolve({ code: 1, output: 'command could not be started' })); });
 }
 async function waitForStableFile(file) {
   let previous = -1;
@@ -198,11 +224,11 @@ async function runCodex(task, source) {
     let initializeRequestId = null, threadRequestId = null, turnRequestId = null;
     const timeout = setTimeout(() => finish({ code: 1, output: 'Codex timeout' }), 30 * 60 * 1000);
     const finish = result => { if (!finished) { finished = true; clearTimeout(timeout); child.kill(); resolve(result); } };
-    child.stderr.on('data', d => stderr += d.toString());
+    child.stderr.on('data', d => stderr += redactCredentials(d.toString()));
     child.stdout.on('data', data => {
       buffer += data.toString(); let end;
       while ((end = buffer.indexOf('\n')) >= 0) { const line = buffer.slice(0, end); buffer = buffer.slice(end + 1); let msg; try { msg = JSON.parse(line); } catch { continue; }
-        if (msg.error) { finish({ code: 1, output: JSON.stringify(msg.error) }); continue; }
+        if (msg.error) { finish({ code: 1, output: redactCredentials(JSON.stringify(msg.error)) }); continue; }
         if (msg.id === initializeRequestId && msg.result) { initialized = true; threadRequestId = send('thread/start', { cwd: ROOT, sandbox: 'workspace-write' }); continue; }
         if (msg.id === threadRequestId && initialized && !threadId && msg.result && (msg.result.threadId || msg.result.thread?.id || msg.result.id)) {
           threadId = msg.result.threadId || msg.result.thread?.id || msg.result.id;
@@ -214,7 +240,7 @@ async function runCodex(task, source) {
         if (turnStarted && /(turn[./](completed|failed)|turn_completed|turn_failed)/.test(type)) finish({ code: type.includes('failed') ? 1 : 0, output: JSON.stringify(msg) });
       }
     });
-    child.on('error', e => finish({ code: 1, output: String(e) }));
+    child.on('error', () => finish({ code: 1, output: 'Codex app-server could not be started' }));
     child.on('close', code => finish({ code: code ?? 1, output: stderr || 'app-server exited before completion' }));
     const send = (method, params) => { const requestId = ++id; child.stdin.write(JSON.stringify({ jsonrpc: '2.0', id: requestId, method, params }) + '\n'); return requestId; };
     initializeRequestId = send('initialize', { clientInfo: { name: 'ai-codex-task-runner', version: '1.0.0' } });
@@ -246,6 +272,6 @@ async function processFile(file) {
   if (failure) { log(`${task.task_id} git failed`); move(running, path.join(AI, 'error')); return; }
   move(running, path.join(AI, 'done')); const finalStatus = await gitStatus(); log(`${task.task_id} completed; working tree ${finalStatus.code === 0 && !finalStatus.output ? 'clean' : `dirty (${finalStatus.output.trim() || `git status exit ${finalStatus.code}`})`}`);
 }
-async function main() { ensureDirs(); if (!acquireLock()) { log('another runner is active; watcher not started'); return; } process.once('SIGINT', () => handleSignal('SIGINT')); process.once('SIGTERM', () => handleSignal('SIGTERM')); let busy = false; const queue = async () => { if (busy) return; const files = fs.readdirSync(path.join(AI, 'inbox')).filter(f => f.toLowerCase().endsWith('.md')); if (!files.length) return; busy = true; try { await new Promise(r => setTimeout(r, 1000)); await processFile(files[0]); } finally { busy = false; } }; const watcher = fs.watch(path.join(AI, 'inbox'), queue); log('watcher started'); await queue(); process.once('beforeExit', () => { watcher.close(); releaseLock(); }); }
+async function main() { loadServerEnvironment(); ensureDirs(); if (!acquireLock()) { log('another runner is active; watcher not started'); return; } process.once('SIGINT', () => handleSignal('SIGINT')); process.once('SIGTERM', () => handleSignal('SIGTERM')); let busy = false; const queue = async () => { if (busy) return; const files = fs.readdirSync(path.join(AI, 'inbox')).filter(f => f.toLowerCase().endsWith('.md')); if (!files.length) return; busy = true; try { await new Promise(r => setTimeout(r, 1000)); await processFile(files[0]); } finally { busy = false; } }; const watcher = fs.watch(path.join(AI, 'inbox'), queue); log('watcher started'); await queue(); process.once('beforeExit', () => { watcher.close(); releaseLock(); }); }
 if (require.main === module) main().catch(e => { log(`fatal: ${e.message}`); releaseLock(); process.exitCode = 1; });
-module.exports = { validateResult };
+module.exports = { validateResult, parseDotenv, loadServerEnvironment, redactCredentials };

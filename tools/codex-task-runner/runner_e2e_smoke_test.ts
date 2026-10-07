@@ -1,4 +1,11 @@
 const runnerSource = await Deno.readTextFile(new URL("./runner.js", import.meta.url));
+const dotenvSource = runnerSource.slice(runnerSource.indexOf("function parseDotenv"), runnerSource.indexOf("function redactCredentials"));
+const dotenvFunctions = new Function("fs", "CREDENTIAL_KEYS", `${dotenvSource}; return { parseDotenv, loadServerEnvironment };`);
+const { parseDotenv, loadServerEnvironment } = dotenvFunctions({
+  existsSync: (file: string) => { try { Deno.statSync(file); return true; } catch { return false; } },
+  readFileSync: (file: string) => Deno.readTextFileSync(file),
+}, ["CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_API_TOKEN"]);
+const redactCredentials = (text: string, env: Record<string, string>) => text.split(env.CLOUDFLARE_API_TOKEN).join("[REDACTED:CLOUDFLARE_API_TOKEN]");
 const validatorSource = runnerSource.match(/function normalizeResultText\([\s\S]*?\r?\n}\r?\nfunction validateResult\([\s\S]*?\r?\n}/)?.[0];
 if (!validatorSource) throw new Error("result validator was not found");
 const validateResult = new Function(`${validatorSource}; return validateResult;`)();
@@ -33,6 +40,53 @@ Deno.test("runner entrypoint resolves", () => {
   }
   if (!import.meta.resolve("./runner.js").endsWith("/tools/codex-task-runner/runner.js")) {
     throw new Error("runner entrypoint could not be resolved");
+  }
+});
+
+Deno.test("dotenv parser handles whitespace, comments, and quoted values", () => {
+  const parsed = parseDotenv("\n# ignored\nCLOUDFLARE_ACCOUNT_ID = 'account-value'\nCLOUDFLARE_API_TOKEN=\"token-value\"\nOTHER=value # note\n");
+  if (parsed.CLOUDFLARE_ACCOUNT_ID !== "account-value" || parsed.CLOUDFLARE_API_TOKEN !== "token-value" || parsed.OTHER !== "value") {
+    throw new Error("dotenv values were not parsed as expected");
+  }
+});
+
+Deno.test("dotenv credentials inherit into a child process without being printed", async () => {
+  const dir = `${Deno.cwd()}/tools/codex-task-runner/.env-test-${crypto.randomUUID()}`;
+  await Deno.mkdir(dir);
+  const envFile = `${dir}/.env.server`;
+  const secret = "synthetic-secret-value";
+  await Deno.writeTextFile(envFile, `CLOUDFLARE_ACCOUNT_ID=synthetic-account\nCLOUDFLARE_API_TOKEN=${secret}\n`);
+  const env = {};
+  try {
+    loadServerEnvironment(env, envFile);
+    const child = new Deno.Command(Deno.execPath(), {
+      args: ["eval", "console.log(process.env.CLOUDFLARE_ACCOUNT_ID ? 'account-present' : 'account-missing'); console.log(process.env.CLOUDFLARE_API_TOKEN ? 'token-present' : 'token-missing')"],
+      env,
+      stdout: "piped",
+      stderr: "piped",
+    });
+    const output = await child.output();
+    const stdout = new TextDecoder().decode(output.stdout);
+    if (output.code !== 0 || !stdout.includes("account-present") || !stdout.includes("token-present")) throw new Error("child did not inherit Cloudflare environment");
+    if (stdout.includes(secret) || redactCredentials(secret, env).includes(secret)) throw new Error("credential value was exposed");
+  } finally {
+    await Deno.remove(dir, { recursive: true });
+  }
+});
+
+Deno.test("dotenv loading preserves existing environment and tolerates a missing file", () => {
+  const env: Record<string, string> = { CLOUDFLARE_API_TOKEN: "existing-token" };
+  loadServerEnvironment(env, "missing-env-server-file");
+  if (env.CLOUDFLARE_API_TOKEN !== "existing-token" || env.CLOUDFLARE_ACCOUNT_ID) throw new Error("missing dotenv file changed environment");
+  const dir = `${Deno.cwd()}/tools/codex-task-runner/.env-test-${crypto.randomUUID()}`;
+  Deno.mkdirSync(dir);
+  try {
+    const file = `${dir}/.env.server`;
+    Deno.writeTextFileSync(file, "CLOUDFLARE_ACCOUNT_ID=file-account\nCLOUDFLARE_API_TOKEN=file-token\n");
+    loadServerEnvironment(env, file);
+    if (env.CLOUDFLARE_API_TOKEN !== "existing-token" || env.CLOUDFLARE_ACCOUNT_ID !== "file-account") throw new Error("dotenv precedence was incorrect");
+  } finally {
+    Deno.removeSync(dir, { recursive: true });
   }
 });
 
